@@ -1,0 +1,24 @@
+{
+  "name": "wifyanywhere",
+  "description": "wifianywhere",
+  "main": "app.js",
+  "authors": [
+    "Ailton Duarte & Anabella Semedo"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "wifianywhere",
+    "nodejs",
+    "Imedia"
+  ],
+  "homepage": "https://github.com/Coyas/wifyanywhere",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/bower_components",
+    "test",
+    "tests"
+  ]
+}
