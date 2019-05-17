@@ -18,5 +18,5 @@ app.use(express.static(path.join(__dirname,"public")))
 
 
 
-app.listen(port, () => console.log(`Ola Bella Servidor iniciado porta ${port}!`))
+app.listen(port, () => console.log(`Servidor iniciado porta ${port}!`))
 
