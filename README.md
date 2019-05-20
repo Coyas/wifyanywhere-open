@@ -4,7 +4,7 @@ site em node do wifianywhere.
 #### Como iniciar a aplicacao
 1° : git clone https://github.com/Coyas/wifyanywhere.git
 
-2° : npm install
+2° : npm install & bower install
 
 3° : node bin/www
 
