@@ -1,9 +1,9 @@
-<<<<<<< HEAD
+
 .banner{
     height: 687px;
     width: 100%;
 }
-=======
+
 /*adicionar fonts*/
 @font-face {
     font-family: 'Segoe UI Regular';
@@ -46,7 +46,7 @@ body {
 
 
 
->>>>>>> 20c204e2b90ba249e86ae67a40350c6c097c8f5f
+
 footer {
     padding: 2%;
     background:  #27348B;  /* fallback for old browsers */
