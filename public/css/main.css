@@ -39,17 +39,20 @@ body {
 }
 
 
-
+/************ estilos do rodape *************************/
 footer {
     padding: 2%;
-    background:  #27348B;  /* fallback for old browsers */
-    background: linear-gradient(to bottom, #27348B 40%, #1FB0C1);
+    background: rgb(39,52,139);
+    background: -moz-linear-gradient(180deg, rgba(39,52,139,1) 0%, rgba(31,176,193,1) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(39,52,139,1) 0%, rgba(31,176,193,1) 100%);
+    background: linear-gradient(180deg, rgba(39,52,139,1) 0%, rgba(31,176,193,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#27348b",endColorstr="#1fb0c1",GradientType=1);
 }
 footer ul {
     list-style-type: none;
 }
 footer .fab {
-    font-size: 250%;
+    font-size: 2.313em;
 }
 a {
     text-decoration: none;
@@ -59,16 +62,28 @@ a:hover {
     text-decoration: none;
     color: white;
 }
+
 .creditos:hover {
     color: #00ccff;
 }
 .creditos {
     color: white;
 }
+
 .fmenu, .fcontato {
     /*font-size: 1.5em;*/
     font-weight: bold;
 }
+.fmenu ul li, .fcontato ul li{
+    margin: 0 0 2% 0;
+}
 .fcontato {
     /*margin-left: 1%;*/
 }
+
+/********** fim dos estilos para rodape *********************
+=============================================================
+************* inicio dos estilos para servicos **************/
+
+
+/*********** fim dos estilos para inicio **********************/

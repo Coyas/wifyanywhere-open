@@ -5,8 +5,8 @@ router.get('/', (req, res) => {
     res.render('home/index')
 })
 
-router.get('/admin', (req, res) => {
-    res.send('rotas do adminitrador')
+router.get('/servicos', (req, res) => {
+    res.render('home/servicos')
 })
 
 module.exports = router
