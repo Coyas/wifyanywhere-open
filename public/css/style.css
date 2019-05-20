@@ -1,0 +1,21 @@
+/*******************div beneficios**********************/
+#beneficio img{
+    width: 134px;
+    height: 134px;
+}
+#beneficio{
+    //height: 488px;
+    padding: 2%;
+    color: #1FB0C1;
+}
+/*******************div howwork**********************/
+#howwork{
+    padding: 2%;
+    height: 700px;
+    background-color: #1FB0C1;
+    color: white;
+}
+#howwork img{
+    width: 187px;
+    height: 187px;
+}
