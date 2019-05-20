@@ -1,16 +1,62 @@
+<<<<<<< HEAD
 .banner{
     height: 687px;
     width: 100%;
 }
+=======
+/*adicionar fonts*/
+@font-face {
+    font-family: 'Segoe UI Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Segoe UI Regular'), url('/fonts/Segoe_UI.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Segoe UI Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Segoe UI Italic'), url('/fonts/Segoe_UI_Italic.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Segoe UI Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Segoe UI Bold'), url('/fonts/Segoe_UI_Bold.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Segoe UI Bold Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Segoe UI Bold Italic'), url('/fonts/Segoe_UI_Bold_Italic.woff') format('woff');
+}
+
+/*definir fonte e cor de letra para body*/
+body {
+    font-family: 'Segoe UI Regular';
+    font-style: normal;
+    font-weight: normal;
+    color: #FFFFFF;
+}
+
+
+
+>>>>>>> 20c204e2b90ba249e86ae67a40350c6c097c8f5f
 footer {
-    color: white;
     padding: 2%;
-    background: darkblue;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to bottom, darkblue, blue, cyan);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to bottom, darkblue, blue, cyan); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background:  #27348B;  /* fallback for old browsers */
+    background: linear-gradient(to bottom, #27348B 40%, #1FB0C1);
 }
 footer ul {
     list-style-type: none;
+}
+footer .fab {
+    font-size: 250%;
 }
 a {
     text-decoration: none;
