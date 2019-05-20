@@ -1,10 +1,7 @@
-.banner {
-    background-image: url("/images/a.png");
-    height: 700px;
-    text-align: center;
+.banner{
+    height: 687px;
+    width: 100%;
 }
-
-
 footer {
     color: white;
     padding: 2%;
