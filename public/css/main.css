@@ -1,3 +1,9 @@
+
+.banner{
+    height: 687px;
+    width: 100%;
+}
+
 /*adicionar fonts*/
 @font-face {
     font-family: 'Segoe UI Regular';
@@ -39,7 +45,9 @@ body {
 }
 
 
+
 /************ estilos do rodape *************************/
+
 footer {
     padding: 2%;
     background: rgb(39,52,139);

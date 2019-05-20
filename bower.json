@@ -25,6 +25,7 @@
     "bootstrap": "^4.3.1",
     "jquery": "^3.4.1",
     "popper.js": "^1.15.0",
-    "Font-Awesome": "^5.8.2"
+    "Font-Awesome": "^5.8.2",
+    "flag-icon-css": "^3.3.0"
   }
 }
