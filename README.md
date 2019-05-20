@@ -1,10 +1,20 @@
 # wifyanywhere
 site em node do wifianywhere.
 
+#### Como iniciar a aplicacao
+1° : git clone https://github.com/Coyas/wifyanywhere.git
 
+2° : npm install
+
+3° : node bin/www
+
+
+ .1: npm test => node bin/www
  
--
-extrutura de arquivos
+ 
+ .2: npm start => nodemon bin/www
+
+### extrutura de arquivos
 -
 ./bin  - arquivos para iniciar o servidor de frontend
 
