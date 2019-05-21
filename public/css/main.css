@@ -147,4 +147,31 @@ a:hover {
     margin-bottom: 8%;
 }
 
-/********fim Book Online dos estilos para descricao de about**********/
+/********fim dos estilos para descricao de about**********
+====================================================================
+ ********* Inicio dos estilos para seccao sobre os devices*/
+#AboutDevices {
+    background-color: gray;
+    padding: 2% 10% 10% 10%;
+}
+
+#AboutDevices .list-group li {
+    color: #1b1e21;
+}
+
+#AboutDevices figure img {
+    /*width: 150%;*/
+    /*height: 150%;*/
+}
+
+#AboutDevices .droppanel {
+    list-style-type: none;
+    background-color: white;
+    color: #1b1e21;
+    width: 85%;
+    margin-left: 8%;
+    border: 25px solid;
+}
+
+
+/********** fim dos estilos para seccao sobre os devices********/
