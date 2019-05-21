@@ -92,6 +92,59 @@ a:hover {
 /********** fim dos estilos para rodape *********************
 =============================================================
 ************* inicio dos estilos para servicos **************/
+.aboutBanner figure{
+    width:100%; /*container-width*/
+    overflow:hidden; /*hide bounds of image */
+    margin:0;   /*reset margin of figure tag*/
+}
+.aboutBanner figure img{
+    display:block; /*remove inline-block spaces*/
+    width:100%; /*make image streatch*/
+}
+.aboutBanner figure img{
+    /*add to other styles*/
+    margin:-15.875% 0;
+}
+
+.sobre {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+}
 
 
-/*********** fim dos estilos para inicio **********************/
+/*********** fim dos estilos para inicio *********************
+=============================================================
+ ********inicio dos estilos para descricao de about**********/
+#desc {
+    background-color: #1FB0C1;
+    padding: 5%;
+
+}
+
+
+/*************fim de descricao de about  *******************
+=============================================================
+ ********inicio dos estilos para descricao de about**********/
+
+#hiw h1, #hiw h2, #hiw h3, #hiw h4, #hiw h5, #hiw h6 {
+    color: #1FB0C1;
+}
+#hiw h1 {
+    text-transform: uppercase;
+}
+#hiw {
+    padding: 5% 10% 10% 10%;
+    text-align: center;
+}
+
+#hiw figure img {
+    width: 11.625em;
+    height: 11.625em;
+}
+
+.mar-bo {
+    margin-bottom: 8%;
+}
+
+/********fim Book Online dos estilos para descricao de about**********/
