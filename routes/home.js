@@ -9,4 +9,8 @@ router.get('/servicos', (req, res) => {
     res.render('home/servicos')
 })
 
+router.get('/planos', (req, res) => {
+    res.render('home/planos')
+})
+
 module.exports = router

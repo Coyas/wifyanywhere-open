@@ -95,3 +95,19 @@
    // margin-left: 8px;
     border: none;
 }
+
+/***************************************our wifi plans********************************************/
+
+#plans img{
+    height: 21.1875rem;
+}
+.planos{
+    background-color: #1FB0C1;
+}
+.logo1 h1{
+    font-size: 6.25rem;
+    margin-top: -16%;
+    padding-left: 350px;
+    font-family: "Segoe UI";
+
+}
