@@ -4,8 +4,9 @@ const exphbs = require ('express-handlebars')
 const path = require('path')
 const createError = require('http-errors');
 const app = express()
-const home = require('./routes/home')
-const user = require('./routes/user')
+const home = require('./routes/home');
+const user = require('./routes/user');
+const booking = require('./routes/booking');
 
 /***************configurações***************/
 
@@ -20,9 +21,13 @@ app.use(express.static(path.join(__dirname,"public")))
 /************* Rotas***********************/
 
 // rota do index
-app.use('/', home)
+app.use('/', home);
 // rotas do user
-app.use('/users', user)
+app.use('/users', user);
+// rota para o bookin online
+app.use('/booking', booking);
+
+
 // rota do 404 (catch 404 and forward to error handler)
 app.use(function(req, res, next) {
     next(createError(404));

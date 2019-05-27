@@ -205,3 +205,22 @@ a:hover {
 
 
 /********** fim dos estilos para seccao sobre os devices********/
+/*********** inicio dos estilos para a seccao booking  *********/
+#booking{
+    background-color: #1FB0C1;
+    padding: 5% 10% 10% 10%;
+}
+#booking .summary > * {
+    color: #1FB0C1;
+}
+#booking .summary {
+    background-color: white;
+    color: #1FB0C1;
+}
+
+
+#Bpolicy {
+    background-color: gray;
+    padding: 5%;
+}
+/*********** fim dos estilos do booking************************/
