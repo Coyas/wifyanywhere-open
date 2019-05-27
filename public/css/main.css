@@ -108,7 +108,7 @@ a:hover {
 
 .sobre {
     position: absolute;
-    top: 40%;
+    top: 20%;
     left: 40%;
 }
 
@@ -153,24 +153,54 @@ a:hover {
 #AboutDevices {
     background-color: gray;
     padding: 2% 10% 10% 10%;
+    height: 500px;
 }
 
 #AboutDevices .list-group li {
     color: #1b1e21;
 }
 
-#AboutDevices figure img {
-    /*width: 150%;*/
-    /*height: 150%;*/
+#AboutDevices img{
+    z-index: 100;
+    position: relative;
 }
 
-#AboutDevices .droppanel {
-    list-style-type: none;
+#AboutDevices .devicebox span {
+    cursor: pointer;
+}
+#AboutDevices .devicebox {
     background-color: white;
-    color: #1b1e21;
-    width: 85%;
-    margin-left: 8%;
-    border: 25px solid;
+    position: absolute;
+    /* deslizado*/
+    /*top: 80%;*/
+    /* escondido*/
+    top: 0;
+    left: 11%;
+    z-index: 1;
+    text-align: center;
+
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+
+    width: 70%;
+}
+#AboutDevices .devicebox > *{
+    color: black;
+}
+#AboutDevices .device {
+    float: left;
+}
+#AboutDevices .devices {
+    /*padding: 2% 10% 10% 10%;*/
+    width: 100%;
+}
+#AboutDevices .device {
+    position: relative;
+    width: 20%;
+}
+#AboutDevices .devicebox ul {
+    list-style-type: none;
+    padding-left: 0;
 }
 
 
