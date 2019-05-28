@@ -6,16 +6,17 @@ site em node do wifianywhere.
 
 2° : npm install & bower install
 
-3° : node bin/www
+3° : Run de app
+```$xslt
 
+ 3.1: npm test => node bin/www
+ 3.2: npm start => nodemon bin/www
+```
 
- .1: npm test => node bin/www
- 
- 
- .2: npm start => nodemon bin/www
 
 ### extrutura de arquivos
--
+```$xslt
+
 ./bin  - arquivos para iniciar o servidor de frontend
 
 ./models
@@ -29,10 +30,12 @@ site em node do wifianywhere.
 ./views/partials - contem as partes de codigos usados em main
 
 ./views/layouts  - comtem a estrutura html da pagina
+```
 
 
 ### tenologias usadas
 
+```$xslt
 - nodejs
 - express
 - handlebars
@@ -40,6 +43,7 @@ site em node do wifianywhere.
 - css3
 - js ES6
 
+```
 
 ### sistema de pagamento
 
