@@ -1,23 +1,27 @@
 /**************carregando modulos****************/
-const express = require('express')
-const exphbs = require ('express-handlebars')
-const path = require('path')
+const express = require('express');
+const exphbs = require ('express-handlebars');
+const path = require('path');
 const createError = require('http-errors');
-const app = express()
+
 const home = require('./routes/home');
 const user = require('./routes/user');
 const booking = require('./routes/booking');
+const favicon = require('serve-favicon');
 
+
+const app = express();
 /***************configurações***************/
 
 //handlebars
 app.engine('handlebars', exphbs({defaultLayout: 'main'}) )
 app.set('view engine', 'handlebars');
 
-
 // static files
 app.use(express.static(path.join(__dirname,"public")))
 
+// servir o favicon
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 /************* Rotas***********************/
 
 // rota do index

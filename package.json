@@ -27,6 +27,7 @@
     "express-handlebars": "^3.1.0",
     "mysql2": "^1.6.5",
     "node-sass-middleware": "^0.11.0",
-    "sequelize": "^5.8.6"
+    "sequelize": "^5.8.6",
+    "serve-favicon": "^2.5.0"
   }
 }
