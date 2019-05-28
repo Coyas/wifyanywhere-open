@@ -57,7 +57,10 @@
     padding: 2% 10% 10% 10%;
     color: #1FB0C1;
 }
-.card{
+.coluna{
+    padding: 6% 4% 8% 4%;
+}
+.pacote{
     -webkit-border-radius: 1.25rem;
     -moz-border-radius: 1.25rem;
     width: 15.625rem;
@@ -65,8 +68,10 @@
     box-shadow: 0.125rem 0.25rem 0.5rem grey;
     border-radius: 1.25rem;
 
+
+
 }
-.card-header{
+.planocabeca{
     background-color: rgb(39,52,139);
     background: -moz-linear-gradient(180deg, rgba(39,52,139,1) 0%, rgba(31,176,193,1) 100%);
     background: -webkit-linear-gradient(180deg, rgba(39,52,139,1) 0%, rgba(31,176,193,1) 100%);
@@ -75,24 +80,24 @@
 
 
 }
-.card-header:first-child {
+.planocabeca:first-child {
     -webkit-border-radius: 1.25rem;
     -moz-border-radius: 1.25rem;
     border-radius: 1.25rem !important;
     border-bottom-left-radius: 40%!important;
     border-bottom-right-radius: 40%!important;
 }
-.card-header h2{
+.planocabeca h2{
     color: #FFFFFF;
     text-align: center;
 }
-.card .btn-info{
-    height: 40px;
-    width: 220px;
-    border-radius: 15px;
+.pacote .btn-info{
+    height: 2.5rem;
+    width: 15rem;
+    border-radius: 0.9375rem;
     background-color: #1FB0C1;
-    margin-top: 50px;
-   // margin-left: 8px;
+    margin-top: 3.125rem;/*
+   // margin-left: 8px;*/
     border: none;
 }
 
@@ -107,7 +112,148 @@
 .logo1 h1{
     font-size: 6.25rem;
     margin-top: -16%;
-    padding-left: 350px;
+    padding-left: 21.875rem;
     font-family: "Segoe UI";
 
+}
+/***********************************************FAQ******************************************/
+#faq img{
+    height: 21.1875rem;
+}
+.logofaq h1{
+    font-size: 4.375rem;
+    margin-top: -16%;
+    padding-left: 15rem;
+    font-family: "Segoe UI";
+}
+#faq input[type=text] {
+    display: block;
+    text-align: left;
+    width: 587px;
+    height: 40px;
+    border-radius: 8px;
+    border: 1px solid #7FC4FD;
+    top: 33%;
+    left: 30%;
+    position: absolute;
+}
+#categoria{
+    padding: 2% 10% 2% 10%;
+    color: #1FB0C1;
+}
+#categoria img{
+    width: 5.4375rem;
+    height: 8.375rem;
+}
+
+#acordiao{
+    background-color: #1FB0C1;
+    padding-top: 2%;
+}
+.seccao {
+    background-color: #1FB0C1;
+    color: #FFFFFF;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 24px;
+    transition: 0.4s;
+    font-family: "Segoe UI Black";
+}
+
+#acordiao .active, .seccao:hover {
+    background-color: #1FB0C1;
+}
+
+#acordiao .panel {
+     padding: 0 18px;
+     display: none;
+     background-color: #1FB0C1;
+     overflow: hidden;
+     color: #FFFFFF;
+ }
+#acordiao .panel p{
+    background-color: #FFFFFF;
+    color: #1FB0C1;
+    padding: 2%;
+}
+#acordiao i{
+    float: right;
+}
+/*.question{
+    background-color: #1FB0C1;
+    color: #FFFFFF;
+}
+.btn-link {
+    font-weight: 400;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+.btn-link:hover {
+    color: #FFFFFF;
+    text-decoration: underline;
+}
+.card-header i{
+    float: right;
+}*/
+
+/*!* Style the buttons that are used to open and close the accordion panel *!
+.accordion {
+    background-color: #1FB0C1;
+    color: #FFFFFF;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+
+}
+
+!* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) *!
+.active, .accordion:hover {
+    background-color: #1FB0C1;
+}
+
+!* Style the accordion panel. Note: hidden by default *!
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+}*/
+/***************************************************************/
+.login{
+    cursor: pointer;
+}
+#login .modal-header{
+    color: black;
+    display: inline-block;
+}
+#login .modal-title{
+    text-align: center;
+}
+
+#login .modal-body {
+    padding: 10% 10% 10% 10%;
+}
+#login .modal-body a {
+    font-size: 1.5rem;
+    padding: 5%;
+    width: 100%;
+}
+#login hr.linha:after{
+    content: 'ou';
+    display: inline-block;
+    position: relative;
+    top: -15px;
+    background-color: #FFFFFF;
+    color: black;
+}
+#login hr.linha{
+    text-align: center;
 }

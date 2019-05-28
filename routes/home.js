@@ -13,4 +13,8 @@ router.get('/planos', (req, res) => {
     res.render('home/planos')
 });
 
+router.get('/faq', (req, res) => {
+    res.render('home/faq')
+})
+
 module.exports = router;
