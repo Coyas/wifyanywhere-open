@@ -1,1 +1,1 @@
-alert('terrasystem: voce foi hackeado por Coyas');
+// alert('terrasystem: voce foi hackeado por Coyas');
