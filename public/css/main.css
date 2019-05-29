@@ -210,13 +210,13 @@ a:hover {
     background-color: #1FB0C1;
     padding: 5% 10% 10% 10%;
 }
-#booking .summary > * {
-    color: #1FB0C1;
-}
-#booking .summary {
-    background-color: white;
-    color: #1FB0C1;
-}
+/*#booking .summary > * {*/
+/*    color: #1FB0C1;*/
+/*}*/
+/*#booking .summary {*/
+/*    background-color: white;*/
+/*    color: #1FB0C1;*/
+/*}*/
 
 
 #Bpolicy {
@@ -296,11 +296,19 @@ a:hover {
     border-radius: 10px;
     /*text-align: center;*/
 }
-#booking .planname {
-    /*text-align: left;*/
+/*#booking .planname {*/
+/*    !*text-align: left;*!*/
+/*}*/
+/*#booking .visa {*/
+/*    position: relative;*/
+/*    margin-top: 3%;*/
+/*}*/
+
+#booking #Cardpay, #booking #step2, #booking #step3, #booking #form-2 {
+    display: none;
 }
-#booking .visa {
-    position: relative;
-    margin-top: 3%;
+/* Mark input boxes that gets an error on validation: */
+#booking input.invalid {
+    background-color: #ffdddd;
 }
 /*********** fim dos estilos do booking************************/
