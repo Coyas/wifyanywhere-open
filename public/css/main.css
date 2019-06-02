@@ -315,3 +315,14 @@ a:hover {
     color: #1FB0C1;
 }
 /*********** fim dos estilos do booking************************/
+/*********** estilos para menu (navbar) **********************/
+#menu {
+    padding: 1%;
+}
+
+#menu a {
+    color: #1FB0C1;
+}
+#menu form a {
+    color: white;
+}
