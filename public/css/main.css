@@ -157,7 +157,7 @@ a:hover {
 #AboutDevices {
     background-color: gray;
     padding: 2% 10% 10% 10%;
-    height: 500px;
+    /*height: 500px;*/
 }
 
 #AboutDevices .list-group li {
@@ -197,6 +197,7 @@ a:hover {
 #AboutDevices .devices {
     /*padding: 2% 10% 10% 10%;*/
     width: 100%;
+
 }
 #AboutDevices .device {
     position: relative;
@@ -317,6 +318,71 @@ a:hover {
 }
 #booking #status{
     color: #1FB0C1;
+}
+
+#booking #step1 select {
+    height: 50px;
+    width: 80%;
+    border-radius: 8px;
+    color: #1FB0C1;
+}
+#booking #step1 input {
+    height: 50px;
+    width: 80%;
+    border-radius: 8px;
+    color: #1FB0C1;
+}
+#booking #step2 select {
+    height: 50px;
+    /*width: 80%;*/
+    border-radius: 8px;
+    color: #1FB0C1;
+}
+#booking #step2 input {
+    height: 50px;
+    /*width: 80%;*/
+    border-radius: 8px;
+    color: #1FB0C1;
+}
+#booking .next {
+    background-color: grey !important;
+    border-color: grey;
+    width: 10%;
+    font-weight: bold;
+    padding: 1%;
+}
+#booking .prev {
+    background-color: white !important;
+    border-color: grey;
+    width: 10%;
+    font-weight: bold;
+    padding: 1%;
+    color: #1FB0C1;
+}
+
+#submit {
+    padding: 1%;
+    background-color: grey !important;
+    border-color: grey;
+    font-weight: bold;
+}
+#submit2 {
+    padding: 1%;
+    background-color: white !important;
+    border-color: white;
+    font-weight: bold;
+    color: #1FB0C1;
+    width: 15%;
+}
+#form-2 input {
+    height: 50px;
+    /*width: 80%;*/
+    border-radius: 8px;
+    color: #1FB0C1;
+    border-color: #1FB0C1;
+}
+#inputCardholder {
+    width: 90%;
 }
 /*********** fim dos estilos do booking************************/
 /*********** estilos para menu (navbar) **********************/

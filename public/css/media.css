@@ -60,9 +60,177 @@
 
 @media (min-width: 320px) and (max-width: 480px) {
 
-/*//CSS*/
-/*    #status {*/
-/*        display: none;*/
-/*    }*/
+    /********* booking   *******************/
+    #booking #step1 select {
+        width: 100%;
+    }
+    #booking #step1 input {
+        width: 100%;
+    }
+    #booking #step2 select {
+        width: 100%;
+    }
+    #booking #step2 input {
+        width: 100%;
+    }
+    #inputCardholder {
+        width: 100%;
+    }
+
+    #booking .next {
+        width: 40%;
+        padding: 2%;
+    }
+    #booking .prev {
+        width: 40%;
+        padding: 2%;
+    }
+
+    #booking #step3 .prev {
+        width: 30%;
+        padding: 2%;
+    }
+    #booking .rr {
+        float: right;
+    }
+    #status {
+        display: none;
+    }
+    #submit {
+        padding: 3%;
+        font-size: 0.8rem;
+        width: 65%;
+    }
+    #step3 .total {
+        font-size: 2rem;
+    }
+    /*********** menu *********************/
+    #menu {
+        padding: 3%;
+    }
+    /*************************** Faq ***************************************/
+    .logofaq {
+        text-align: center;
+        top: 18%;
+        left: 10%;
+        width: 90%;
+    }
+    .logofaq h1 {
+        font-size: 2rem;
+    }
+    #faq input[type=text] {
+        top: 50%;
+        left: 10%;
+        width: 80%;
+    }
+    #acordiao .faqs {
+        width: 100%;
+    }
+
+
+    /***************************************our wifi plans********************************************/
+
+    #plans img{
+        height: 21.1875rem;
+    }
+    .logo1 h1{
+        font-size: 2.5rem;
+
+    }
+
+    #plans .logo1 {
+        top: 35%;
+        left: 25%;
+        width: 70%;
+        text-align: center;
+    }
+
+
+    /***** pagina index seccao offers  ***************/
+    #offers h1 {
+        font-size: 2rem;
+    }
+    #howwork h1 {
+        font-size: 2rem;
+    }
+    #beneficio h1 {
+        font-size: 2rem;
+    }
+    #menu h1 {
+        font-size: 2rem;
+    }
+    #banner .logo {
+        top: 45%;
+        left: 8%;
+    }
+
+    .aboutBanner figure img {
+        margin: 0;
+    }
+
+
+    .mar-bo {
+        margin-top: 8%;
+    }
+
+    .sobre {
+        top: 20%;
+        left: 7%;
+    }
+    .aboutBanner span {
+        color: white;
+    }
+
+    /***** pagina servicos ************/
+    #AboutDevices .col-md-3:not(:first-child) {
+        margin-top: 45%;
+    }
+    #AboutDevices .device {
+        width: 100%;
+    }
+
+
+    #hiw h1 {
+        font-size: 2rem;
+    }
+    #AboutDevices h1 {
+        font-size: 2rem;
+    }
+
+
+    #AboutDevices .mo {
+        width: 80%;
+        margin-left: 10%;
+    }
+
+    #AboutDevices .devicebox {
+        margin-left: 2.5%;
+        width: 90%;
+    }
+
+    /******** Rodapé ************************/
+
+    footer {
+        padding-top: 9%;
+    }
+
+
+    footer .logofooter, footer .menufooter{
+        display: none;
+    }
+    footer .social {
+        position: relative;
+        width: 33.333333333%;
+        padding-right: 15px;
+        padding-left: 15px
+    }
+    footer ul {
+        padding-left: 0;
+    }
+
+
+    footer .rsocial {
+        /*margin-left: 1%;*/
+    }
 
 }

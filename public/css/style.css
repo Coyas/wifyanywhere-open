@@ -111,20 +111,30 @@
 }
 .logo1 h1{
     font-size: 6.25rem;
-    margin-top: -16%;
-    padding-left: 21.875rem;
+    /*margin-top: -16%;*/
+    /*padding-left: 21.875rem;*/
     font-family: "Segoe UI";
 
 }
+
+#plans .logo1 {
+    top: 20%;
+    left: 20%;
+}
+
 /***********************************************FAQ******************************************/
 #faq img{
     height: 21.1875rem;
 }
 .logofaq h1{
     font-size: 4.375rem;
-    margin-top: -16%;
-    padding-left: 15rem;
+    /*margin-top: -16%;*/
+    /*padding-left: 15rem;*/
     font-family: "Segoe UI";
+}
+.logofaq {
+    top: 18%;
+    left: 8%;
 }
 #faq input[type=text] {
     display: block;
@@ -193,6 +203,7 @@
 #acordiao i{
     float: right;
 }
+
 /*.question{
     background-color: #1FB0C1;
     color: #FFFFFF;
