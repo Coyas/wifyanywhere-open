@@ -311,4 +311,7 @@ a:hover {
 #booking input.invalid {
     background-color: #ffdddd;
 }
+#booking #status{
+    color: #1FB0C1;
+}
 /*********** fim dos estilos do booking************************/

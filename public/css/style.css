@@ -42,7 +42,7 @@
     padding: 5% 10% 10% 10%;
     color: #1FB0C1;
 }
-/*******************div howwork**************************************/
+/*******************div how it work**************************************/
 #howwork{
     padding: 5% 10% 10% 10%;
     background-color: #1FB0C1;
@@ -144,6 +144,16 @@
 #categoria img{
     width: 5.4375rem;
     height: 8.375rem;
+    opacity: 0.3;
+}
+#categoria img.ativo {
+    opacity: 1;
+}
+#categoria h6 {
+    opacity: 0.3;
+}
+#categoria h6.ativo {
+    opacity: 1;
 }
 
 #acordiao{
