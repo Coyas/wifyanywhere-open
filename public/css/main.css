@@ -108,10 +108,12 @@ a:hover {
 
 .sobre {
     position: absolute;
-    top: 20%;
+    top: 40%;
     left: 40%;
 }
-
+.aboutBanner span {
+    color: #1FB0C1;
+}
 
 /*********** fim dos estilos para inicio *********************
 =============================================================
@@ -123,9 +125,11 @@ a:hover {
 }
 
 
-/*************fim de descricao de about  *******************
+/*************fim de descricao de servicos  *******************
 =============================================================
  ********inicio dos estilos para descricao de about**********/
+
+
 
 #hiw h1, #hiw h2, #hiw h3, #hiw h4, #hiw h5, #hiw h6 {
     color: #1FB0C1;
