@@ -11,6 +11,12 @@ const favicon = require('serve-favicon');
 
 
 const app = express();
+require('dotenv').config();
+console.log(process.env.DBNAME)
+console.log(process.env.HOST)
+console.log(process.env.USERS)
+console.log(process.env.DB_PASSWORD)
+
 /***************configurações***************/
 
 //handlebars

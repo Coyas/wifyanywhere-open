@@ -1,25 +1,22 @@
 const Sequelize = require("sequelize");
 const sequelize = require("../config/db.js");
 
-
-const Faqs = sequelize.define('faqs',{
-    title:{
+const Categoria = sequelize.define('categoria',{
+    nomept:{
         type: Sequelize.STRING,
         unique: true,
         allowNull:false
     },
-
-    descricao:{
+    nomeen:{
         type: Sequelize.STRING,
+        unique: true,
+        allowNull:false
     },
-
-    lingua:{
+    nomefr:{
         type: Sequelize.STRING,
+        unique: true,
+        allowNull:false
     }
+
 })
-
-/*Faqs.belongsTo(Categoria);*//*
-sequelize.sync();*/
-
-module.exports = Faqs
-
+module.exports =  Categoria
