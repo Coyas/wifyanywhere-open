@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="122.881" height="122.881" viewBox="0 0 122.881 122.881">
+  <defs>
+    <filter id="Caminho_258" x="0" y="0" width="122.881" height="122.881" filterUnits="userSpaceOnUse">
+      <feOffset dy="10" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feFlood flood-opacity="0.369"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Caminho_3" x="13.704" y="29.601" width="81.37" height="66.03" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-2"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Caminho_2" x="24.576" y="21.249" width="84.229" height="68.196" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-3"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-3"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Grupo_13" data-name="Grupo 13" transform="translate(-1108 -596)">
+    <g id="Grupo_12" data-name="Grupo 12" transform="translate(1123 601)">
+      <g transform="matrix(1, 0, 0, 1, -15, -5)" filter="url(#Caminho_258)">
+        <path id="Caminho_258-2" data-name="Caminho 258" d="M46.441,0A46.441,46.441,0,1,1,0,46.441,46.441,46.441,0,0,1,46.441,0Z" transform="translate(15 5)" fill="#fff"/>
+      </g>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 1108, 596)" filter="url(#Caminho_3)">
+      <path id="Caminho_3-2" data-name="Caminho 3" d="M55.281,0H8.09A8.09,8.09,0,0,0,0,8.09V24.944a8.09,8.09,0,0,0,8.09,8.09v15l17.3-15H55.281a8.09,8.09,0,0,0,8.09-8.09V8.09A8.09,8.09,0,0,0,55.281,0Z" transform="translate(22.7 35.6)" fill="rgba(31,176,193,0.48)"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 1108, 596)" filter="url(#Caminho_2)">
+      <path id="Caminho_2-2" data-name="Caminho 2" d="M8.455,0H57.774a8.455,8.455,0,0,1,8.455,8.455V26.069a8.455,8.455,0,0,1-8.455,8.455V50.2L39.692,34.523H8.455A8.455,8.455,0,0,1,0,26.069V8.455A8.455,8.455,0,0,1,8.455,0Z" transform="translate(33.58 27.25)" fill="#1fb0c1"/>
+    </g>
+    <text id="LIVE_CHAT" data-name="LIVE CHAT" transform="translate(1147.23 643.691)" fill="#fff" font-size="11" font-family="SegoeUI-Bold, Segoe UI" font-weight="700"><tspan x="0" y="0">LIVE CHAT</tspan></text>
+  </g>
+</svg>
