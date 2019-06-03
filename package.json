@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/Coyas/wifyanywhere#readme",
   "dependencies": {
+    "chat-engine": "^0.9.21",
     "express": "^4.16.4",
     "express-handlebars": "^3.1.0",
     "mysql2": "^1.6.5",
