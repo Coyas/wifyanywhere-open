@@ -1,6 +1,8 @@
 <nav id="menu" class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow">
     <div class="container">
-  <a class="navbar-brand h1 mb-0 font-weight-normal" style="color: #1FB0C1" href="/">LOGO</a>
+  <a class="navbar-brand h1 mb-0 font-weight-normal" style="color: #1FB0C1" href="/">
+    <img src="/images/logo2.png" height="50">
+  </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -9,30 +11,30 @@
 <!--      navbar-nav ml-auto mr-3-->
     <ul class="navbar-nav ml-auto mr-4">
       <li class="nav-item active">
-            <a class="nav-link"  href="./servicos">SERVICES<span class="sr-only">(current)</span></a>
+            <a class="nav-link"  href="./servicos">{{translation.SERVICOS}}<span class="sr-only">(current)</span></a>
       </li>
         <li class="nav-item">
-            <a class="nav-link"  href="./planos">PLANS</a>
+            <a class="nav-link"  href="./planos">{{translation.PLANOS}}</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link"   href="./faq/1">FAQ</a>
+            <a class="nav-link"   href="./faq/1">{{translation.FAQ}}</a>
         </li>
         <li class="nav-item">
-            <a class="login nav-link"   data-toggle="modal" data-target="#login"><i class="far fa-user"></i> LOGIN</a>
+            <a class="login nav-link"   data-toggle="modal" data-target="#login"><i class="far fa-user"></i> {{translation.ENTRAR}}</a>
         </li>
         <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle"  href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="flag-icon flag-icon-gb-eng"></span> ENG
+            <a class="nav-link dropdown-toggle"  href="/?clang=es" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="flag-icon flag-icon-gb-eng"></span> {{translation.ENG}}
             </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item"  href="#"><span class="flag-icon flag-icon-pt"></span> POR</a>
-              <a class="dropdown-item"  href="#"><span class="flag-icon flag-icon-fr"></span> FRA</a>
+              <a class="dropdown-item"  href="/?clang=pt"><span class="flag-icon flag-icon-pt"></span> {{translation.POR}}</a>
+              <a class="dropdown-item"  href="/?clang=fr"><span class="flag-icon flag-icon-fr"></span> {{translation.FRA}}</a>
         </div>
       </li>
 
     </ul>
     <form class="form-inline my-2 my-lg-0">
-            <a href="./booking" class="btn btn-info my-2 my-sm-0" >ONLINE BOOKING</a>
+            <a href="./booking" class="btn btn-info my-2 my-sm-0" >{{translation.ONLINE_BOOKING}}</a>
     </form>
   </div>
  </div>

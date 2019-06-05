@@ -32,6 +32,16 @@ app.use(express.static(path.join(__dirname,"public")))
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 /************* Rotas***********************/
 
+app.use(i18n({
+    translationsPath: path.join(__dirname, 'i18n'), // <--- use here. Specify translations files path.
+    siteLangs: ["en","fr", "pt"],
+    textsVarName: 'translation',
+    browserEnable: true,
+    defaultLang: 'pt',
+    paramLangName: 'clang',
+
+}));
+
 // rota do index
 app.use('/', home);
 // rotas do user

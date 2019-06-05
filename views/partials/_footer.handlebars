@@ -1,25 +1,28 @@
 <footer class="container-fluid text-center">
     <div class="row">
         <div class="col-md logofooter">
-            <h1>LOGO</h1>
+            {{!-- <h1>LOGO</h1> --}}
+            <a href="/">
+                <img src="/images/logo-footer.png" height="50">
+            </a>
         </div>
         <div class="col-md-3 menufooter">
             <div class="row">
                 <div class="col-md-2 fmenu">MENU</div>
                 <div class="col-md-10">
                     <ul>
-                        <li><a href="./servicos">Servicos</a></li>
-                        <li><a href="./planos">Plans</a></li>
-                        <li><a href="#">Faq</a></li>
-                        <li><a href="./booking">Booking</a></li>
-                        <li><a href="#">Login</a></li>
+                        <li><a href="./servicos">{{translation.SERVICOS}}</a></li>
+                        <li><a href="./planos">{{translation.PLANOS}}</a></li>
+                        <li><a href="#">{{translation.FAQ}} </a></li>
+                        <li><a href="./booking">{{translation.RESERVAS}} </a></li>
+                        <li><a href="#">{{translation.ENTRAR}} </a></li>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="col-md-4">
             <div class="row">
-                <div class="col-md-2 fcontato">CONTATOS</div>
+                <div class="col-md-2 fcontato">{{translation.CONTATOS}} </div>
                 <div class="col-md-10">
                     <ul>
                         <li><a href="tel:002380000000">(+238) 000 00 00</a></li>

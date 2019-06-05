@@ -12,7 +12,7 @@ const Sequelize = require("sequelize");
 const sequelize = new Sequelize(
     'wifianywhere',
     'root',
-    '',
+    'terrasystem',
     {
         host: 'localhost',
         dialect: 'mysql'
