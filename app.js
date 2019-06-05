@@ -3,6 +3,8 @@ const express = require('express');
 const exphbs = require ('express-handlebars');
 const path = require('path');
 const createError = require('http-errors');
+// traducao
+const i18n = require('i18n-express')
 
 const home = require('./routes/home');
 const user = require('./routes/user');
