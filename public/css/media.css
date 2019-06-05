@@ -214,6 +214,10 @@
         padding-top: 9%;
     }
 
+    footer .mrg {
+        margin: -0.8rem 0 1rem 0;
+    }
+
 
     footer .logofooter, footer .menufooter{
         display: none;

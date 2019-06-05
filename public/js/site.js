@@ -1,5 +1,30 @@
 // alert('terrasystem: voce foi hackeado por Coyas');
 
+// code do footer
+$(document).ready(function() {
+   // $("#a").click(function(){
+        //$(this).hide();
+        //console.log ( $("#z").index() )
+     //   $('#creditos').before($('#social'));
+     // });
+     var $window = $(window);
+     
+     //$('#social').html("<p>sq</p>");
+
+     // viewport 230-480
+     if($window.width() > 319 && $window.width() < 481){
+        console.log('$window.width mobile:'+$window.width())
+        // alert('teste de swap div footer mobile version');
+        $('#a').addClass('aa');
+        $('#b').addClass('bb');
+        $('.aa').before($('.bb'));
+     }else {
+        console.log('$window.width nao:'+$window.width())
+     }
+
+
+});
+
 // script do bookin
 var currentTab = 0;
 $(document).ready(function() {
