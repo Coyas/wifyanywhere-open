@@ -76,9 +76,8 @@
     background: -moz-linear-gradient(180deg, rgba(39,52,139,1) 0%, rgba(31,176,193,1) 100%);
     background: -webkit-linear-gradient(180deg, rgba(39,52,139,1) 0%, rgba(31,176,193,1) 100%);
     background: linear-gradient(180deg, rgba(39,52,139,1) 0%, rgba(31,176,193,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#27348b",endColorstr="#1fb0c1",GradientType=1); ;
-
-
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#27348b",endColorstr="#1fb0c1",GradientType=1);
+    color: #FFFFFF;
 }
 .planocabeca:first-child {
     -webkit-border-radius: 1.25rem;
@@ -99,6 +98,11 @@
     margin-top: 3.125rem;/*
    // margin-left: 8px;*/
     border: none;
+}
+
+.site-cor {
+    background-color: #1FB0C1 !important;
+    border-color: #1FB0C1 !important;
 }
 
 /***************************************our wifi plans********************************************/

@@ -53,7 +53,7 @@
 
 }
 
-/*
+/* 
   ##Device = Most of the Smartphones Mobiles (Portrait)
   ##Screen = B/w 320px to 479px
 */
@@ -161,7 +161,7 @@
     }
     #banner .logo {
         top: 45%;
-        left: 8%;
+        left: 14%;
     }
 
     .aboutBanner figure img {
@@ -212,6 +212,10 @@
 
     footer {
         padding-top: 9%;
+    }
+
+    footer .mrg {
+        margin: -0.8rem 0 1rem 0;
     }
 
 
