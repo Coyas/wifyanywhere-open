@@ -1,6 +1,7 @@
 /**************carregando modulos****************/
 const express = require('express');
 const exphbs = require ('express-handlebars');
+const bodyParser = require('body-parser');
 const path = require('path');
 const createError = require('http-errors');
 
@@ -9,6 +10,8 @@ const user = require('./routes/user');
 const booking = require('./routes/booking');
 const favicon = require('serve-favicon');
 
+
+let FacebookStrategy = require ('passport-facebook');
 
 const app = express();
 require('dotenv').config();
@@ -22,6 +25,10 @@ console.log(process.env.DB_PASSWORD)
 //handlebars
 app.engine('handlebars', exphbs({defaultLayout: 'main'}) )
 app.set('view engine', 'handlebars');
+
+// Body Parser
+app.use(bodyParser.urlencoded({extended:false}))
+app.use(bodyParser.json())
 
 // static files
 app.use(express.static(path.join(__dirname,"public")))
@@ -55,5 +62,17 @@ app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.render('error');
 });
+/************************************facebook*************************************/
+/*app.use(new FacebookStrategy({
+        clientID: FACEBOOK_APP_ID,
+        clientSecret: FACEBOOK_APP_SECRET,
+        callbackURL: "http://localhost:3000/auth/facebook/callback"
+    },
+    function(accessToken, refreshToken, profile, cb) {
+        User.findOrCreate({ facebookId: profile.id }, function (err, user) {
+            return cb(err, user);
+        });
+    }
+));*/
 
 module.exports = app;
