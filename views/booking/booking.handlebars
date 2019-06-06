@@ -205,7 +205,7 @@
 <section id="booking" class="container-fluid mt-5">
     <div class="row">
         <div class="col-md-12 text-center">
-            <h1 class="display-4 font-weight-bold">BOOKING</h1>
+            <h1 class="display-4 font-weight-bold">{{translation.BOOKING}}</h1>
         </div>
     </div>
 
@@ -214,9 +214,9 @@
         <div class="col-md-8">
             <div class="wrapper-progressBar">
                 <ul class="progressBar">
-                    <li class="active">ORDER</li>
-                    <li class="active">BILING INFORMATION</li>
-                    <li>CONFIRME & CHECKOUT</li>
+                    <li class="active">{{translation.ORDER}}</li>
+                    <li class="active">{{translation.BI}}</li>
+                    <li>{{translation.CCH}}</li>
                 </ul>
             </div>
         </div>
@@ -230,7 +230,7 @@
                 <div id="step1"  class="tab">
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="inputNumber">Select the number of days for wifi</label>
+                            <label for="inputNumber">{{translation.SN_DAYWIFI}}</label>
                             <select id="inputNumber" class="form-control">
                                 <option selected>Select</option>
                                 <option>5 dias</option>
@@ -240,13 +240,13 @@
                             </select>
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="inputPickupdate">Pick-up date</label>
+                            <label for="inputPickupdate">{{translation.PICKUP_DATE}}</label>
                             <input type="date" class="form-control" id="inputPickupdate" placeholder="dd/mm/yyyy">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="inputLocation">confirm pick-up location</label>
+                            <label for="inputLocation">{{translation.CPU_LOC}}</label>
                             <select id="inputLocation" class="form-control">
                                 <option selected>Select</option>
                                 <option>Aeroporto Nelson Mandela (praia)</option>
@@ -254,24 +254,22 @@
                             </select>
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="inputreturnlocation">Confirm return location</label>
-                            <select id="inputNumber" class="form-control">
+                            <label for="inputreturnlocation">{{translation.CR_LOC}}</label>
+                            <select id="inputLocation" class="form-control">
                                 <option selected>Select</option>
-                                <option>5 dias</option>
-                                <option>10 dias</option>
-                                <option>20 dias</option>
-                                <option>30 dias</option>
+                                <option>Aeroporto Nelson Mandela (praia)</option>
+                                <option>TerraSystem (Latata)</option>
                             </select>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="inputFlightnumber">Flight Number (optional)</label>
+                            <label for="inputFlightnumber">{{translation.FN}}</label>
                             <input type="number" class="form-control" id="inputFlightnumber" placeholder="">
                         </div>
                     </div>
                     <div class="form-group">
-                        <a href="#" class="btn btn-danger next" id="next-1">NEXT</a>
+                        <a href="#" class="btn btn-danger next" id="next-1">{{translation.NEXT}}</a>
                     </div>
                 </div>
 
@@ -287,37 +285,37 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="inputAddress">First Name</label>
+                        <label for="inputAddress">{{translation.FNAME}}</label>
                         <input type="text" class="form-control" id="inputAddress" placeholder="">
                     </div>
                     <div class="form-group">
-                        <label for="inputAddress2">Last Name</label>
+                        <label for="inputAddress2">{{translation.LNAME}}</label>
                         <input type="text" class="form-control" id="inputAddress2" placeholder="">
                     </div>
                     <div class="form-group">
-                        <label for="inputAddress">Street Address</label>
+                        <label for="inputAddress">{{translation.SADDRESS}}</label>
                         <input type="text" class="form-control" id="inputAddress" placeholder="">
                     </div>
                     <div class="form-group">
-                        <label for="inputAddress2">city</label>
+                        <label for="inputAddress2">{{translation.city}}</label>
                         <input type="text" class="form-control" id="inputAddress2" placeholder="">
                     </div>
 
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="inputZip">Zip code</label>
+                            <label for="inputZip">{{translation.Zcode}}</label>
                             <input type="text" class="form-control" id="inputZip" placeholder="">
                         </div>
 
                         <div class="form-group col-md-6">
-                            <label for="inputPhone">Phone</label>
+                            <label for="inputPhone">{{translation.Phone}}</label>
                             <input type="text" class="form-control" id="inputPhone" placeholder="">
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="inputCountry">Country</label>
+                            <label for="inputCountry">{{translation.Country}}</label>
                             <select id="inputCountry" class="form-control">
                                 <option selected>EUA</option>
                                 <option>Portugal</option>
@@ -326,14 +324,14 @@
                         </div>
 
                         <div class="form-group col-md-6">
-                            <label for="inputEmail">Email</label>
+                            <label for="inputEmail">{{translation.Email}}</label>
                             <input type="email" class="form-control" id="inputEmail" placeholder="">
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <a href="#" class="btn btn-danger prev" id="prev-2">BACK</a>
-                        <a href="#" class="btn btn-danger next rr" id="next-2">NEXT</a>
+                        <a href="#" class="btn btn-danger prev" id="prev-2">{{translation.BACK}}</a>
+                        <a href="#" class="btn btn-danger next rr" id="next-2">{{translation.NEXT}}</a>
                     </div>
                 </div>
 
@@ -342,20 +340,20 @@
                     <div class="checkout">
                         <div class="row">
                             <div class="col-md-12 planname">
-                                <h1>PLAN NAME</h1>
+                                <h1>{{translation.PN}}</h1>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-3">Duration: 00 days</div>
-                            <div class="col-md-3">Ending: dd/mm/yyyy</div>
-                            <div class="col-md-3">Starting: dd/mm/yyyy</div>
+                            <div class="col-md-3">{{translation.Duration}}: 00 days</div>
+                            <div class="col-md-3">{{translation.Ending}}: dd/mm/yyyy</div>
+                            <div class="col-md-3">{{translation.Starting}}: dd/mm/yyyy</div>
                             <div class="col-md-3"><b>0000$</b></div>
                         </div>
                     </div>
                     <div class="terms">
                         <div class="row">
                             <div class="col-md-12">
-                                <h4 class="font-weight-bold">Terms and Conditions</h4>
+                                <h4 class="font-weight-bold">{{translation.T_CONDITION}}</h4>
                             </div>
                         </div>
                         <div class="row">
@@ -363,21 +361,21 @@
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="inputTerms" required>
                                     <label class="form-check-label" for="inputTerms">
-                                        I agry to the <a class="linkTerms" href="#">terms and conditions</a>
+                                        {{translation.IAGRY}}<a class="linkTerms" href="#"> {{translation.T_CONDITION}}</a>
                                     </label>
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <h1 class="display-4 font-weight-bold total">TOTAL: 000$</h1>
+                                <h1 class="display-4 font-weight-bold total">{{translation.TOTAL}}: 000$</h1>
                             </div>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <a href="#" class="btn btn-danger prev" id="prev-3">BACK</a>
+                        <a href="#" class="btn btn-danger prev" id="prev-3">{{translation.BACK}}</a>
 <!--                        <a href="#" class="btn btn-success" id="submit">PROCCED TO PAYMENT</a>-->
                         <!-- id=submi => id=next3 -->
-                         <input type="submit" name="submit" value="PROCCED TO PAYMENT" id="submit" class="btn btn-success">
+                         <input type="submit" name="submit" value="{{translation.PPAY}}" id="submit" class="btn btn-success">
                     </div>
                 </div>
             </form>
@@ -389,7 +387,7 @@
             <form action="" method="POST">
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="inputCardnumber">Card Number</label>
+                        <label for="inputCardnumber">{{translation.CNumber}}</label>
                         <input type="number" class="form-control" id="inputCardnumber" placeholder="">
                     </div>
 
@@ -399,24 +397,24 @@
                     </div>
 
                     <div class="form-group col-md-3">
-                        <label for="inputCardexpiry">card Expiry Date</label>
+                        <label for="inputCardexpiry">{{translation.cardExpiryDate}}</label>
                         <input type="date" class="form-control" id="inputCardexpiry" placeholder="">
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group col-md-9">
-                        <label for="inputCardHolder">Card Holder Name</label>
+                        <label for="inputCardHolder">{{translation.CardHolderName}}</label>
                         <input type="text" class="form-control" id="inputCardholder" placeholder="">
                     </div>
 
                     <div class="form-group col-md-3">
-                        <label for="inputCVC">CVC</label>
+                        <label for="inputCVC">{{translation.CVC}}</label>
                         <input type="number" class="form-control" id="inputCVC" placeholder="">
                     </div>
                 </div>
 
-                <input type="submit" name="submit" value="PAY" id="submit2" class="btn btn-success">
+                <input type="submit" name="submit" value="{{translation.PAY}}" id="submit2" class="btn btn-success">
             </form>
         </div>
         <div class="col-md-3">
@@ -425,20 +423,20 @@
                     <table class="able">
                         <thead class="thead-deault">
                         <tr>
-                            <th><h1 class="font-weight-bold">SUMARY</h1></th>
+                            <th><h1 class="font-weight-bold">{{translation.SUMARY}}</h1></th>
                         </tr>
                         </thead>
                         <tbody>
                         <tr>
-                            <th scope="row">Wifi Plan</th>
+                            <th scope="row">{{translation.WP}}</th>
                             <td>Nina</td>
                         </tr>
                         <tr>
-                            <th scope="row">Pick-up Date</th>
+                            <th scope="row">{{translation.PICKUP_DATE}}</th>
                             <td>dd-mm-yyy</td>
                         </tr>
                         <tr>
-                            <th scope="row">Total</th>
+                            <th scope="row">{{translation.TOTAL}}</th>
                             <td>0000$</td>
                         </tr>
                         </tbody>
@@ -468,15 +466,14 @@
     <div class="row">
         <div class="col-md-12">
             <article>
-                <b>Cancellation Policy: </b> Refunds are possible up to 4 days before selected WiFi pickup date. WiFi cancellations after this point are non
-                refundable. Please contact us via support@wifianywhere.com if you wish to cancel or change your order after purchase.
+                <b>{{translation.C_Policy}}</b> {{translation.Refunds}}
             </article>
         </div>
     </div>
     <div class="row mt-4">
         <div class="col-md-12">
             <article>
-                <b>Disclamer: </b> The Wifi Anywhere service is provided by iMedia. For post sales support, please contact iMedia directly.
+                <b>{{translation.Disclamer}}</b> {{translation.TheWifianywhere}}
             </article>
         </div>
     </div>
