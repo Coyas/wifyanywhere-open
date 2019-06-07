@@ -238,8 +238,6 @@ footer .mrg {
     width: 100%
 }
 
-#booking .progressBar {
-}
 
 #booking .progressBar li {
     list-style-type: none;
@@ -396,4 +394,11 @@ footer .mrg {
 }
 #menu form a {
     color: white;
+}
+
+footer .cc {
+    text-align: left;
+}
+footer .mm {
+    text-align: left;
 }
