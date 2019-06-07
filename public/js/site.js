@@ -18,8 +18,11 @@ $(document).ready(function() {
         $('#a').addClass('aa');
         $('#b').addClass('bb');
         $('.aa').before($('.bb'));
-     }else {
-        console.log('$window.width nao:'+$window.width())
+     }else if($window.width() > 479 && $window.width() < 768) {
+        // console.log('$window.width nao:'+$window.width())
+        $('#a').addClass('aa');
+        $('#b').addClass('bb');
+        $('.aa').before($('.bb'));
      }
 
 
