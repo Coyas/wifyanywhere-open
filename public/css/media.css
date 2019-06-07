@@ -49,7 +49,70 @@
 
 @media (min-width: 481px) and (max-width: 767px) {
 
-/*//CSS*/
+        /***** pagina index+  ***************/
+        #offers h1 {
+            font-size: 3rem;
+        }
+        #howwork h1 {
+            font-size: 3rem;
+        }
+        #beneficio h1 {
+            font-size: 3rem;
+        }
+        #menu h1 {
+            font-size: 2rem;
+        }
+        #banner .logo {
+            top: 40%;
+            left: 29%;
+        }
+    
+        .aboutBanner figure img {
+            margin: 0;
+        }
+    
+    
+        .mar-bo {
+            margin-top: 8%;
+        }
+    
+        .sobre {
+            top: 20%;
+            left: 7%;
+        }
+        .aboutBanner span {
+            color: white;
+        }
+
+         /******** Rodapé ************************/
+
+    footer {
+        padding-top: 9%;
+    }
+
+    footer .mrg {
+        margin: -0.8rem 0 1rem 0;
+    }
+
+
+    footer .logofooter, footer .menufooter{
+        display: none;
+    }
+    footer .social {
+        position: relative;
+        width: 33.333333333%;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-bottom: 10%;
+    }
+    footer ul {
+        padding-left: 0;
+    }
+
+
+    footer .rsocial {
+        /*margin-left: 1%;*/
+    }
 
 }
 
@@ -106,7 +169,7 @@
     }
     /*********** menu *********************/
     #menu {
-        padding: 3%;
+        /* padding: 3%; */
     }
     /*************************** Faq ***************************************/
     .logofaq {
@@ -146,7 +209,7 @@
     }
 
 
-    /***** pagina index seccao offers  ***************/
+    /***** pagina index+  ***************/
     #offers h1 {
         font-size: 2rem;
     }
@@ -226,7 +289,8 @@
         position: relative;
         width: 33.333333333%;
         padding-right: 15px;
-        padding-left: 15px
+        padding-left: 15px;
+        margin-bottom: 20%;
     }
     footer ul {
         padding-left: 0;
