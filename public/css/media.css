@@ -99,6 +99,17 @@ footer .ab {
     margin-bottom: 2%;
 }
 
+/*********Planos*********/
+#plans .logo1 {
+    top: 20%;
+    left: 9%;
+}
+#beneficio .col-md-3 {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
 
 }
 
