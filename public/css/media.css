@@ -27,7 +27,78 @@
 
 @media (min-width: 768px) and (max-width: 1024px) {
 
-/*//CSS*/
+/***** pagina index+  ***************/
+#offers h1 {
+    font-size: 3rem;
+}
+#howwork h1 {
+    font-size: 3rem;
+}
+#beneficio h1 {
+    font-size: 3rem;
+}
+#menu h1 {
+    font-size: 2rem;
+}
+#banner .logo {
+    top: 30%;
+    left: 33%;
+}
+
+.aboutBanner figure img {
+    margin: 0;
+}
+
+
+.mar-bo {
+    margin-top: 8%;
+}
+
+.sobre {
+    top: 20%;
+    left: 7%;
+}
+.aboutBanner span {
+    color: white;
+}
+
+/**********servicos ***************/
+.sobre {
+    top: 30%;
+    left: 33%;
+}
+#hiw .col-md-3 {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 100%;
+}
+#AboutDevices .col-md-3 {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 100%;
+    margin-bottom: 20%;
+}
+#AboutDevices .mo {
+    margin-left: 9%;
+}
+
+/******* footer  ************/
+footer .fmenu, footer .fcontato {
+    display: none;
+}
+footer .mm{
+    margin-left: -15%;
+}
+footer .cc {
+    margin-left: -25%;
+}
+footer .mrg, footer .rsocial {
+    margin-left: -80%;
+}
+footer .ab {
+    margin-bottom: 2%;
+}
+
 
 }
 
@@ -38,8 +109,25 @@
 
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
 
-/*//CSS*/
-
+             /******** Rodapé ************************/
+            footer .social {
+                position: relative;
+                width: 33.333333333%;
+                padding-right: 15px;
+                padding-left: 15px;
+                
+            }
+            footer ul {
+                padding-left: 0;
+            }
+            footer .ab {
+                margin-bottom: 1%;
+            }
+        
+        
+            footer .rsocial {
+                /*margin-left: 1%;*/
+            }
 }
 
 /*
@@ -48,6 +136,7 @@
 */
 
 @media (min-width: 481px) and (max-width: 767px) {
+    
 
         /***** pagina index+  ***************/
         #offers h1 {
@@ -98,6 +187,7 @@
     footer .logofooter, footer .menufooter{
         display: none;
     }
+
     footer .social {
         position: relative;
         width: 33.333333333%;
