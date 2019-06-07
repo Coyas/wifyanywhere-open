@@ -4,13 +4,16 @@ site em node do wifianywhere.
 #### Como iniciar a aplicacao
 1° : git clone https://github.com/Coyas/wifyanywhere.git
 
-2° : npm install & bower install
+1.1: npm install bower -g
 
-3° : Run de app
+2° : npm install
+3° : bower install
+
+4° : Run de app
 ```$xslt
 
- 3.1: npm test => node bin/www
- 3.2: npm start => nodemon bin/www
+ 4.1: npm test => node bin/www
+ 4.2: npm start => nodemon bin/www
 ```
 
 
