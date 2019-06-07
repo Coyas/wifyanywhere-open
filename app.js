@@ -17,10 +17,13 @@ let FacebookStrategy = require ('passport-facebook');
 
 const app = express();
 require('dotenv').config();
+
+console.log("variaveis do hanbiente")
 console.log(process.env.DBNAME)
 console.log(process.env.HOST)
 console.log(process.env.USERS)
 console.log(process.env.DB_PASSWORD)
+console.log("fim variaveis do hanbiente")
 
 /***************configurações***************/
 
