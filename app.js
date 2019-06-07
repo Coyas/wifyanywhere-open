@@ -4,8 +4,10 @@ const exphbs = require ('express-handlebars');
 const bodyParser = require('body-parser');
 const path = require('path');
 const createError = require('http-errors');
+
 // traducao
 const i18n = require('i18n-express')
+
 
 const home = require('./routes/home');
 const user = require('./routes/user');
@@ -74,17 +76,6 @@ app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.render('error');
 });
-/************************************facebook*************************************/
-/*app.use(new FacebookStrategy({
-        clientID: FACEBOOK_APP_ID,
-        clientSecret: FACEBOOK_APP_SECRET,
-        callbackURL: "http://localhost:3000/auth/facebook/callback"
-    },
-    function(accessToken, refreshToken, profile, cb) {
-        User.findOrCreate({ facebookId: profile.id }, function (err, user) {
-            return cb(err, user);
-        });
-    }
-));*/
+
 
 module.exports = app;
