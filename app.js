@@ -3,6 +3,7 @@ const express = require('express');
 const exphbs = require ('express-handlebars');
 const path = require('path');
 const createError = require('http-errors');
+const bodyParser = require('body-parser');
 
 const home = require('./routes/home');
 const user = require('./routes/user');
