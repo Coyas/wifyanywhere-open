@@ -1,5 +1,12 @@
 const Sequelize = require("sequelize");
+require('dotenv').config();
 
+console.log("variaveis do hanbiente do dbjs")
+console.log(process.env.DBNAME)
+console.log(process.env.HOST)
+console.log(process.env.USERS)
+console.log(process.env.DB_PASSWORD)
+console.log("fim variaveis do hanbiente do dbjs")
 
 const sequelize = new Sequelize(
     process.env.DBNAME,
