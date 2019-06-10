@@ -95,13 +95,15 @@
 #plans img{
     height: 21.1875rem;
 }
+
 .planos{
     background-color: #1FB0C1;
 }
+/*
 .logo1 h1{
     font-size: 6.25rem;
     /*margin-top: -16%;*/
-    /*padding-left: 21.875rem;*/
+    /*padding-left: 21.875rem;
     font-family: "Segoe UI";
 
 }
@@ -109,33 +111,62 @@
 #plans .logo1 {
     top: 20%;
     left: 20%;
+} */
+#plans {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+#plans .centered{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3.375rem;
 }
 
 /***********************************************FAQ******************************************/
-#faq img{
+ #faq img{
     height: 21.1875rem;
 }
-.logofaq h1{
-    font-size: 4.375rem;
+/*
+#faq .logofaq h1{
+    font-size: 3.375rem;
     /*margin-top: -16%;*/
-    /*padding-left: 15rem;*/
+    /*padding-left: 15rem;
     font-family: "Segoe UI";
 }
-.logofaq {
+#faq .logofaq {
     top: 18%;
-    left: 22%;
+    left: 8%;
 }
+*/
 #faq input[type=text] {
-    display: block;
-    text-align: left;
-    width: 587px;
-    height: 40px;
+    /* display: block; */
+    /* text-align: left; */
+    /* width: 587px; */
+    /* height: 40px; */
     border-radius: 8px;
     border: 1px solid #7FC4FD;
-    top: 28%;
-    left: 30%;
-    position: absolute;
+    /* top: 50%; */
+    /* left: 50%; */
+    /* position: absolute; */
+} 
+#faq {
+    position: relative;
+    text-align: center;
+    color: white;
 }
+#faq .centered{
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  #faq .centered span {
+    font-size: 3.375rem;
+  }
+
 #categoria{
     padding: 2% 10% 2% 10%;
     color: #1FB0C1;

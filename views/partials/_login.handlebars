@@ -23,24 +23,33 @@
                         <h2 id="separador"><span>or</span></h2>
 
                         <div class="container">
-                            <label for="uname"><b>Username</b></label>
-                            <input type="text" placeholder="Enter Username" name="uname" required>
+                            <label for="uname"><b>E-mail</b></label>
+                            <input type="text" placeholder="Enter your Email" name="username" required>
 
                             <label for="psw"><b>Password</b></label>
-                            <input type="password" placeholder="Enter Password" name="psw" required>
+                            <input type="password" placeholder="Enter Password" name="password" required>
 
-                            <button type="submit">Login</button>
+                            {{!-- <button type="submit">Login</button> --}}
+                            <div class="clearfix">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <button type="button" class="signupbtn" id="cansel">Cancel</button>
+                                </div>
+                                <div class="col-md-6">
+                                    <button type="submit" class="signupbtn">Sign Up</button>
+                                </div>
+                            </div>
+                        </div>
                             <label>
                                 <input type="checkbox" checked="checked" name="remember"> Remember me
+                            </label>
+                            <label id="forgot">
+                                 <a href="/resetSenha">Esqueceu a senha?</a>
                             </label>
                         </div>
 
 
-                        <div class="container" style="background-color:#f1f1f1">
-                            <button type="button" class="cancelbtn">Cancel</button>
-                            <span class="psw">Forgot <a href="#">password?</a></span>
-
-                        </div>
+                        
                     </form>
                 </div>
                 <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
@@ -59,15 +68,21 @@
                             <label for="psw-repeat"><b>Repeat Password</b></label>
                             <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
 
-                            <label>
+                            {{!-- <label>
                                 <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-                            </label>
+                            </label> --}}
 
                             <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
 
                             <div class="clearfix">
-                                <button type="button" class="cancelbtn">Cancel</button>
-                                <button type="submit" class="signupbtn">Sign Up</button>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <button type="button" class=" btn-danger cancel">cansel</button>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <button type="submit" class="signupbtn">Sign Up</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </form>

@@ -1,7 +1,15 @@
-
+#cansel {
+    background-color: #dc3545;
+}
 .banner{
     height: 687px;
     width: 100%;
+}
+#forgot {
+    float: right;
+}
+#forgot a {
+    color: #1FB0C1;
 }
 
 /*adicionar fonts*/
@@ -96,17 +104,17 @@ footer .mrg {
 /********** fim dos estilos para rodape *********************
 =============================================================
 ************* inicio dos estilos para servicos **************/
-.aboutBanner figure{
-    width:100%; /*container-width*/
-    overflow:hidden; /*hide bounds of image */
-    margin:0;   /*reset margin of figure tag*/
+/* .aboutBanner figure{
+    width:100%; /*container-width*
+    overflow:hidden; /*hide bounds of image *
+    margin:0;   /*reset margin of figure tag/
 }
 .aboutBanner figure img{
-    display:block; /*remove inline-block spaces*/
-    width:100%; /*make image streatch*/
+    display:block; /*remove inline-block spaces*
+    width:100%; /*make image streatch*
 }
 .aboutBanner figure img{
-    /*add to other styles*/
+    /*add to other styles*
     margin:-15.875% 0;
 }
 
@@ -117,6 +125,22 @@ footer .mrg {
 }
 .aboutBanner span {
     color: #1FB0C1;
+} */
+#SN img{
+    height: 21.1875rem;
+}
+
+#SN {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+#SN .centered{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3.375rem;
 }
 
 /*********** fim dos estilos para inicio *********************
@@ -186,7 +210,7 @@ footer .mrg {
     left: 6%;
     z-index: 1;
     text-align: center;
-
+    margin-left: 4%;
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
 
