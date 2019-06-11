@@ -225,47 +225,47 @@
     <!-- codigos do formulario -->
     <div class="row">
         <div id="form-1" class="col-md-9">
-            <form action="" method="POST">
+            <form action="/booking/orders" method="POST">
                 <!-- step orders -->
                 <div id="step1"  class="tab">
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputNumber">{{translation.SN_DAYWIFI}}</label>
-                            <select id="inputNumber" class="form-control">
+                            <select id="inputNumber"  name="numdays" class="form-control">
                                 <option selected>Select</option>
-                                <option>5 dias</option>
-                                <option>10 dias</option>
-                                <option>20 dias</option>
-                                <option>30 dias</option>
+                                <option value="5">5 dias</option>
+                                <option value="10">10 dias</option>
+                                <option value="20">20 dias</option>
+                                <option value="30">30 dias</option>
                             </select>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputPickupdate">{{translation.PICKUP_DATE}}</label>
-                            <input type="date" class="form-control" id="inputPickupdate" placeholder="dd/mm/yyyy">
+                            <input type="date" name="pdate" class="form-control" id="inputPickupdate" placeholder="dd/mm/yyyy">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputLocation">{{translation.CPU_LOC}}</label>
-                            <select id="inputLocation" class="form-control">
+                            <select id="inputLocation" name="plocation" class="form-control">
                                 <option selected>Select</option>
-                                <option>Aeroporto Nelson Mandela (praia)</option>
-                                <option>TerraSystem (Latata)</option>
+                                <option value="1">Aeroporto Nelson Mandela (praia)</option>
+                                <option value="2">TerraSystem (Latata)</option>
                             </select>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputreturnlocation">{{translation.CR_LOC}}</label>
-                            <select id="inputLocation" class="form-control">
+                            <select id="inputLocation" name="rlocation" class="form-control">
                                 <option selected>Select</option>
-                                <option>Aeroporto Nelson Mandela (praia)</option>
-                                <option>TerraSystem (Latata)</option>
+                                <option value="1">Aeroporto Nelson Mandela (praia)</option>
+                                <option value="2">TerraSystem (Latata)</option>
                             </select>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputFlightnumber">{{translation.FN}}</label>
-                            <input type="number" class="form-control" id="inputFlightnumber" placeholder="">
+                            <input type="number" name="flynum" class="form-control" id="inputFlightnumber" placeholder="">
                         </div>
                     </div>
                     <div class="form-group">
@@ -278,54 +278,57 @@
                     <div class="form-row">
                         <div class="form-group col-md-3">
                             <label for="inputTitle">Title</label>
-                            <select id="inputTitle" class="form-control">
-                                <option selected>Mr.</option>
-                                <option>Ms.</option>
+                            <select id="inputTitle" name="title" class="form-control">
+                                <option value="mr" selected>Mr.</option>
+                                <option value="ms">Ms.</option>
                             </select>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="inputAddress">{{translation.FNAME}}</label>
-                        <input type="text" class="form-control" id="inputAddress" placeholder="">
+                        <input type="text" name="fname" class="form-control" id="inputAddress" placeholder="">
                     </div>
                     <div class="form-group">
                         <label for="inputAddress2">{{translation.LNAME}}</label>
-                        <input type="text" class="form-control" id="inputAddress2" placeholder="">
+                        <input type="text" name="lname" class="form-control" id="inputAddress2" placeholder="">
                     </div>
                     <div class="form-group">
                         <label for="inputAddress">{{translation.SADDRESS}}</label>
-                        <input type="text" class="form-control" id="inputAddress" placeholder="">
+                        <input type="text" name="addr" class="form-control" id="inputAddress" placeholder="">
                     </div>
                     <div class="form-group">
                         <label for="inputAddress2">{{translation.city}}</label>
-                        <input type="text" class="form-control" id="inputAddress2" placeholder="">
+                        <input type="text" name="addr2" class="form-control" id="inputAddress2" placeholder="">
                     </div>
 
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputZip">{{translation.Zcode}}</label>
-                            <input type="text" class="form-control" id="inputZip" placeholder="">
+                            <input type="text" name="zip" class="form-control" id="inputZip" placeholder="">
                         </div>
 
                         <div class="form-group col-md-6">
                             <label for="inputPhone">{{translation.Phone}}</label>
-                            <input type="text" class="form-control" id="inputPhone" placeholder="">
+                            <input type="text" name="phone" class="form-control" id="inputPhone" placeholder="">
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputCountry">{{translation.Country}}</label>
-                            <select id="inputCountry" class="form-control">
-                                <option selected>EUA</option>
-                                <option>Portugal</option>
-                                <option>França</option>
+                            <select id="inputCountry" class="form-control" name="country">
+                                <option value="eua" selected>EUA</option>
+                                <option value="pt">Portugal</option>
+                                <option value="fr">França</option>
+                                <option value="es">Espanha</option>
+                                <option value="in">Inglatera</option>
+                                <option value="ho">Holanda</option>
                             </select>
                         </div>
 
                         <div class="form-group col-md-6">
                             <label for="inputEmail">{{translation.Email}}</label>
-                            <input type="email" class="form-control" id="inputEmail" placeholder="">
+                            <input type="email" class="form-control" id="inputEmail" placeholder="" name="email">
                         </div>
                     </div>
 
@@ -375,50 +378,15 @@
                         <a href="#" class="btn btn-danger prev" id="prev-3">{{translation.BACK}}</a>
 <!--                        <a href="#" class="btn btn-success" id="submit">PROCCED TO PAYMENT</a>-->
                         <!-- id=submi => id=next3 -->
-                         <input type="submit" name="submit" value="{{translation.PPAY}}" id="submit" class="btn btn-success">
+                         <input type="submit" value="{{translation.PPAY}}" id="submit" class="btn btn-success">
                     </div>
                 </div>
             </form>
 
 
-        </div>
-
-        <div id="form-2" class="col-md-9">
-            <form action="" method="POST">
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="inputCardnumber">{{translation.CNumber}}</label>
-                        <input type="number" class="form-control" id="inputCardnumber" placeholder="">
-                    </div>
-
-                    <div class="col-md-3 visa">
-                        <img src="/images/mastercard.svg" width="40" height="40">
-                        <img src="/images/visa.svg" width="40" height="40">
-                    </div>
-
-                    <div class="form-group col-md-3">
-                        <label for="inputCardexpiry">{{translation.cardExpiryDate}}</label>
-                        <input type="date" class="form-control" id="inputCardexpiry" placeholder="">
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group col-md-9">
-                        <label for="inputCardHolder">{{translation.CardHolderName}}</label>
-                        <input type="text" class="form-control" id="inputCardholder" placeholder="">
-                    </div>
-
-                    <div class="form-group col-md-3">
-                        <label for="inputCVC">{{translation.CVC}}</label>
-                        <input type="number" class="form-control" id="inputCVC" placeholder="">
-                    </div>
-                </div>
-
-                <input type="submit" name="submit" value="{{translation.PAY}}" id="submit2" class="btn btn-success">
-            </form>
         </div>
         <div class="col-md-3">
-            <div id="status" class="card">
+            <div id="status" class="card mt-5">
                 <div class="card-body">
                     <table class="able">
                         <thead class="thead-deault">
@@ -443,21 +411,9 @@
                     </table>
                 </div>
             </div>
-
-            <div id="Cardpay" class="card text-right">
-                <div class="card-body">
-                    <ul class="list-unstyled">
-                        <li class="list-inline">Mr. Nome Apelido</li>
-                        <li class="list-inline">Morada</li>
-                        <li class="list-inline">Cidade</li>
-                        <li class="list-inline">Zip code</li>
-                        <li class="list-inline">Cabo Verde</li>
-                        <li class="list-inline">(000) 000 00 00</li>
-                        <li class="list-inline">email@gmail.com</li>
-                    </ul>
-                </div>
-            </div>
         </div>
+
+       
     </div>
 </section>
 

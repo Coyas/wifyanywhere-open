@@ -1,0 +1,91 @@
+<section id="booking2" class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h1 class="display-4 font-weight-bold">{{translation.BOOKING}}</h1>
+        </div>
+    </div>
+
+    <!--    seccao para o steppers-->
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="wrapper-progressBar">
+                <ul class="progressBar">
+                    <li class="active">{{translation.ORDER}}</li>
+                    <li class="active">{{translation.BI}}</li>
+                    <li>{{translation.CCH}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="row">
+         <div id="form-2" class="col-md-9">
+            <form action="/pagamento/pagamento_visa" method="POST">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputCardnumber">{{translation.CNumber}}</label>
+                        <input type="number" class="form-control" id="inputCardnumber" placeholder="">
+                    </div>
+
+                    <div class="col-md-3 visa">
+                        <img src="/images/mastercard.svg" width="40" height="40">
+                        <img src="/images/visa.svg" width="40" height="40">
+                    </div>
+
+                    <div class="form-group col-md-3">
+                        <label for="inputCardexpiry">{{translation.cardExpiryDate}}</label>
+                        <input type="date" class="form-control" id="inputCardexpiry" placeholder="">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-9">
+                        <label for="inputCardHolder">{{translation.CardHolderName}}</label>
+                        <input type="text" class="form-control" id="inputCardholder" placeholder="">
+                    </div>
+
+                    <div class="form-group col-md-3">
+                        <label for="inputCVC">{{translation.CVC}}</label>
+                        <input type="number" class="form-control" id="inputCVC" placeholder="">
+                    </div>
+                </div>
+
+                <input type="submit" name="submit" value="{{translation.PAY}}" id="submit2" class="btn btn-success">
+            </form>
+        </div>
+        <div class="col-md-3">
+            <div id="Cardpay" class="card text-right">
+                <div class="card-body">
+                    <ul class="list-unstyled">
+                        <li class="list-inline">Mr. Nome Apelido</li>
+                        <li class="list-inline">Morada</li>
+                        <li class="list-inline">Cidade</li>
+                        <li class="list-inline">Zip code</li>
+                        <li class="list-inline">Cabo Verde</li>
+                        <li class="list-inline">(000) 000 00 00</li>
+                        <li class="list-inline">email@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="Bpolicy" class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <article>
+                <b>{{translation.C_Policy}}</b> {{translation.Refunds}}
+            </article>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <article>
+                <b>{{translation.Disclamer}}</b> {{translation.TheWifianywhere}}
+            </article>
+        </div>
+    </div>
+</section>

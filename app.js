@@ -4,15 +4,18 @@ const exphbs = require ('express-handlebars');
 const bodyParser = require('body-parser');
 const path = require('path');
 const createError = require('http-errors');
+const favicon = require('serve-favicon');
 
 // traducao
 const i18n = require('i18n-express')
 
-
+/***** importar rotas */
 const home = require('./routes/home');
 const user = require('./routes/user');
-const booking = require('./routes/booking');
-const favicon = require('serve-favicon');
+const booking = require('./routes/booking')
+const pagamento = require('./routes/pagamento')
+
+
 
 
 let FacebookStrategy = require ('passport-facebook');
@@ -50,7 +53,7 @@ app.use(i18n({
     browserEnable: true,
     defaultLang: 'pt',
     paramLangName: 'clang',
-
+    // cookie: 'cookeLang'
 }));
 
 // rota do index
@@ -59,6 +62,8 @@ app.use('/', home);
 app.use('/users', user);
 // rota para o bookin online
 app.use('/booking', booking);
+//rota do pagamento
+app.use('/pagamento', pagamento)
 
 
 // rota do 404 (catch 404 and forward to error handler)
