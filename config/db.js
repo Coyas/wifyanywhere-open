@@ -1,32 +1,24 @@
 const Sequelize = require("sequelize");
-require('dotenv').config();
+const keys = require('../config/keys.json')
 
 console.log("variaveis do hanbiente do dbjs")
-console.log(process.env.DBNAME)
-console.log(process.env.HOST)
-console.log(process.env.USERS)
-console.log(process.env.DB_PASSWORD)
+console.log(keys.mysql.host)
+console.log(keys.mysql.dbname)
+console.log(keys.mysql.user)
+console.log(keys.mysql.pass)
+console.log(keys.mysql.dialect)
 console.log("fim variaveis do hanbiente do dbjs")
 
 const sequelize = new Sequelize(
-    process.env.DBNAME,
-    process.env.USERS,
-    process.env.DB_PASSWORD,
+    keys.mysql.dbname,
+    keys.mysql.user,
+    keys.mysql.pass,
     {
-        host: process.env.HOST,
-        dialect: 'mysql'
+        host: keys.mysql.host,
+        dialect: keys.mysql.dialect
     },
 );
 
-// const sequelize = new Sequelize(
-//     'wifianywhere',
-//     'root',
-//     '',
-//     {
-//         host: 'localhost',
-//         dialect: 'mysql'
-//     }
-// );
 
 sequelize.authenticate().then(() => {
     console.log("conectado ao db com sucesso");
