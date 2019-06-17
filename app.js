@@ -67,7 +67,7 @@ app.use(expressValidador());
 app.use(cookieParser());
 
 app.use(session({
-    key: 'locallogin-cookie',
+    key: 'wifianywhere',
     secret: 'qsqdqsjhqsdjkdq',
     resave: false,
     store: sessionStore,

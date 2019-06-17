@@ -2,44 +2,36 @@ const express = require("express");
 const faqs = require("../models/faqs.js")
 const router = express.Router();
 
-/***auth login***/
-router.get('/login',(req,res)=>{
-    res.render('login');
-});
-
-/***auth logout***/
-router.get('/logout',(req,res)=>{
-    res.send('logout out');
-});
-
-/***auth with facebook***/
-router.get('/facebook',(req,res)=>{
-    //handle with passport
-    res.send('logging in with facebook');
-});
-
 
 router.get('/', (req, res) => {
     // res.send(lang)
     // console.log('lingua: '+lang)
     // console.log('teste')
     // res.cookie('cookeLang', 'pt', { maxAge: 900000, httpOnly: true });
-    res.render('home/index')
+    res.render('home/index', {
+        User: req.user
+    })
 });
 
 router.get('/servicos', (req, res) => {
-    res.render('home/servicos')
+    res.render('home/servicos', {
+        User: req.user
+    })
 });
 
 router.get('/planos', (req, res) => {
-    res.render('home/planos')
+    res.render('home/planos', {
+        User: req.user
+    })
 });
 
 router.get('/faq', (req, res) => {
     /*let id = req.params.id
     console.log("id:" + id)*/
     // faqs.find("")
-    res.render('home/faq')
+    res.render('home/faq', {
+        User: req.user
+    })
 })
 
 /*router.post('/login',function (req, res) {
