@@ -18,8 +18,8 @@ const Faqs = sequelize.define('faqs',{
     }
 })
 
-/*Faqs.belongsTo(Categoria);*//*
-sequelize.sync();*/
+// Faqs.belongsTo(Categoria);
+// Faqs.sync();
 
 module.exports = Faqs
 
