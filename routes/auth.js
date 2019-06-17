@@ -1,5 +1,8 @@
 const router = require('express').Router()
 const passport = require('passport')
+const User = require('../models/User')
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
 
 const authCheck = (req, res, next) => {
     if(!req.user){
@@ -24,19 +27,23 @@ router.get('/logout', authCheck, (req, res) => {
 });
 
 router.post('/login', passport.authenticate('local', {
-    successRedirect: '/',
-    failureRedirect: '/dash' 
+    successRedirect: '/users',
+    failureRedirect: '/loginfalhou' 
 }))
 
-router.post('/registro', authCheck, (req, res) => {
+router.post('/registro', (req, res) => {
     // tested e logs
-    
+    console.log('Nome: '+req.body.firstName)
+    console.log('Apelido: '+req.body.lastName)
     console.log('email: '+req.body.email)
     console.log('password: '+req.body.password)
+    console.log('repeat pass: '+req.body.repass)
 
 
     // validacao com espress-validator
     
+    // req.checkBody('firstName', 'O firstName nao pode estar vazia, porfavor tenta de novo').isEmpty();
+    // req.checkBody('lastName', 'O lastName nao pode estar vazia, porfavor tenta de novo').isEmpty();
     req.checkBody('email', 'O email nao pode estar vazia, porfavor tenta de novo').isEmail();
     req.checkBody('email', 'O email deve estar entre 4-100 caracteres, porfavor tenta de novo').len(4, 100);
     // req.checkBody('password', 'password deve estar entre 8-100 caracteres.').len(8,100);
@@ -55,17 +62,20 @@ router.post('/registro', authCheck, (req, res) => {
       });
     }else {
         // criptografando a senha
+        console.log('registrando user')
         const password = req.body.password
         bcrypt.hash(password, saltRounds, (err, hash) => {
             // create user
             User.create({
+                firstName: req.body.firstName,
+                lastName: req.body.lastName,
                 email: req.body.email,
                 password: hash
             }).then( user => {
                 console.log('cadastro feito com sucesso<br>*********** dados do cadastro **********************<br><br>username: '+req.body.username+'<br>email: '+req.body.email+'<br>password: '+req.body.password+'<br>password criptografado: '+hash)
                 req.login(user, (err) => {
                     console.log('login done com sucesso no registrar');
-                    res.redirect('/dash');
+                    res.redirect('/users');
                 });
             }).catch((err) => {
                 console.log('erro ao cadastrar o user: '+err)

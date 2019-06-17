@@ -11,7 +11,7 @@
             </nav>
             <div class="tab-content" id="nav-tabContent">
                 <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                    <form action="/auth/login">
+                    <form method="POST" action="/auth/login">
                         <div class="row text-center" id="redesocial">
                             <div class="col-6">
                                 <a href="/auth/facebook" class="btn btn-primary"><i class="fab fa-facebook-square"></i>  Facebook</a>
@@ -55,7 +55,7 @@
                     </form>
                 </div>
                 <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                    <form action="/auth/registro">
+                    <form method="POST" action="/auth/registro">
                         <div class="container">
                             <h1>Sign Up</h1>
                             <p>Please fill in this form to create an account.</p>
