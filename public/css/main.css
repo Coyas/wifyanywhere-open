@@ -239,7 +239,7 @@ footer .mrg {
 
 /********** fim dos estilos para seccao sobre os devices********/
 /*********** inicio dos estilos para a seccao booking  *********/
-#booking{
+#booking, #booking2{
     background-color: #1FB0C1;
     padding: 5% 10% 10% 10%;
 }
@@ -258,12 +258,12 @@ footer .mrg {
 }
 
 /*estilos para o stepers*/
-#booking .wrapper-progressBar {
+#booking .wrapper-progressBar, #booking2 .wrapper-progressBar {
     width: 100%
 }
 
 
-#booking .progressBar li {
+#booking .progressBar li, #booking2 .progressBar li {
     list-style-type: none;
     float: left;
     width: 33.33%;
@@ -272,7 +272,7 @@ footer .mrg {
     font-weight: bold;
 }
 
-#booking .progressBar li:before {
+#booking .progressBar li:before, #booking2 .progressBar li:before {
     content: " ";
     line-height: 15px;
     border-radius: 50%;
@@ -286,7 +286,7 @@ footer .mrg {
     color: red;/*cor das linhas de conexao*/
 }
 
-#booking .progressBar li:after {
+#booking .progressBar li:after, #booking2 .progressBar li:after {
     content: "";
     position: absolute;
     width: 100%;
@@ -297,23 +297,23 @@ footer .mrg {
     z-index: -1;
 }
 
-#booking .progressBar li:first-child:after {
+#booking .progressBar li:first-child:after, #booking2 .progressBar li:first-child:after {
     content: none;
 }
 
-#booking .progressBar li.active {
+#booking .progressBar li.active, #booking2 .progressBar li.active {
     color: white; /*cor das letras embaixo*/
 }
 
-#booking .progressBar li.active:before {
+#booking .progressBar li.active:before, #booking2 .progressBar li.active:before {
     border-color: dodgerblue;
     background-color: white; /* cor do fundo das bolinhas*/
 }
 
-#booking .progressBar li.active + li:after {
+#booking .progressBar li.active + li:after, #booking .progressBar li.active + li:after {
     background-color: red;
 }
-#booking .card {
+#booking .card, #booking2 .card {
     width: 100%;
 }
 
@@ -335,11 +335,11 @@ footer .mrg {
 /*    margin-top: 3%;*/
 /*}*/
 
-#booking #Cardpay, #booking #step2, #booking #step3, #booking #form-2 {
+#booking #step2, #booking #step3 {
     display: none;
 }
 /* Mark input boxes that gets an error on validation: */
-#booking input.invalid {
+#booking input.invalid, #booking2 input.invalid {
     background-color: #ffdddd;
 }
 #booking #status{
@@ -392,7 +392,7 @@ footer .mrg {
     border-color: grey;
     font-weight: bold;
 }
-#submit2 {
+#booking2 #submit2 {
     padding: 1%;
     background-color: white !important;
     border-color: white;

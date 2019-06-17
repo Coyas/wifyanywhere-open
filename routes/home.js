@@ -20,6 +20,10 @@ router.get('/facebook',(req,res)=>{
 
 
 router.get('/', (req, res) => {
+    // res.send(lang)
+    // console.log('lingua: '+lang)
+    // console.log('teste')
+    // res.cookie('cookeLang', 'pt', { maxAge: 900000, httpOnly: true });
     res.render('home/index')
 });
 
