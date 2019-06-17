@@ -2,9 +2,9 @@
     "mysql":
     {
         "host": "localhost",
-        "dbname": "wifi",
+        "dbname": "wifianywhere",
         "user": "root",
-        "pass": "terrasystem",
+        "pass": "",
         "dialect": "mysql"
     }
 }
