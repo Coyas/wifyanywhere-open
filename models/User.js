@@ -3,23 +3,33 @@ const sequelize = require('../config/db');
 
 const User = sequelize.define('users',{
     firstName: {
-        type: Sequelize.STRING,
-        allowNull: false,
+        type: Sequelize.STRING(50),
+        allowNull: true,
     },
     lastName: {
-        type: Sequelize.STRING,
-        allowNull: false,
+        type: Sequelize.STRING(50),
+        allowNull: true,
     },
     email:  {
-        type: Sequelize.STRING,
-        allowNull: false,
-        unique: true
+        type: Sequelize.STRING(100),
+        allowNull: true
     },
     password:  {
-        type: Sequelize.STRING,
-        allowNull: false,
-        unique: true
+        type: Sequelize.STRING(70),
+        allowNull: true
     },
+    photo: {
+        type: Sequelize.STRING(150)
+    },
+    localId: {
+        type: Sequelize.STRING
+    },
+    facebookId: {
+        type: Sequelize.STRING
+    },
+    googleId: {
+        type: Sequelize.STRING
+    }
 })
 User.sync()
 module.exports = User

@@ -7,8 +7,6 @@ const bcrypt = require('bcrypt')
 
 // importar models
 const User = require('../models/User')
-const Guser = require('../models/google')
-const Fuser = require('../models/facebook')
 
 /************Estrategia de login por facebook**********/
 passport.use(new FacebookStrategy({
@@ -22,9 +20,12 @@ passport.use(new FacebookStrategy({
         // User.findOrCreate({ facebookId: profile.id }, function (err, user) {
         // return cb(err, user);
         // });
-        console.log(profile)
+        console.log('facebook Profile: '+profile.id)
+        console.log('facebook Profile: '+profile.displayName)
+        console.log('facebook Profile: '+profile.emails[0].value)
+        console.log('facebook Profile: '+profile.photos[0].value)
 
-        Fuser.findOne({
+        User.findOne({
             where: {
                 facebookId: profile.id
             }
@@ -36,8 +37,10 @@ passport.use(new FacebookStrategy({
             }else {
                 //usuario nao existe, entao crie-o
                 //create user into a database
-                Fuser.create({
-                    username: profile.displayName,
+                User.create({
+                    firstName: profile.displayName,
+                    email: profile.emails[0].value,
+                    photo: profile.photos[0].value,                    
                     facebookId: profile.id
                 }).then( newUser => {
                     console.log('Novo User: '+ newUser)
@@ -47,7 +50,7 @@ passport.use(new FacebookStrategy({
         })
     }
 ));
-
+100
 
 /*************Estrategia de login por google **********/
 console.log(`google ci: ${keys.google.client_id}`)
@@ -71,7 +74,7 @@ passport.use(
         console.log('googleUser: '+profile.name.givenName)
         console.log('googleUser: '+profile.photos[0].value)
         
-        Guser.findOne({
+        User.findOne({
             where: {
                 googleId: profile.id
             }
@@ -83,8 +86,10 @@ passport.use(
             }else {
                 //usuario nao existe, entao crie-o
                 //create user into a database
-                Guser.create({
-                    username: profile.displayName,
+                User.create({
+                    firstName: profile.name.familyName,
+                    lastName: profile.name.givenName,
+                    photo: profile.photos[0].value,
                     googleId: profile.id
                 }).then( newUser => {
                     console.log('Novo User: '+ newUser)
@@ -130,13 +135,13 @@ passport.use(new LocalStrategy(
 
 
 passport.serializeUser((user, done) => {
-    console.log('serialize user: '+user)
-    console.log('serialize user: '+user.facebookId)
+    // console.log('serialize user: '+user)
+    // console.log('serialize user: '+user.facebookId)
     done(null, user.id);
 });
   
 passport.deserializeUser((id, done) => {
-    Fuser.findByPk(id).then( user => {
+    User.findByPk(id).then( user => {
         console.log('deserialize user: '+user)
         done(null, user)
     }).catch( err => {
