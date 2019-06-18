@@ -11,7 +11,7 @@
             </nav>
             <div class="tab-content" id="nav-tabContent">
                 <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                    <form method="POST" action="/auth/login">
+                    
                         <div class="row text-center" id="redesocial">
                             <div class="col-6">
                                 <a href="/auth/facebook" class="btn btn-primary"><i class="fab fa-facebook-square"></i>  Facebook</a>
@@ -23,36 +23,38 @@
                         <h2 id="separador"><span>{{translation.OR}}</span></h2>
 
                         <div class="container">
-                            <label for="uname"><b>E-mail</b></label>
-                            <input type="text" placeholder="Enter your Email" name="username" required>
+                            <form method="POST" action="/auth/login"></form>
+                                <label for="uname"><b>E-mail</b></label>
+                                <input type="text" placeholder="Enter your Email" name="username" required>
 
-                            <label for="psw"><b>Password</b></label>
-                            <input type="password" placeholder="Enter Password" name="password" required>
+                                <label for="psw"><b>Password</b></label>
+                                <input type="password" placeholder="Enter Password" name="password" required>
 
-                            {{!-- <button type="submit">Login</button> --}}
-                            <div class="clearfix">
-                            <div class="row">
-                                <div class="col-md-6">
+                                {{!-- <button type="submit">Login</button> --}}
+                                <div class="clearfix">
+                                <div class="row">
+                                        <div class="col-md-6">
 
-                                    <button type="button" class="signupbtn" id="cancel">Cancel</button>
+                                            <button type="button" class="signupbtn" id="cancel">Cancel</button>
 
+                                        </div>
+                                        <div class="col-md-6">
+                                            <button type="submit" class="signupbtn">Entrar</button>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <button type="submit" class="signupbtn">Entrar</button>
-                                </div>
-                            </div>
-                        </div>
-                            <label>
-                                <input type="checkbox" checked="checked" name="remember"> Remember me
-                            </label>
-                            <label id="forgot">
-                                 <a href="/resetSenha">Esqueceu a senha?</a>
-                            </label>
+                                <label>
+                                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                                </label>
+                                <label id="forgot">
+                                    <a href="/resetSenha">Esqueceu a senha?</a>
+                                </label>
+                            </form>
                         </div>
 
 
                         
-                    </form>
+                    
                 </div>
                 <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                     <form method="POST" action="/auth/registro">

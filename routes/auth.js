@@ -4,6 +4,7 @@ const User = require('../models/User')
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 
+// login session checker
 const authCheck = (req, res, next) => {
     if(!req.user){
         //se user nao esta logado
@@ -15,10 +16,23 @@ const authCheck = (req, res, next) => {
     }
 }
 
-// router.get('/login', (req, res) => {
-//     res.render('dash/login')
+/********************Google Login *****************************/
+//auth with google
+router.get('/google', passport.authenticate('google', {
+    scope: ['profile'] //separa informacao por virgulas ['profile', 'email']
+})) 
+// router.get('/google', (req, res) => {
+//     res.send('login com google')
 // })
 
+//callback de redirecionamento do google
+router.get('/google/redirect', passport.authenticate('google'), (req, res) => {
+    
+    // res.send('user logado foi: '+req.user.googleId)
+    res.redirect('/users/')
+})
+
+/************* Local Login ************************************/
 router.get('/logout', authCheck, (req, res) => {
     console.log('logout com sucesso');
     req.logout();
@@ -72,7 +86,7 @@ router.post('/registro', (req, res) => {
                 email: req.body.email,
                 password: hash
             }).then( user => {
-                console.log('cadastro feito com sucesso<br>*********** dados do cadastro **********************<br><br>username: '+req.body.username+'<br>email: '+req.body.email+'<br>password: '+req.body.password+'<br>password criptografado: '+hash)
+                console.log('cadastro feito com sucesso<br>**** dados do cadastro ***<br><br>username: '+req.body.username+'<br>email: '+req.body.email+'<br>password: '+req.body.password+'<br>password criptografado: '+hash)
                 req.login(user, (err) => {
                     console.log('login done com sucesso no registrar');
                     res.redirect('/users');

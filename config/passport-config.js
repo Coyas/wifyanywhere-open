@@ -1,10 +1,61 @@
 const passport = require('passport')
 const LocalStrategy = require('passport-local').Strategy
+const GoogleStrategy = require('passport-google-oauth20').Strategy
 const keys = require('./keys.json')
-const User = require('../models/User')
 const bcrypt = require('bcrypt')
 
+// importar models
+const User = require('../models/User')
+const Guser = require('../models/google')
 
+/************Estrategia de login por facebook**********/
+
+/*************Estrategia de login por google **********/
+console.log(`google ci: ${keys.google.client_id}`)
+console.log(`google cs: ${keys.google.client_secret}`)
+console.log(`google redirect_uris: ${keys.google.redirect_uris}`)
+passport.use(
+    new GoogleStrategy({
+        // opcao para google strategy
+        callbackURL: '/auth/google/redirect',
+        // callbackURL: keys.google.redirect_uris,
+        clientID: keys.google.client_id,
+        clientSecret: keys.google.client_secret
+    }, (accessToken, refreshToken, profile, done) => {
+        // passport callback (redirect do google)
+        console.log(profile)
+
+        //ver se o utilizador ja existe no banco de dados
+        console.log('googleUser: '+profile.id)
+        console.log('googleUser: '+profile.displayName)
+        console.log('googleUser: '+profile.name.familyName)
+        console.log('googleUser: '+profile.name.givenName)
+        console.log('googleUser: '+profile.photos[0].value)
+        
+        Guser.findOne({
+            where: {
+                googleId: profile.id
+            }
+        }).then(atualUser => {
+            if(atualUser){
+                //usuario ja existe
+                console.log('user is: '+ atualUser)
+                done(null, atualUser)
+            }else {
+                //usuario nao existe, entao crie-o
+                //create user into a database
+                Guser.create({
+                    username: profile.displayName,
+                    googleId: profile.id
+                }).then( newUser => {
+                    console.log('Novo User: '+ newUser)
+                    done(null, newUser)
+                })
+            }
+        })
+    })
+)
+/********** estrategia de login local ****************/
 passport.use(new LocalStrategy(
     // {
     //     usernameField: 'email'
@@ -36,19 +87,17 @@ passport.use(new LocalStrategy(
             return done(err);
         })
     }
-))
-
-
-    
+))   
 
 
 passport.serializeUser((user, done) => {
     console.log('serialize user: '+user)
+    console.log('serialize user: '+user.googleId)
     done(null, user.id);
 });
   
 passport.deserializeUser((id, done) => {
-    User.findByPk(id).then( user => {
+    Guser.findByPk(id).then( user => {
         console.log('deserialize user: '+user)
         done(null, user)
     }).catch( err => {
