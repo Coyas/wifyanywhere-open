@@ -25,10 +25,6 @@ const pagamento = require('./routes/pagamento')
 const auth = require('./routes/auth')
 
 
-
-
-let FacebookStrategy = require ('passport-facebook');
-
 const app = express();
 // require('dotenv').config();
 // console.log("variaveis do hanbiente do appjs")

@@ -16,6 +16,22 @@ const authCheck = (req, res, next) => {
     }
 }
 
+/******************** Facebook Login **************************/
+//auth with facebook
+router.get('/facebook', passport.authenticate('facebook'));
+// router.get('/facebook', passport.authenticate('facebook',
+//     {
+//       scope: ['displayName', 'name', 'gender', 'photos']
+//     }
+// ));
+
+router.get('/facebook/callback',
+  passport.authenticate('facebook', { failureRedirect: '/' }),
+  function(req, res) {
+    // Successful authentication, redirect home.
+    res.redirect('/users');
+}); 
+
 /********************Google Login *****************************/
 //auth with google
 router.get('/google', passport.authenticate('google', {
@@ -42,7 +58,7 @@ router.get('/logout', authCheck, (req, res) => {
 
 router.post('/login', passport.authenticate('local', {
     successRedirect: '/users',
-    failureRedirect: '/loginfalhou' 
+    failureRedirect: '/' 
 }))
 
 router.post('/registro', (req, res) => {

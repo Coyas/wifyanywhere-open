@@ -1,14 +1,53 @@
 const passport = require('passport')
 const LocalStrategy = require('passport-local').Strategy
 const GoogleStrategy = require('passport-google-oauth20').Strategy
+const FacebookStrategy = require('passport-facebook').Strategy;
 const keys = require('./keys.json')
 const bcrypt = require('bcrypt')
 
 // importar models
 const User = require('../models/User')
 const Guser = require('../models/google')
+const Fuser = require('../models/facebook')
 
 /************Estrategia de login por facebook**********/
+passport.use(new FacebookStrategy({
+    clientID: keys.facebook.clientID,
+    clientSecret: keys.facebook.clientSecret,
+    callbackURL: keys.facebook.callbackURL,
+    profileFields: ['id', 'displayName', 'photos', 'email']
+  },
+  function(accessToken, refreshToken, profile, done) {
+
+        // User.findOrCreate({ facebookId: profile.id }, function (err, user) {
+        // return cb(err, user);
+        // });
+        console.log(profile)
+
+        Fuser.findOne({
+            where: {
+                facebookId: profile.id
+            }
+        }).then(atualUser => {
+            if(atualUser){
+                //usuario ja existe
+                console.log('user is: '+ atualUser.username)
+                done(null, atualUser)
+            }else {
+                //usuario nao existe, entao crie-o
+                //create user into a database
+                Fuser.create({
+                    username: profile.displayName,
+                    facebookId: profile.id
+                }).then( newUser => {
+                    console.log('Novo User: '+ newUser)
+                    done(null, newUser)
+                })
+            }
+        })
+    }
+));
+
 
 /*************Estrategia de login por google **********/
 console.log(`google ci: ${keys.google.client_id}`)
@@ -92,12 +131,12 @@ passport.use(new LocalStrategy(
 
 passport.serializeUser((user, done) => {
     console.log('serialize user: '+user)
-    console.log('serialize user: '+user.googleId)
+    console.log('serialize user: '+user.facebookId)
     done(null, user.id);
 });
   
 passport.deserializeUser((id, done) => {
-    Guser.findByPk(id).then( user => {
+    Fuser.findByPk(id).then( user => {
         console.log('deserialize user: '+user)
         done(null, user)
     }).catch( err => {
