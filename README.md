@@ -1,7 +1,11 @@
 # wifyanywhere
+```
 site em node do wifianywhere.
 
+```
+
 #### Como iniciar a aplicacao
+```$xslt
 1° : git clone https://github.com/Coyas/wifyanywhere.git
 
 1.1: npm install bower -g
@@ -10,8 +14,6 @@ site em node do wifianywhere.
 3° : bower install
 
 4° : Run de app
-```$xslt
-
  4.1: npm test => node bin/www
  4.2: npm start => nodemon bin/www
 ```
@@ -36,7 +38,8 @@ site em node do wifianywhere.
     - css/media : media queries para o site
     - fonts/* : fontes de textos usados no site
     - imagens/* : imagens usadas no site
-    - js/* : customizacao do [DOM](https://pt.wikipedia.org/wiki/Modelo_de_Objeto_de_Documentos) do site e e interacoes
+    - js/* : customizacao do [DOM](https://pt.wikipedia.org/wiki/Modelo_de_Objeto_de_Documentos)
+     do site e e interacoes
 ./routes (rotas/acessos do site)
     - auth : rotas para autenticacao de facebook, google e local-login
     - booking : rotas para o online booking
@@ -69,16 +72,23 @@ site em node do wifianywhere.
 ### sistema de pagamento
 ```
 Os dados do formulario do booking online sera guardado no bando de dados, dados como
-da ordem de aluguer, e os dados do requerente, e estes tanbem sao os dados do utilizador, que consequentimente pode ser 
+da ordem de aluguer, e os dados do requerente, e estes tanbem sao os dados do utilizador, 
+que consequentimente pode ser 
 Tambem podem ser introduzidos na hora de alugar um despositivo, pois sao dados do perfil do 
-utilizador e por isso podem ser prenchidas mesmo antes de tentar alugar um despositivo direto no perfil do usuario.
+utilizador e por isso podem ser prenchidas mesmo antes de tentar alugar um despositivo direto
+ no perfil do usuario.
 
-Depois de confirmar os dados da ordem e sobre informacoes de pagamento(pessoais, nao cartao de credito), 
+Depois de confirmar os dados da ordem e sobre informacoes de pagamento(pessoais, nao cartao de
+ credito), 
 passa para a etapa do pagamento online.
-O pagamento online é feito atravez do cartao visa e as informacoes como numero de cartao, data de expiracao,
-nome do titular e cvc nao sao guardadas no sistema por razoes de seguranca, segundo os normas da [sisp](https://www.sisp.cv/).
-Os dados do cartao seguirao para os servidores da [sisp](https://www.sisp.cv/) e serao devidamente tratadas 
+O pagamento online é feito atravez do cartao visa e as informacoes como numero de cartao, data
+ de expiracao,
+nome do titular e cvc nao sao guardadas no sistema por razoes de seguranca, segundo os normas 
+da [sisp](https://www.sisp.cv/).
+Os dados do cartao seguirao para os servidores da [sisp](https://www.sisp.cv/) e serao devidamente 
+tratadas 
 de modo a efetuar o pagamento online.
-Depois da [sisp](https://www.sisp.cv/) confirmar o pagamento, sera enviado uma mensagem/email para a conta do utilizador a confirmar o pagamento.
+Depois da [sisp](https://www.sisp.cv/) confirmar o pagamento, sera enviado uma mensagem/email para
+ a conta do utilizador a confirmar o pagamento.
 
 ```
