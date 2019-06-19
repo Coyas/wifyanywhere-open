@@ -4,6 +4,18 @@
             <p  style="background-color: blue;">Nome: {{User.firstName }}</p>
             <p  style="background-color: blue;">Apelido: {{User.lastName}}</p>
             <p  style="background-color: blue;">Email: {{User.email}}</p>
+            <p  style="background-color: blue;">lingua: {{lang}}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <p  style="background-color: blue;">
+                
+            {{#if_equal translation lang 'pt'}}
+                lingua {{translation}}
+            {{/if_equal}}
+            </p>
+            
         </div>
     </div>
 </section>

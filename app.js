@@ -24,6 +24,8 @@ const booking = require('./routes/booking')
 const pagamento = require('./routes/pagamento')
 const auth = require('./routes/auth')
 
+// console testes
+
 
 const app = express();
 // require('dotenv').config();
@@ -48,9 +50,43 @@ let sessionStore = new MySQLStore(options);
 
 
 /***************configurações***************/
-
+const hbs = exphbs.create({
+    defaultLayout: 'main',
+    layoutsDir: path.join(__dirname, 'views/layouts'),
+    partialsDir: path.join(__dirname, 'views/partials'),
+    // create helpers   
+    helpers: {
+        if_equal: (translation ,lang, b, opts) => {
+            if (lang === b) {
+                if(lang === 'pt'){
+                    this.translation = {
+                        'pt': 'POR',
+                        'en': 'ING',
+                        'fr': 'FRA'
+                    }
+                } else if(lang === 'en'){
+                    this.translation = {
+                        'pt': 'POR',
+                        'en': 'ENG',
+                        'fr': 'FRE'
+                    }
+                }else if(lang === 'fr') {
+                    this.translation = {
+                        'pt': 'POR',
+                        'en': 'ANG',
+                        'fr': 'FRA'
+                    }
+                }
+                return opts.fn(this)
+            } 
+            // else {
+                // return opts.inverse(this)
+            // }
+        }
+    }
+})
 //handlebars
-app.engine('handlebars', exphbs({defaultLayout: 'main'}) )
+app.engine('handlebars', hbs.engine )
 app.set('view engine', 'handlebars');
 
 // Body Parser
@@ -85,6 +121,7 @@ app.use(i18n({
     browserEnable: true,
     defaultLang: 'pt',
     paramLangName: 'clang',
+    // textsVarName: 'lang'
     // cookie: 'cookeLang'
 }));
 
