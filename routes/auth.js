@@ -35,7 +35,7 @@ router.get('/facebook/callback',
 /********************Google Login *****************************/
 //auth with google
 router.get('/google', passport.authenticate('google', {
-    scope: ['profile'] //separa informacao por virgulas ['profile', 'email']
+    scope: ['profile', 'email'] //separa informacao por virgulas ['profile', 'email']
 })) 
 // router.get('/google', (req, res) => {
 //     res.send('login com google')

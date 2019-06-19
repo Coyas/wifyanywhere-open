@@ -73,6 +73,7 @@ passport.use(
         console.log('googleUser: '+profile.name.familyName)
         console.log('googleUser: '+profile.name.givenName)
         console.log('googleUser: '+profile.photos[0].value)
+        console.log('googleUser: '+profile.emails[0].value)
         
         User.findOne({
             where: {
@@ -90,7 +91,8 @@ passport.use(
                     firstName: profile.name.familyName,
                     lastName: profile.name.givenName,
                     photo: profile.photos[0].value,
-                    googleId: profile.id
+                    googleId: profile.id,
+                    email: profile.emails[0].value
                 }).then( newUser => {
                     console.log('Novo User: '+ newUser)
                     done(null, newUser)
