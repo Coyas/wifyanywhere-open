@@ -4,6 +4,56 @@ site em node do wifianywhere.
 
 ```
 
+##### Adicione as chaves do app
+
+```
+As chaves do app sao as credencias do seu banco de dados, as credenciais de autenticacao do 
+facebook e google, as configuracoes do servidor de email.
+
+copie este codigo e crie um ficheiro com o nome "keys.json", e estao cole a linha de codigo
+json no arquivo:
+
+{
+    "google":
+    {
+        "client_id":"id do google api",
+        "project_id":"wifianywhere",
+        "auth_uri":"https://accounts.google.com/o/oauth2/auth",
+        "token_uri":"https://oauth2.googleapis.com/token",
+        "auth_provider_x509_cert_url":"https://www.googleapis.com/oauth2/v1/certs",
+        "client_secret":"chave secreto do cliente",
+        "redirect_uris":["http://localhost:3000/auth/google/redirect"],
+        "javascript_origins":["http://localhost:3000"]
+    },
+    "facebook":
+    {
+        "clientID": "ciente ai do facebook",
+        "clientSecret": "chave secreto do facebook",
+        "callbackURL": "http://localhost:3000/auth/facebook/callback"
+    },
+    "mysql":
+    {
+        "host": "localhost",
+        "dbname": "wifianywhere",
+        "user": "root",
+        "pass": "",
+        "dialect": "mysql"
+    },
+    "email":
+    {
+        "smtp": "smtp.doseufornecedordeemail.com",
+        "porta": 465,
+        "seguro": true,
+        "user": "emaildeenvio@email.com",
+        "pass": "Sua12senha#aqui"
+
+    }
+}
+
+
+
+```
+
 #### Como iniciar a aplicacao
 ```$xslt
 1° : git clone https://github.com/Coyas/wifyanywhere.git
@@ -17,6 +67,7 @@ site em node do wifianywhere.
  4.1: npm test => node bin/www
  4.2: npm start => nodemon bin/www
 ```
+
 
 
 ### extrutura de arquivos
