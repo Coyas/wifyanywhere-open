@@ -133,3 +133,6 @@ fabric.properties
 
 # adicionar variaveis de hanbiente
 .env
+
+# adicionar as chaves no gitignore
+config/keys.json
