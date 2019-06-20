@@ -1,4 +1,21 @@
 {
+    "google":
+    {
+        "client_id":"320969458478-fevjert870alo70oie7d4g3sut30t1ou.apps.googleusercontent.com",
+        "project_id":"wifianywhere",
+        "auth_uri":"https://accounts.google.com/o/oauth2/auth",
+        "token_uri":"https://oauth2.googleapis.com/token",
+        "auth_provider_x509_cert_url":"https://www.googleapis.com/oauth2/v1/certs",
+        "client_secret":"cuxuNtv8ZMYp7xL8hjBB0PgT",
+        "redirect_uris":["http://localhost:3000/auth/google/redirect"],
+        "javascript_origins":["http://localhost:3000"]
+    },
+    "facebook":
+    {
+        "clientID": "467408744035679",
+        "clientSecret": "5dd40797c2414842661daabed8b43ee4",
+        "callbackURL": "http://localhost:3000/auth/facebook/callback"
+    },
     "mysql":
     {
         "host": "localhost",

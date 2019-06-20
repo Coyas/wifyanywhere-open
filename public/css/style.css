@@ -270,6 +270,31 @@
 #nav-tabContent{
     color: #1FB0C1;
 }
+#nav-tabContent input.terras {
+    padding: 5.5%;
+    font-size: 1.2rem;
+    color: #ffc107;
+    font-weight: bold;
+    width: 100%;
+}
+
+/* novo estilos para os botoes canselar ,entrar e registrar */
+#nav-tabContent input.terras:hover {
+    color: #FFFFFF
+}
+#nav-tabContent input.terra {
+    padding: 5.5%;
+    font-size: 1.2rem;
+    color: #FFFFFF;
+    font-weight: bold;
+    width: 100%;
+}
+/* para igualar a dimencao do input (firstName & lastName) aos outros input do formulario registro de utilizador */
+#nav-tabContent input.agua {
+    height: 49px;
+    border-radius: 0px;
+}
+
 
 
 
