@@ -24,6 +24,7 @@ router.get('/', authCheck, (req, res) => {
 
 router.get('/config', authCheck, (req, res) => {
     res.send('Pagina para perfil de usuarios - configuracoes')
+
 })
 
 module.exports = router

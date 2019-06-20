@@ -11,18 +11,19 @@
             </nav>
             <div class="tab-content" id="nav-tabContent">
                 <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                    
+
                         <div class="row text-center" id="redesocial">
                             <div class="col-md-6">
                                 <a href="/auth/facebook" class="btn btn-primary"><i class="fab fa-facebook-square"></i>  Facebook</a>
                                 </div>
                             <div class="col-md-6">
                                 <a href="/auth/google" class="btn btn-danger"><i class="fab fa-google"></i>  Google</a>
-                            </div> 
+                            </div>
                         </div>
                         <h2 id="separador"><span>{{translation.OR}}</span></h2>
 
                         <div class="container">
+
                             <form method="POST" action="/auth/login">
                                 <label for="uname"><b>E-mail</b></label>
                                 <input type="text" name="username" placeholder="Enter your Email" name="username" required>
@@ -38,13 +39,14 @@
                                 </div>
                                 <div class="row mb-3">
                                     <div class="col-md-6">
-                                      <input  class="btn btn-outline-warning terras" type="reset" value="canselar">  
+                                      <input  class="btn btn-outline-warning terras" type="reset" value="canselar">
                                     </div>
                                     <div class="col-md-6">
-                                      <input class="btn btn-success terra" type="submit" value="{{translation.ENTRAR}}">  
+                                      <input class="btn btn-success terra" type="submit" value="{{translation.ENTRAR}}">
                                     </div>
+
                                 </div>
-                                
+
                             </form>
                         </div>
                 </div>

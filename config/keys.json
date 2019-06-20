@@ -21,7 +21,7 @@
         "host": "localhost",
         "dbname": "wifi",
         "user": "root",
-        "pass": "terrasystem",
+        "pass": "",
         "dialect": "mysql"
     }
 }
