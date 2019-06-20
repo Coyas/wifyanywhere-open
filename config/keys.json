@@ -2,7 +2,7 @@
     "mysql":
     {
         "host": "localhost",
-        "dbname": "wifianywhere",
+        "dbname": "wifi",
         "user": "root",
         "pass": "",
         "dialect": "mysql"
