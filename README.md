@@ -54,8 +54,8 @@ site em node do wifianywhere.
 ### tenologias usadas
 
 ```$xslt
-- nodejs (servidor)
-- express (pacotes para servidor web (node))
+- [nodejs](https://nodejs.org/) (servidor)
+- [express](https://expressjs.com/) (pacotes para servidor web (node))
 - handlebars (tamplete engine)
 - html5 (marcacao de texto)
 - css3 (marcacao de estilos)

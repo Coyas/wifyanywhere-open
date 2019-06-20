@@ -6,12 +6,16 @@ router.get('/', (req, res) => {
         User: req.user
     })
 })
+
+router.post('/visasuccess', (req, res) => {
+    res.send('pagamento efetuado')
+})
  
 router.post('/pagamento_visa', (req, res) => {
     // res.send('pagamento efetuado')
-    res.redirect('/users', {
-        User: req.user
-    })
+    
+
+    res.redirect('/users')
 })
 
 module.exports = router

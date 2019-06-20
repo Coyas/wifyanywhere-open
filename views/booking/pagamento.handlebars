@@ -25,29 +25,32 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="inputCardnumber">{{translation.CNumber}}</label>
-                        <input type="number" class="form-control" id="inputCardnumber" placeholder="">
+                        <input type="text" class="form-control" id="inputCardnumber" placeholder="0000  0000  0000  0000" name="cardnumber">
                     </div>
 
                     <div class="col-md-3 visa">
-                        <img src="/images/mastercard.svg" width="40" height="40">
+                        <label id="terrasystem">terrasysys</label>
+                        <p>
+                            <img src="/images/mastercard.svg" width="40" height="40">
                         <img src="/images/visa.svg" width="40" height="40">
+                        </p>
                     </div>
 
                     <div class="form-group col-md-3">
                         <label for="inputCardexpiry">{{translation.cardExpiryDate}}</label>
-                        <input type="date" class="form-control" id="inputCardexpiry" placeholder="">
+                        <input type="text" class="form-control" id="inputCardexpiry" placeholder="00 / 00" name="cardexpiry">
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group col-md-9">
                         <label for="inputCardHolder">{{translation.CardHolderName}}</label>
-                        <input type="text" class="form-control" id="inputCardholder" placeholder="">
+                        <input type="text" class="form-control" id="inputCardholder" placeholder="John Doe" name="cardholder">
                     </div>
 
                     <div class="form-group col-md-3">
                         <label for="inputCVC">{{translation.CVC}}</label>
-                        <input type="number" class="form-control" id="inputCVC" placeholder="">
+                        <input type="text" class="form-control" id="inputCVC" placeholder="000" name="ccv">
                     </div>
                 </div>
 

@@ -14,9 +14,7 @@ router.post('/orders', (req, res) => {
     // let title = "terra system";
     // console.log('hora de pagamento: '+req.body.email)
     // res.send('hora do pagamento')
-    res.redirect('/pagamento', {
-        User: req.user
-    })
+    res.redirect('/pagamento')
 })
 
 // implementar a requisicao de post de form para SISP (visa's card)

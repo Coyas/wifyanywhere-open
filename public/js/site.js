@@ -1,5 +1,14 @@
 // alert('terrasystem: voce foi hackeado por Coyas');
 
+
+// script para input mask
+$(document).ready(function(){
+    $('#inputCardnumber').mask('0000   0000   0000   0000');inputCardexpiry
+    $('#inputCardexpiry').mask('00 / 00');
+    $('#inputCVC').mask('000');
+    // $('#inputCardholder').mask('AAAAA');
+  });
+
 // code do footer
 $(document).ready(function() {
    // $("#a").click(function(){
