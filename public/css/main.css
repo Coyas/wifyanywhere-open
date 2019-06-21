@@ -16,6 +16,9 @@
 #forgot a {
     color: #1FB0C1;
 }
+body {
+    color:#1FB0C1 !important;
+}
 
 /*adicionar fonts*/
 @font-face {

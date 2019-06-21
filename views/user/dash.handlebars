@@ -1,13 +1,12 @@
 <!--User dashboard-->
 
 <section class="container-fluid"  id="dashboard">
-    <div class="row perfiluser">
+    <div class="row">
         <div class="col-md-4">
             <figure>
                 <img src="./images/General.svg">
-                <figcaption>NOME DO USUARIO</figcaption>
+                <figcaption class="mt-2 h1">{{User.firstName}} {{User.lastName}}</figcaption>
             </figure>
-
         </div>
 
         <div class="col-md-8" >
@@ -15,10 +14,8 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-12">
-                            <h5 class="card-title">MINHAS INFORMAÇÕES</h5><span><i class="fa-pull-right">editar</i></span>
-                        </div>
-
-
+                            <h5 class="card-title">MINHAS INFORMAÇÕES <a href="./users/config"><i class="float-right fas fa-sign-out-alt"></i></a></h5>
+                        </div> 
                     </div>
 
                     <h2 id="separador"></h2>
@@ -27,29 +24,27 @@
                        <div class="col-md-6">
                            <ul>
                                <li class="a">NOME</li>
-                               <li class="b">Nome</li>
+                               <li class="b">{{User.firstName}}</li>
                                <li class="a">EMAIL</li>
-                               <li class="b">Email</li>
+                               <li class="b">{{User.email}}</li>
                                <li class="a">ENDEREÇO</li>
-                               <li class="b">Endereço</li>
+                               <li class="b">latada, praia, cabo verde</li>
                                <li class="a">CIDADE</li>
-                               <li class="b">Cidade</li>
+                               <li class="b">Praia</li>
                                <li class="a">PAIS</li>
-                               <li class="b">Pais</li>
+                               <li class="b">Cabo Verde</li>
                            </ul>
                        </div>
                        <div class="col-md-6">
                            <ul>
-                               <li class="a">NOME</li>
-                               <li class="b">Nome</li>
-                               <li class="a">EMAIL</li>
-                               <li class="b">Email</li>
-                               <li class="a">ENDEREÇO</li>
-                               <li class="b">Endereço</li>
-                               <li class="a">CIDADE</li>
-                               <li class="b">Cidade</li>
-                               <li class="a">PAIS</li>
-                               <li class="b">Pais</li>
+                               <li class="a">APELIDO</li>
+                               <li class="b">{{User.lastName}}</li>
+                               <li class="a">TELEFONE/MOVEL</li>
+                               <li class="b">(+238 000 00 00)</li>
+                               <li class="a">ENDEREÇO DE COBRANÇA</li>
+                               <li class="b">latada, praia, cabo verde</li>
+                               <li class="a">CODIGO ZIP</li>
+                               <li class="b">3125</li>
                            </ul>
                        </div>
                    </div>
@@ -188,105 +183,3 @@
          </div>
     </div>
 </section>
-
-<section class="editarinfo container-fluid">
-    <div class="row perfiluser">
-        <div class="col-md-4">
-            <figure>
-                <img src="./images/General.svg">
-                <figcaption>NOME DO USUARIO</figcaption>
-            </figure>
-
-            <div class="editpwd">
-                <div class="card" id="editpwd1">
-                    <div class="card-header" id="editpwd2">CHANGE PASSWORD</div>
-                    <div class="card-body">
-                        <form>
-                            <div class="form-group">
-                                <label for="exampleInputOldPassword">Old Password</label>
-                                <input type="password" class="form-control" id="exampleInputOldPassword" placeholder="">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputPassword1">New Password</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="">
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-8" >
-            <div class="card" id="editarcard">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h5 class="card-title">EDITAR INFORMAÇÕES</h5>
-                        </div>
-                    </div>
-
-       <h2 id="separador"></h2>
-
-                    <form>
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="inputNome">Nome</label>
-                                <input type="text" class="form-control" id="inputNome" placeholder="Nome">
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="inputApelido">Apelido</label>
-                                <input type="text" class="form-control" id="inputApelido" placeholder="Apelido">
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="inputEmail4">Email</label>
-                                <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="inputTelefone">Telefone</label>
-                                <input type="Telefone" class="form-control" id="inputTelefone" placeholder="Telefone">
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="inputAddress">Address</label>
-                                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="inputAddress2">Address Cobrança</label>
-                                <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="inputCity">City</label>
-                                <input type="text" class="form-control" id="inputCity">
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="inputZip">Zip</label>
-                                <input type="text" class="form-control" id="inputZip">
-                            </div>
-                        </div>
-                        <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="inputZip">Pais</label>
-                            <input type="text" class="form-control" id="inputPais">
-                        </div>
-                        </div>
-
-                        <div class="col-md-12 pull-right">
-                            <a href="#" class="btn btn-info btn-lg active" role="button" aria-pressed="true">Confirmar</a>
-                            <a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Cancelar</a>
-
-                        </div>
-                    </form>
-                </div>
-
-            </div>
-
-        </div>
-    </div>
-
-</section>
-

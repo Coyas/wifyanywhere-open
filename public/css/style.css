@@ -403,19 +403,22 @@ span.psw {
 
 #dashboard{
     background-color: #cccccc;
-    margin-top: 5.1%;
-    padding: 4% 2%;
+    margin-top: 3.5%;
+    padding: 5% 10% 10% 10%; 
 }
 #dashboard .card{
     background-color: #1FB0C1;
-    padding: 4%;
+    /* padding: 4%; */
     border-radius: 50px;
 }
 
-#dashboard .card-title{
+#dashboard .card-title {
     color: #23494e;
     font-size: 3rem;
     font-weight: bold;
+}
+#dashboard .card-title a{
+    color: #23494e;
 }
 
 #dashboard img{
@@ -481,30 +484,30 @@ span.psw {
     margin-top: 5%;
 }
 
-.editarinfo{
+#editarinfo{
     background-color: #1FB0C1;
     margin-top: 5.1%;
     padding: 4% 10% 10% 10%;
 }
 
-.editarinfo img{
+#editarinfo img{
     width: 40%;
     height: 40%;
 }
-.editarinfo figure{
+#editarinfo figure{
     text-align: center;
 }
 
-.editarinfo #editarcard{
+#editarinfo #editarcard{
     background-color: #1FB0C1;
     border: none;
 }
-.editarinfo .card-title{
+#editarinfo .card-title{
     color: #23494e;
     font-size: 3rem;
     font-weight: bold;
 }
-.editarinfo editpwd{
+#editarinfo editpwd{
     margin-left: 4%;
 }
 

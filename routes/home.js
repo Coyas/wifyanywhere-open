@@ -26,11 +26,18 @@ router.get('/planos', (req, res) => {
 });
 
 router.get('/faq', (req, res) => {
+    res.render('home/faq', {
+        User: req.user
+    })
+})
+
+router.get('/faq/:id', (req, res) => {
     /*let id = req.params.id
     console.log("id:" + id)*/
     // faqs.find("")
-    res.render('home/faq', {
-        User: req.user
+    res.render('booking/teste', {
+        User: req.user,
+        id: req.params.id
     })
 })
 

@@ -7,6 +7,12 @@ router.get('/', (req, res, next) => {
     });
 });
 
+router.get('/:id', (req, res, next) => {
+    res.render('booking/teste', {
+        User: req.user,
+        id: req.params.id
+    });
+});
 
 // inplementar a requisicao post dos form de dados
 router.post('/orders', (req, res) => {
