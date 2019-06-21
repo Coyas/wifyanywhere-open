@@ -1,18 +1,20 @@
 # wifyanywhere
-```
+
 site em node do wifianywhere.
 
-```
+
+#### clone o app
+1° : git clone https://github.com/Coyas/wifyanywhere.git
 
 ##### Adicione as chaves do app
 
-```
+
 As chaves do app sao as credencias do seu banco de dados, as credenciais de autenticacao do 
 facebook e google, as configuracoes do servidor de email.
 
 copie este codigo e crie um ficheiro com o nome "keys.json", e estao cole a linha de codigo
 json no arquivo:
-
+```
 {
     "google":
     {
@@ -56,8 +58,6 @@ json no arquivo:
 
 #### Como iniciar a aplicacao
 ```$xslt
-1° : git clone https://github.com/Coyas/wifyanywhere.git
-
 1.1: npm install bower -g
 
 2° : npm install
@@ -73,17 +73,21 @@ json no arquivo:
 ### extrutura de arquivos
 
 ./bin - configuracao do servidor node
+
 ./congig (configuracoes da aplicacao)
     - db : configuracoes de conexao com o banco de dados
     - keys : chaves de acesso ao banco de dados, facebook auth system, google auth system, etc, chaves...
     - mail : configuracoes para envio de email
     - passport-config : configuracoes do passport e das suas estrategias de autenticacao
+
 ./i18n (pacote de traducao e localizacao)
     - en : traducoes para a lingua inglesa
     - pt : traducaes para a lingua portuguesa
     - fr : traducoes para a lingua francesa
+
 ./models (modelos para criar as tabelas no banco de dados)
     - User : esquema da tabela user
+
 ./public (ficheiros estaticos do site)
     - css/main & css/style : pacotes para a estilizacao do site
     - css/media : media queries para o site
@@ -91,12 +95,14 @@ json no arquivo:
     - imagens/* : imagens usadas no site
     - js/* : customizacao do [DOM](https://pt.wikipedia.org/wiki/Modelo_de_Objeto_de_Documentos)
      do site e e interacoes
+
 ./routes (rotas/acessos do site)
     - auth : rotas para autenticacao de facebook, google e local-login
     - booking : rotas para o online booking
     - home : rotas para as paginas principais
     - pagamento : rotas para o seccao de pagamento online via rede Visa
     - user : rotas de acesso aos dados do utilizador
+    
 ./views
 
 
