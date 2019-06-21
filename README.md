@@ -71,7 +71,7 @@ json no arquivo:
 
 
 ### extrutura de arquivos
-```$xslt
+
 ./bin - configuracao do servidor node
 ./congig (configuracoes da aplicacao)
     - db : configuracoes de conexao com o banco de dados
@@ -99,12 +99,12 @@ json no arquivo:
     - user : rotas de acesso aos dados do utilizador
 ./views
 
-```
+
 
 
 ### tenologias usadas
 
-```$xslt
+
 - [nodejs](https://nodejs.org/) (servidor)
 - [express](https://expressjs.com/) (pacotes para servidor web (node))
 - handlebars (tamplete engine)
@@ -118,10 +118,10 @@ json no arquivo:
 - passport google Auth2.0 (integracao com sistema de autenticacao do google)
 - mysql  (banco de dados)
 
-```
+
 
 ### sistema de pagamento
-```
+
 Os dados do formulario do booking online sera guardado no bando de dados, dados como
 da ordem de aluguer, e os dados do requerente, e estes tanbem sao os dados do utilizador, 
 que consequentimente pode ser 
@@ -142,4 +142,3 @@ de modo a efetuar o pagamento online.
 Depois da [sisp](https://www.sisp.cv/) confirmar o pagamento, sera enviado uma mensagem/email para
  a conta do utilizador a confirmar o pagamento.
 
-```
