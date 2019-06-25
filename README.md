@@ -75,32 +75,49 @@ json no arquivo:
 ./bin - configuracao do servidor node
 
 ./congig (configuracoes da aplicacao)
+
     - db : configuracoes de conexao com o banco de dados
+
     - keys : chaves de acesso ao banco de dados, facebook auth system, google auth system, etc, chaves...
+
     - mail : configuracoes para envio de email
+    
     - passport-config : configuracoes do passport e das suas estrategias de autenticacao
 
 ./i18n (pacote de traducao e localizacao)
+
     - en : traducoes para a lingua inglesa
+
     - pt : traducaes para a lingua portuguesa
+
     - fr : traducoes para a lingua francesa
 
 ./models (modelos para criar as tabelas no banco de dados)
     - User : esquema da tabela user
 
 ./public (ficheiros estaticos do site)
+
     - css/main & css/style : pacotes para a estilizacao do site
+
     - css/media : media queries para o site
+
     - fonts/* : fontes de textos usados no site
+
     - imagens/* : imagens usadas no site
+
     - js/* : customizacao do [DOM](https://pt.wikipedia.org/wiki/Modelo_de_Objeto_de_Documentos)
      do site e e interacoes
 
 ./routes (rotas/acessos do site)
+
     - auth : rotas para autenticacao de facebook, google e local-login
+
     - booking : rotas para o online booking
+
     - home : rotas para as paginas principais
+
     - pagamento : rotas para o seccao de pagamento online via rede Visa
+
     - user : rotas de acesso aos dados do utilizador
     
 ./views

@@ -1,9 +1,15 @@
 // alert('terrasystem: voce foi hackeado por Coyas');
-
+// add slidedown and up em despositivos, servicos
+$(document).ready(function(){
+    $(".fa-chevron-down").click(function(){
+        alert('tessra system slidedown');
+      $(".devicebox").slideDown("slow");
+    });
+  });
 
 // script para input mask
 $(document).ready(function(){
-    $('#inputCardnumber').mask('0000   0000   0000   0000');inputCardexpiry
+    $('#inputCardnumber').mask('0000   0000   0000   0000');
     $('#inputCardexpiry').mask('00 / 00');
     $('#inputCVC').mask('000');
     // $('#inputCardholder').mask('AAAAA');

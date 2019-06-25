@@ -16,9 +16,7 @@
 #forgot a {
     color: #1FB0C1;
 }
-body {
-    color:#1FB0C1 !important;
-}
+
 
 /*adicionar fonts*/
 @font-face {
@@ -247,6 +245,84 @@ footer .mrg {
 
 /********** fim dos estilos para seccao sobre os devices********/
 /*********** inicio dos estilos para a seccao booking  *********/
+
+#booking .choose {
+    padding: 2%;
+    border: 1px solid #1FB0C1;
+}
+#booking .choose:hover {
+    background-color: #1FB0C1;
+    color: #FFFFFF;
+}
+#booking .containers {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default radio button */
+ #booking .containers input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  /* Create a custom radio button */
+  #booking .checkmark {
+    position: absolute;
+    top: 15%;
+    left: 15%;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+    border: 1px solid #FFFFFF;
+  }
+  #booking .fff{
+      margin-top: 7%;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  #booking .containers:hover input ~ .checkmark {
+    background-color: #FFFFFF;
+  }
+  
+  /* When the radio button is checked, add a blue background */
+  #booking .containers input:checked ~ .checkmark {
+    background-color: #1FB0C1;
+  }
+  
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+  #booking .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the indicator (dot/circle) when checked */
+  #booking .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the indicator (dot/circle) */
+  #booking .containers .checkmark:after {
+       top: 9px;
+      left: 9px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: white;
+  }
+
+
+#booking .pacote {
+    color: #1FB0C1;
+}
 #booking, #booking2{
     background-color: #1FB0C1;
     padding: 5% 10% 10% 10%;

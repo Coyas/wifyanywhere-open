@@ -1,7 +1,13 @@
 const express = require("express");
-const faqs = require("../models/faqs.js")
 const router = express.Router();
 
+
+// importar models para db
+const faqs = require("../models/faqs")
+const Despositivo = require('../models/despositivos')
+const planos = require('../models/planos')
+
+// as rotas
 
 router.get('/', (req, res) => {
     // res.send(lang)
