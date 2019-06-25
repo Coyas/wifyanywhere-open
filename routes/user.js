@@ -29,13 +29,8 @@ router.get('/config', authCheck, (req, res) => {
     res.render('user/editar',{User:req.user})
 })
 router.post('/config', authCheck, (req, res) => {
-    User.firstName="primeironome"
-    user.save({
-        field:['firstname']
-    }).then(()=>{
-       console.log('update feito com sucesso')
-    })
 
+        // res.send('Pagina para perfil de usuarios - configuracoes')
     res.render('user/dash',{User:req.user})
 })
 
