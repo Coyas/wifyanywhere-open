@@ -22,7 +22,7 @@ async function main(){
 
   // send mail with defined transport object
   let info = await transporter.sendMail({
-    from: '"Ailton Duarte 👻" <adidas.coyas@gmail.com>', // sender address
+    from: '"Ana Bela Semedo 👻" <anabelasemedo5@gmail.com>', // sender address
     to: "geralinnovatmedia@gmail.com", // list of receivers
     subject: "Ola teste do nodemailer ✔", // Subject line
     text: "Ola Mundo, estou testando o email enviado por nodejs com pacote nodemailer, viva mundo node", // plain text body
@@ -31,8 +31,8 @@ async function main(){
 
   console.log("Message sent: %s", info.messageId);
   // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
-  
-  
+
+
   // Preview only available when sending through an Ethereal account
   console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
   // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
@@ -42,7 +42,7 @@ main().catch(console.error);
 
 // module.exports = main
 
- 
+
 // nodemailer.createTestAccount((err, account) => {
 //     let transporter = nodemailer.createTransport({
 //         host: 'smtp.googlemail.com', // Gmail Host
@@ -53,14 +53,14 @@ main().catch(console.error);
 //             pass: 'GMAIL_PASSWORD' // Gmail password
 //         }
 //     });
- 
+
 //     let mailOptions = {
 //         from: '"Artisans Web" <admin@artisansweb.net>',
 //         to: 'RECEPIENT_EMAIL_ADDRESS', // Recepient email address. Multiple emails can send separated by commas
 //         subject: 'Welcome Email',
 //         text: 'This is the email sent through Gmail SMTP Server.'
 //     };
- 
+
 //     transporter.sendMail(mailOptions, (error, info) => {
 //         if (error) {
 //             return console.log(error);
