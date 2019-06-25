@@ -3,9 +3,12 @@ const router = express.Router();
 
 
 // importar models para db
-const faqs = require("../models/faqs")
+const Categoria = require("../models/categoria")
+const Faqs = require("../models/faqs")
 const Despositivo = require('../models/despositivos')
-const planos = require('../models/planos')
+const Planos = require('../models/planos')
+const Bookins = require('../models/bookins')
+const Pagamentos = require('../models/pagamento')
 
 // as rotas
 

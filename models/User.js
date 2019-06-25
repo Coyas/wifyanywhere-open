@@ -1,7 +1,12 @@
 const Sequelize = require('sequelize');
-const sequelize = require('../config/db');
+const sequelize = require('../config/db')
 
 const User = sequelize.define('users',{
+    // uuid: {
+    //     type: Sequelize.UUID,
+    //     primaryKey: true,
+    //     defaultValue: Sequelize.UUIDV4
+    // }, 
     firstName: {
         type: Sequelize.STRING(50),
         allowNull: true,
