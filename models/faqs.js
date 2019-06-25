@@ -2,6 +2,26 @@ const Sequelize = require("sequelize");
 const sequelize = require("../config/db.js");
 
 
+
+const Categoria = sequelize.define('categoria',{
+    nomept:{
+        type: Sequelize.STRING,
+        unique: true,
+        allowNull:false
+    },
+    nomeen:{
+        type: Sequelize.STRING,
+        unique: true,
+        allowNull:false
+    },
+    nomefr:{
+        type: Sequelize.STRING,
+        unique: true,
+        allowNull:false
+    }
+
+})
+
 const Faqs = sequelize.define('faqs',{
     title:{
         type: Sequelize.STRING,
@@ -18,8 +38,12 @@ const Faqs = sequelize.define('faqs',{
     }
 })
 
-// Faqs.belongsTo(Categoria);
-// Faqs.sync();
+Categoria.hasMany(Faqs)
+// Faqs.hasMany(Categoria)
+
+Categoria.sync()
+Faqs.sync()
+
 
 module.exports = Faqs
 

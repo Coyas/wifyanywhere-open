@@ -103,7 +103,7 @@ app.use(session({
     secret: 'qsqdqsjhqsdjkdq',
     resave: false,
     store: sessionStore,
-    saveUninitialized: false,
+    saveUninitialized: true,
     // cookie: { secure: true}  //for https
 }));
 
@@ -118,7 +118,7 @@ app.use(i18n({
     translationsPath: path.join(__dirname, 'i18n'), // <--- use here. Specify translations files path.
     siteLangs: ["en","fr", "pt"],
     textsVarName: 'translation',
-    browserEnable: true,
+    browserEnable: true,  //cria cookie mesmo sem iniciar sessao
     defaultLang: 'pt',
     paramLangName: 'clang',
     // textsVarName: 'lang'
