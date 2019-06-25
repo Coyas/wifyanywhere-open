@@ -1,7 +1,7 @@
 const express = require("express")
 const router = express.Router()
 
-const User= require("../models/User")
+const User = require("../models/User")
 
 const authCheck = (req, res, next) => {
     if(!req.user){
@@ -29,14 +29,30 @@ router.get('/config', authCheck, (req, res) => {
     res.render('user/editar',{User:req.user})
 })
 router.post('/config', authCheck, (req, res) => {
-    User.firstName="primeironome"
-    user.save({
-        field:['firstname']
-    }).then(()=>{
-       console.log('update feito com sucesso')
-    })
 
-    res.render('user/dash',{User:req.user})
+
+      // Change everyone without a last name to "Doe"
+    User.update({
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        email: req.body.email, // ca sta fixe
+        phone: req.body.phone,
+        street_adress: req.body.street_adress,
+        biling_adress: req.body.biling_adress,
+        city: req.body.city,
+        zip_code: req.body.zip_code,
+        country: req.body.country
+    }, {
+        where: {
+        id: req.user.id
+        }
+    }).then( () => {
+        console.log("atualizacao de user feito com sucesso")
+        res.redirect('/users')
+    }).catch( err => {
+        console.log("Falha na atualizacao de user feito com sucesso")
+        res.redirect('/user/config')
+    })     
 })
 
 module.exports = router
