@@ -5,9 +5,9 @@ const   PickupPlaces = sequelize.define('pickupplaces',{
 
     place:{
         type: Sequelize.STRING,
-        AllowNull: false
+        allowNull: false
     }
 })
 PickupPlaces.sync()
 
-module.exports= PickupPlaces
+module.exports = PickupPlaces
