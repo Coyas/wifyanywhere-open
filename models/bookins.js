@@ -1,5 +1,6 @@
 const Sequelize = require("sequelize");
-const sequelize = require("../config/db.js");
+const sequelize = require("../config/db.js")
+const pagamento = require('./pagamento')
 
 
 const Bookins = sequelize.define('bookins',{
@@ -13,11 +14,12 @@ const Bookins = sequelize.define('bookins',{
         allowNull: false
     },
     flynumber:{
-        tye: Sequelize.STRING,
+        type: Sequelize.STRING,
         allowNull:true
     }
 })
  
+Bookins.hasMany(pagamento)
 Bookins.sync()
 
 
