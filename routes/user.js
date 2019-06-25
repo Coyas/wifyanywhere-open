@@ -16,7 +16,7 @@ const authCheck = (req, res, next) => {
 
 router.get('/', authCheck, (req, res) => {
     // console.log(`nome: ${req.user.firstName} apelido: ${req.user.lastName}`)
-    
+
     res.render('user/dash', {
         User: req.user
     })
@@ -24,7 +24,7 @@ router.get('/', authCheck, (req, res) => {
 
 router.get('/config', authCheck, (req, res) => {
     // res.send('Pagina para perfil de usuarios - configuracoes')
-    res.render('user/editar')
+    res.render('user/editar',{User:req.user})
 })
 
 module.exports = router

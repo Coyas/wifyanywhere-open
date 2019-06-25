@@ -404,7 +404,7 @@ span.psw {
 #dashboard{
     background-color: #cccccc;
     margin-top: 3.5%;
-    padding: 5% 10% 10% 10%; 
+    padding: 5% 10% 10% 10%;
 }
 #dashboard .card{
     background-color: #1FB0C1;
@@ -458,9 +458,8 @@ span.psw {
     font-weight: bold;
     margin-top: 5%;
 }
-#minhasreservas #res-at{
-    margin-left: 30%;
-    text-align: right;
+#minhasreservas .reservabotao{
+    margin-left: 10%;
 }
 
 #minhasreservas a{
@@ -471,15 +470,18 @@ span.psw {
     border-radius: 10px;
     font-weight: bold;
     border: 1px solid #1FB0C1;
-    width: 70%;
-    height: 110%;
+
 
 }
 #minhasreservas a.active{
     background-color: #1FB0C1;
     color: white;
-
 }
+#minhasreservas .reserva{
+    width: 70%;
+    height: 110%;
+}
+
 .lista1{
     margin-top: 5%;
 }

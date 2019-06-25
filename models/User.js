@@ -29,7 +29,27 @@ const User = sequelize.define('users',{
     },
     googleId: {
         type: Sequelize.STRING
-    }
+    },
+    street_adress: {
+        type: Sequelize.STRING
+    },
+    city: {
+        type: Sequelize.STRING
+    },
+    biling_adress: {
+       type: Sequelize.STRING
+    },
+    zip_code: {
+        type: Sequelize.STRING
+    },
+    phone: {
+        type: Sequelize.STRING
+    },
+    country: {
+        type: Sequelize.STRING
+    },
+
+
 })
 User.sync()
 module.exports = User
