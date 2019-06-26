@@ -15,20 +15,23 @@
     <link rel="stylesheet" href="/bower_components/flag-icon-css/css/flag-icon.css">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/bower_components/datatables.net-dt/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="/bower_components/datatables.net-responsive-dt/css/responsive.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="/bower_components/datatables.net-select-dt/css/select.dataTables.min.css">
 <!--    <link rel="icon" href="/a.png">-->
 
 </head>
-<>
+<body>
 
-{{>_navbars}}
+    {{>_navbars}}
 
-{{{body}}}
+    {{{body}}}
 
-{{>_footer}}
+    {{>_footer}}
 
-{{>_login}}
+    {{>_login}}
 
-{{>_chat}}
+    {{>_chat}}
 
     <script src="/bower_components/jquery/dist/jquery.js"></script><!--
     <script src="/bower_components/popper.js/dist/popper.js"></script>-->
@@ -40,7 +43,9 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-    <script scr="https://cdn.datatables.net/select/1.3.0/js/dataTables.select.min.js"></script>
+    <script src="/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+    {{!-- <script src="/bower_components/datatables.net-responsive-dt/js/responsive.dataTables.min.js"></script> --}}
+    <script src="/bower_components/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="/bower_components/datatables.net-select/js/dataTables.select.min.js"></script>
 </body>
 </html>

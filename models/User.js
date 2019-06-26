@@ -2,11 +2,11 @@ const Sequelize = require('sequelize');
 const sequelize = require('../config/db')
 
 const User = sequelize.define('users',{
-    // uuid: {
-    //     type: Sequelize.UUID,
-    //     primaryKey: true,
-    //     defaultValue: Sequelize.UUIDV4
-    // }, 
+    id: {
+        type: Sequelize.UUID,
+        primaryKey: true,
+        defaultValue: Sequelize.UUIDV4
+    }, 
     firstName: {
         type: Sequelize.STRING(50),
         allowNull: true,
@@ -53,7 +53,12 @@ const User = sequelize.define('users',{
     country: {
         type: Sequelize.STRING
     },
-
+    status: {
+        type: Sequelize.SMALLINT
+    },
+    access: {
+        type: Sequelize.SMALLINT
+    }
 
 })
 User.sync()
