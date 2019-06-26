@@ -13,15 +13,29 @@ const authCheck = (req, res, next) => {
         next() //continue
     }
 }
+ 
 
 
-
-router.get('/', authCheck, (req, res) => {
+router.get('/:user', authCheck, (req, res) => {
     // console.log(`nome: ${req.user.firstName} apelido: ${req.user.lastName}`)
 
-    res.render('user/dash', {
-        User: req.user
+    User.findByPk(req.params.user).then( user => {
+        if(req.params.user == req.user.id){
+            res.render('user/dash', {
+                User: user
+            })
+        }else {
+            res.render('error', {
+                User: user
+            })
+        }
+    }).catch( err => {
+        res.render('error',{
+            User: req.user
+        })
     })
+
+    
 })
 
 router.get('/config', authCheck, (req, res) => {

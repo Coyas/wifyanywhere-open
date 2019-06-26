@@ -504,9 +504,21 @@ footer .mrg {
     color: white;
 }
 
+
+/************* estilos para footer **************************/
 footer .cc {
     text-align: left;
 }
 footer .mm {
     text-align: left;
+}
+
+#login .terra {
+	padding: 5.5%;
+	font-size: 1.2rem;
+	color: #FFFFFF;
+	background-color: #1FB0C1;
+	border-color: #1FB0C1;
+	font-weight: bold;
+	width: 100%;
 }

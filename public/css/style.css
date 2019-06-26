@@ -273,19 +273,26 @@
 #nav-tabContent input.terras {
     padding: 5.5%;
     font-size: 1.2rem;
-    color: #ffc107;
+    color: #1FB0C1;
+    border-color: #1FB0C1;
     font-weight: bold;
     width: 100%;
 }
 
-/* novo estilos para os botoes canselar ,entrar e registrar */
 #nav-tabContent input.terras:hover {
-    color: #FFFFFF
+  
+    color: #1FB0C1;
+    background-color: #ffffff;
 }
+
+/* novo estilos para os botoes canselar ,entrar e registrar */
+
 #nav-tabContent input.terra {
     padding: 5.5%;
     font-size: 1.2rem;
     color: #FFFFFF;
+    background-color: #1FB0C1;
+    border-color: #1FB0C1;
     font-weight: bold;
     width: 100%;
 }
