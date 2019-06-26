@@ -1,21 +1,29 @@
 const express = require("express");
 const router = express.Router();
 
-router.get('/', (req, res, next) => {
+// login session checker
+const authCheck = (req, res, next) => {
+    if(!req.user){
+        //se user nao esta logado
+        // console.log(` o middlewhere para sessao (req.session.passport.user): ${JSON.stringify(req.session.passport)}`);
+        res.redirect('/login')
+    }else{
+        // se esta logado
+        next() //continue
+    }
+}
+
+
+
+router.get('/', authCheck, (req, res, next) => {
     res.render('booking/booking', {
         User: req.user
     });
 });
 
-router.get('/:id', (req, res, next) => {
-    res.render('booking/teste', {
-        User: req.user,
-        id: req.params.id
-    });
-});
 
 // inplementar a requisicao post dos form de dados
-router.post('/orders', (req, res) => {
+router.post('/orders', authCheck, (req, res) => {
     // let title = req.body.
     // let title = "terra system";
     // console.log('hora de pagamento: '+req.body.email)

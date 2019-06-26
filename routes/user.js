@@ -38,9 +38,24 @@ router.get('/:user', authCheck, (req, res) => {
     
 })
 
-router.get('/config', authCheck, (req, res) => {
+router.get('/:user/config', authCheck, (req, res) => {
     // res.send('Pagina para perfil de usuarios - configuracoes')
-    res.render('user/editar',{User:req.user})
+    User.findByPk(req.params.user).then( user => {
+        if(req.params.user == req.user.id){
+            res.render('user/editar', {
+                User: user
+            })
+        }else {
+            res.render('error', {
+                User: user
+            })
+        }
+    }).catch( err => {
+        res.render('error',{
+            User: req.user
+        })
+    })
+    
 })
 router.post('/config', authCheck, (req, res) => {
 
@@ -62,10 +77,10 @@ router.post('/config', authCheck, (req, res) => {
         }
     }).then( () => {
         console.log("atualizacao de user feito com sucesso")
-        res.redirect('/users')
+        res.redirect('/users/'+req.user.id)
     }).catch( err => {
         console.log("Falha na atualizacao de user feito com sucesso")
-        res.redirect('/user/config')
+        res.redirect('/user/'+req.user.id+'/config')
     })     
 })
 

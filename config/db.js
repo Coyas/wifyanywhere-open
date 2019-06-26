@@ -2,20 +2,20 @@ const Sequelize = require("sequelize");
 const keys = require('../config/keys.json')
 
 console.log("variaveis do hanbiente do dbjs")
-console.log(keys.mysql.host)
-console.log(keys.mysql.dbname)
-console.log(keys.mysql.user)
-console.log(keys.mysql.pass)
-console.log(keys.mysql.dialect)
+console.log(keys.server.host)
+console.log(keys.server.dbname)
+console.log(keys.server.user)
+console.log(keys.server.pass)
+console.log(keys.server.dialect)
 console.log("fim variaveis do hanbiente do dbjs")
 
 const sequelize = new Sequelize(
-    keys.mysql.dbname,
-    keys.mysql.user,
-    keys.mysql.pass,
+    keys.server.dbname,
+    keys.server.user,
+    keys.server.pass,
     {
-        host: keys.mysql.host,
-        dialect: keys.mysql.dialect
+        host: keys.server.host,
+        dialect: keys.server.dialect
     },
 );
 

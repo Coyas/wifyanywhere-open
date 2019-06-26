@@ -2,6 +2,7 @@ const router = require('express').Router()
 const passport = require('passport')
 const User = require('../models/User')
 const bcrypt = require('bcrypt');
+const Mail = require('../config/mail')
 const saltRounds = 10;
 
 // login session checker
@@ -91,6 +92,9 @@ router.post('/registro', (req, res) => {
           title: 'Erros ao registrar utilizador'
       });
     }else {
+
+
+
         // criptografando a senha
         console.log('registrando user')
         const password = req.body.password
@@ -101,22 +105,75 @@ router.post('/registro', (req, res) => {
                 lastName: req.body.lastName,
                 email: req.body.email,
                 password: hash,
-                status: 0,
+                status: 10,
                 access: 1
             }).then( user => {
                 console.log('cadastro feito com sucesso<br>**** dados do cadastro ***<br><br>username: '+req.body.username+'<br>email: '+req.body.email+'<br>password: '+req.body.password+'<br>password criptografado: '+hash)
                 req.login(user, (err) => {
                     console.log('login done com sucesso no registrar');
-                    res.redirect('/users/'+req.user.id);
+                    
+                    // get accessToken
+                    const Url = `http://192.168.88.42:3000/auth/emailcheck/${req.user.accessToken}`
+                    // console.log(Url)
+
+                    Mail.sendMail({
+                        from: '"Ailton Duarte 👻" <adidas.coyas@gmail.com>', // sender address
+                        to: req.user.email, // list of receivers
+                        subject: "Confirmacao de email wifianywhere ✔", // Subject line
+                        text: "Ola Mundo, estou testando o email enviado por nodejs com pacote nodemailer, viva mundo node", // plain text body
+                        html: `Confirme seu email <a href="${Url}" class="btn btn-primary">Confirmar</a>` // html body
+                    }).then( () => {
+                        console.log('email enviado')
+                        res.redirect('/users/'+req.user.id)
+                    }).catch( err => {
+                        console.log('erro ao enviar o email: '+err)
+                        // res.redirect('/users/'+req.user.id)
+                        res.send("erro ao enviar o email: "+err)
+                    })
+
+                    // res.redirect('/users/'+req.user.id);
                 });
             }).catch((err) => {
                 console.log('erro ao cadastrar o user: '+err)
             })
 
-            //  res.send('*********** dados do cadastro **********************<br><br>username: '+req.body.username+'<br>email: '+req.body.email+'<br>password: '+req.body.password+'<br>password criptografado: ')
+            //  res.send('*********** dados do cadastro ********************** <br><br>username: '+req.body.username+'<br>email: '+req.body.email+'<br>password: '+req.body.password+'<br>password criptografado: ')
         })
     }
 })
 
 
-module.exports = router
+// rota de comfirmar email
+router.get('/emailcheck/:accessToken', (req, res) => {
+
+    User.findOne({ where: {accessToken: req.params.accessToken} }).then(user => {
+
+        console.log("user: "+user)
+
+        if(user){
+            User.update({
+                accessToken: null,
+                confirme: true
+            }, {
+                where: {
+                    accessToken: req.params.accessToken
+                }
+            }).then( () => {
+                console.log("atualizacao de user feito com sucesso")
+                res.redirect('/')
+            }).catch( err => {
+                console.log("Falha na atualizacao de user feito com sucesso")
+                res.redirect('/undefined')
+            }) 
+        }else{
+            res.redirect('/undefined')
+        }       
+    }).catch( err => {
+        res.redirect('/undefined')
+    })
+
+    
+})
+
+
+module.exports = router 

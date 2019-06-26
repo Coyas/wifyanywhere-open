@@ -58,6 +58,14 @@ const User = sequelize.define('users',{
     },
     access: {
         type: Sequelize.SMALLINT
+    },
+    accessToken:{
+        type: Sequelize.UUID,
+        defaultValue: Sequelize.UUIDV4
+    },
+    confirme:{
+        type: Sequelize.BOOLEAN,
+        defaultValue: false
     }
 
 })

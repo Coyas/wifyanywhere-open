@@ -38,10 +38,10 @@ const app = express();
 
 // create a database sessionStorage
 let options = {
-    host: keys.mysql.host,
-    user: keys.mysql.user,
-    password: keys.mysql.pass,
-    database: keys.mysql.dbname,
+    host: keys.server.host,
+    user: keys.server.user,
+    password: keys.server.pass,
+    database: keys.server.dbname,
     // socketPath: '/var/lib/mysql/mysql.sock'  //use isso, se houver error connrefused
 };
 
@@ -156,7 +156,7 @@ app.use(function(err, req, res, next) {
 
     // render the error page
     res.status(err.status || 500);
-    res.render('error');
+    res.render('error', {User: req.user});
 });
 
 
