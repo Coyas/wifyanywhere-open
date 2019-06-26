@@ -17,7 +17,7 @@ const authCheck = (req, res, next) => {
 
 
 router.get('/:user', authCheck, (req, res) => {
-    // console.log(`nome: ${req.user.firstName} apelido: ${req.user.lastName}`)
+    // console.log(`nome: ${req.user.firstName}  b apelido: ${req.user.lastName}`)
 
     User.findByPk(req.params.user).then( user => {
         if(req.params.user == req.user.id){
