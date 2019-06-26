@@ -95,7 +95,7 @@ router.post('/registro', (req, res) => {
 
 
 
-        // criptografando a senha
+        // criptografando a senhaa
         console.log('registrando user')
         const password = req.body.password
         bcrypt.hash(password, saltRounds, (err, hash) => {
