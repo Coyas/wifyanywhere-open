@@ -13,7 +13,7 @@ const authCheck = (req, res, next) => {
         next() //continue
     }
 }
- 
+
 
 
 router.get('/:user', authCheck, (req, res) => {
@@ -35,8 +35,10 @@ router.get('/:user', authCheck, (req, res) => {
         })
     })
 
-    
+
 })
+
+
 
 router.get('/config', authCheck, (req, res) => {
     // res.send('Pagina para perfil de usuarios - configuracoes')

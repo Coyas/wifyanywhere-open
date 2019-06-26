@@ -30,20 +30,20 @@ router.get('/facebook/callback',
   function(req, res) {
     // Successful authentication, redirect home.
     res.redirect('/users');
-}); 
+});
 
 /********************Google Login *****************************/
 //auth with google
 router.get('/google', passport.authenticate('google', {
     scope: ['profile', 'email'] //separa informacao por virgulas ['profile', 'email']
-})) 
+}))
 // router.get('/google', (req, res) => {
 //     res.send('login com google')
 // })
 
 //callback de redirecionamento do google
 router.get('/google/redirect', passport.authenticate('google'), (req, res) => {
-    
+
     // res.send('user logado foi: '+req.user.googleId)
     res.redirect('/users/')
 })
@@ -58,7 +58,7 @@ router.get('/logout', authCheck, (req, res) => {
 
 router.post('/login', passport.authenticate('local', {//add condicoes de acesso
     successRedirect: '/',
-    failureRedirect: '/' 
+    failureRedirect: '/'
 }))
 
 router.post('/registro', (req, res) => {
@@ -71,7 +71,7 @@ router.post('/registro', (req, res) => {
 
 
     // validacao com espress-validator
-    
+
     // req.checkBody('firstName', 'O firstName nao pode estar vazia, porfavor tenta de novo').isEmpty();
     // req.checkBody('lastName', 'O lastName nao pode estar vazia, porfavor tenta de novo').isEmpty();
     req.checkBody('email', 'O email nao pode estar vazia, porfavor tenta de novo').isEmail();
@@ -106,7 +106,7 @@ router.post('/registro', (req, res) => {
             }).then( user => {
                 console.log('cadastro feito com sucesso<br>**** dados do cadastro ***<br><br>username: '+req.body.username+'<br>email: '+req.body.email+'<br>password: '+req.body.password+'<br>password criptografado: '+hash)
                 req.login(user, (err) => {
-                    console.log('login done com sucesso no registrar');
+                    console.log('please confirm your email to confirm your registration');
                     res.redirect('/users/'+req.user.id);
                 });
             }).catch((err) => {
