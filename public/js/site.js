@@ -1,14 +1,25 @@
 // alert('terrasystem: voce foi hackeado por Coyas');
+
 // datatables
 $(document).ready( function () {
     $('#table_id').DataTable({
-        paging: false,
+        // paging: false,k
         // scrollY: 400,
-        searching: false,
-        ordering:  true,
-        select: true,
-        autoWidth: true,
-        responsive: true
+        searching: true,
+        ordering:  false,
+        // select: true,
+        // autoWidth: true,
+        // responsive: true,
+        columnDefs: [ {
+            orderable: false,
+            className: 'select-checkbox',
+            targets:   0
+        } ],
+        select: {
+            style:    'os',
+            selector: 'td:first-child'
+        },
+        order: [[ 1, 'asc' ]]
     });
 } );
 
