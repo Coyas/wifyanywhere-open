@@ -118,7 +118,7 @@ router.post('/registro', (req, res) => {
                     // console.log(Url)
 
                     Mail.sendMail({
-                        from: '"Ailton Duarte 👻" <adidas.coyas@gmail.com>', // sender address
+                        from: '"Ana Bela Semedo 👻" <anabelasemedo5@gmail.com>', // sender address
                         to: req.user.email, // list of receivers
                         subject: "Confirmacao de email wifianywhere ✔", // Subject line
                         text: "Ola Mundo, estou testando o email enviado por nodejs com pacote nodemailer, viva mundo node", // plain text body
