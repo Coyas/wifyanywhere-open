@@ -52,9 +52,9 @@ json no arquivo:
     }
 }
 
-
-
 ```
+Depois vai em [Google Console Developers](https://console.developers.google.com) e crie as credenciais para a autenticacao com google.
+Vai em [Facebook Developers](https://developers.facebook.com/) e cria as credenciais para autenticacao com facebook
 
 #### Como iniciar a aplicacao
 ```$xslt
