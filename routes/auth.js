@@ -178,5 +178,15 @@ router.get('/emailcheck/:accessToken', (req, res) => {
 
 })
 
+router.get('/resetSenha', (req, res) => {
+    res.render('home/resetsenha', {layout: 'resetsenha'})
+})
+
+router.post('/resetSenha', (req, res) => {
+    res.send('email de reset de senha enviado')
+    // res.redirect('/')
+})
+
+
 
 module.exports = router
