@@ -28,6 +28,8 @@
     "Font-Awesome": "^5.8.2",
     "flag-icon-css": "^3.3.0",
     "datatables.net": "^1.10.19",
+    "datatables.net-scroller": "^2.0.0",
+    "datatables.net-scroller-dt": "^2.0.0",
     "datatables.net-dt": "^3.2.2",
     "datatables.net-responsive": "^2.2.3",
     "datatables.net-responsive-dt": "^2.2.3",

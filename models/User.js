@@ -6,7 +6,7 @@ const User = sequelize.define('users',{
         type: Sequelize.UUID,
         primaryKey: true,
         defaultValue: Sequelize.UUIDV4
-    }, 
+    },
     firstName: {
         type: Sequelize.STRING(50),
         allowNull: true,
@@ -22,6 +22,10 @@ const User = sequelize.define('users',{
     password:  {
         type: Sequelize.STRING(70),
         allowNull: true
+    },
+    confirm: {
+        type: Sequelize.BOOLEAN,
+        defaultValue: false
     },
     photo: {
         type: Sequelize.STRING(150)

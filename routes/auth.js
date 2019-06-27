@@ -32,20 +32,20 @@ router.get('/facebook/callback',
   function(req, res) {
     // Successful authentication, redirect home.
     res.redirect('/users');
-}); 
+});
 
 /********************Google Login *****************************/
 //auth with google
 router.get('/google', passport.authenticate('google', {
     scope: ['profile', 'email'] //separa informacao por virgulas ['profile', 'email']
-})) 
+}))
 // router.get('/google', (req, res) => {
 //     res.send('login com google')
 // })
 
 //callback de redirecionamento do google
 router.get('/google/redirect', passport.authenticate('google'), (req, res) => {
-    
+
     // res.send('user logado foi: '+req.user.googleId)
     res.redirect('/users/')
 })
@@ -60,7 +60,7 @@ router.get('/logout', authCheck, (req, res) => {
 
 router.post('/login', passport.authenticate('local', {//add condicoes de acesso
     successRedirect: '/',
-    failureRedirect: '/' 
+    failureRedirect: '/'
 }))
 
 router.post('/registro', (req, res) => {
@@ -73,7 +73,7 @@ router.post('/registro', (req, res) => {
 
 
     // validacao com espress-validator
-    
+
     // req.checkBody('firstName', 'O firstName nao pode estar vazia, porfavor tenta de novo').isEmpty();
     // req.checkBody('lastName', 'O lastName nao pode estar vazia, porfavor tenta de novo').isEmpty();
     req.checkBody('email', 'O email nao pode estar vazia, porfavor tenta de novo').isEmail();
@@ -111,16 +111,17 @@ router.post('/registro', (req, res) => {
             }).then( user => {
                 console.log('cadastro feito com sucesso<br>**** dados do cadastro ***<br><br>username: '+req.body.username+'<br>email: '+req.body.email+'<br>password: '+req.body.password+'<br>password criptografado: '+hash)
                 req.login(user, (err) => {
+
                     console.log('login done com sucesso no registrar');
-                    
+
                     // get accessToken
                     const Url = `http://192.168.88.42:3000/auth/emailcheck/${req.user.accessToken}`
                     // console.log(Url)
 
                     Mail.sendMail({
-                        from: `${req.user.firstName} ${req.user.lastName} 👻 <${keys.email.user}>`,
+                        from: `<${keys.email.user}>`,
                         to: req.user.email, // list of receivers
-                        subject: "Confirmacao de email wifianywhere ✔", // Subject line
+                        subject: "Confirmacao de conta no wifianywhere ✔", // Subject line
                         text: "Ola Mundo, estou testando o email enviado por nodejs com pacote nodemailer, viva mundo node", // plain text body
                         html: `Confirme seu email <a href="${Url}" class="btn btn-primary">Confirmar</a>` // html body
                     }).then( () => {
@@ -133,6 +134,7 @@ router.post('/registro', (req, res) => {
                     })
 
                     // res.redirect('/users/'+req.user.id);
+
                 });
             }).catch((err) => {
                 console.log('erro ao cadastrar o user: '+err)
@@ -165,16 +167,16 @@ router.get('/emailcheck/:accessToken', (req, res) => {
             }).catch( err => {
                 console.log("Falha na atualizacao de user feito com sucesso")
                 res.redirect('/undefined')
-            }) 
+            })
         }else{
             res.redirect('/undefined')
-        }       
+        }
     }).catch( err => {
         res.redirect('/undefined')
     })
 
-    
+
 })
 
 
-module.exports = router 
+module.exports = router

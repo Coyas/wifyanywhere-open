@@ -13,7 +13,7 @@ const authCheck = (req, res, next) => {
         next() //continue
     }
 }
- 
+
 
 
 router.get('/:user', authCheck, (req, res) => {
@@ -35,7 +35,7 @@ router.get('/:user', authCheck, (req, res) => {
         })
     })
 
-    
+
 })
 
 router.get('/:user/config', authCheck, (req, res) => {
@@ -55,7 +55,7 @@ router.get('/:user/config', authCheck, (req, res) => {
             User: req.user
         })
     })
-    
+
 })
 router.post('/config', authCheck, (req, res) => {
 
@@ -81,7 +81,8 @@ router.post('/config', authCheck, (req, res) => {
     }).catch( err => {
         console.log("Falha na atualizacao de user feito com sucesso")
         res.redirect('/user/'+req.user.id+'/config')
-    })     
+    })
 })
 
 module.exports = router
+
