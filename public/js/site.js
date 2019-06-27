@@ -14,13 +14,13 @@ $(document).ready( function () {
 
 
 // add slidedown and up em despositivos, servicos
-$(document).ready(function(){
+
+/*$(document).ready(function(){
     $(".fa-chevron-down").click(function(){
         alert('tessra system slidedown');
       $(".devicebox").slideDown("slow");
     });
-  });
-
+  });*/
 // script para input mask
 $(document).ready(function(){
     $('#inputCardnumber').mask('0000   0000   0000   0000');
@@ -37,7 +37,7 @@ $(document).ready(function() {
      //   $('#creditos').before($('#social'));
      // });
      var $window = $(window);
-     
+
      //$('#social').html("<p>sq</p>");
 
      // viewport 230-480
@@ -86,7 +86,7 @@ $(document).ready(function() {
         currentTab -= 1;
     });
 
-    //    step3 
+    //    step3
     // $("#submit").click(function() {
     //     if ( !validateForm()) return false;
     //     $("#form-2").show();
@@ -94,7 +94,7 @@ $(document).ready(function() {
     //     $("#step3").hide();
     //     currentTab += 1;
     // });
- 
+
     $("#prev-3").click(function() {
         // if ( !validateForm()) return false;
         $("#step2").show();
