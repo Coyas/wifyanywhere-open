@@ -11,15 +11,19 @@
                 <div class="card" id="editpwd1">
                     <div class="card-header" id="editpwd2">CHANGE PASSWORD</div>
                     <div class="card-body">
-                        <form>
+                        <form method="POST" action="/users/changepass">
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Password antigo</label>
-                                <input type="password" class="form-control"  placeholder="Enter old passworrd">
+                                <input type="password" class="form-control"  placeholder="Enter old passworrd" name="oldpass">
 
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Novo Password</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="New Password">
+                                <input type="password" class="form-control" id="exampleInputPassword1" name="pass" placeholder="New Password">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Repete Password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1" name="repass" placeholder="Repete Password">
                             </div>
                             <button type="submit" class="btn btn-primary">Mudar</button>
                         </form>

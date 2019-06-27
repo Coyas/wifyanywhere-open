@@ -1,4 +1,5 @@
 const express = require("express")
+const bcrypt = require('bcrypt')
 const router = express.Router()
 
 const User = require("../models/User")
@@ -82,6 +83,15 @@ router.post('/config', authCheck, (req, res) => {
         console.log("Falha na atualizacao de user feito com sucesso")
         res.redirect('/user/'+req.user.id+'/config')
     })
+})
+
+router.post('/changepass', authCheck, (req, res) => {
+
+    if (bcrypt.compareSync(req.body.oldpass, req.user.password)) {
+        res.send(`chage passpord<br> old: ${req.body.oldpass}<br>pass: ${req.body.pass}<br>repass: ${req.body.repass}`)
+    }else {
+        res.send(`Passpords Diferentes<br> old: ${req.body.oldpass}<br>pass: ${req.body.pass}<br>repass: ${req.body.repass}`)
+    }    
 })
 
 module.exports = router

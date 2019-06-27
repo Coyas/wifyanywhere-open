@@ -24,18 +24,9 @@ $(document).ready( function () {
 } );
 
 
-<<<<<<< HEAD
 
-=======
-// add slidedown and up em despositivos, servicos
 
-/*$(document).ready(function(){
-    $(".fa-chevron-down").click(function(){
-        alert('tessra system slidedown');
-      $(".devicebox").slideDown("slow");
-    });
-  });*/
->>>>>>> 2a0f4fd6b0f117996e648bc2fa4be9bda356e88d
+
 // script para input mask
 $(document).ready(function(){
     $('#inputCardnumber').mask('0000   0000   0000   0000');

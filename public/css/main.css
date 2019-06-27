@@ -540,7 +540,6 @@ footer .mm {
 	width: 100%;
 }
 
-<<<<<<< HEAD
 
 /********************reset senha css****************************/
 .resetbody {
@@ -553,7 +552,7 @@ footer .mm {
     padding: 5% 10% 10% 10%;
     text-align: center;
 }
-=======
+
 #login .terra1{
     box-shadow: 2px 2px 4px 4px rgba(31,176,193,0.5);
 }
@@ -585,4 +584,3 @@ footer .mm {
 #login button ~ button {
     margin-left: 20px;
 }
->>>>>>> 2a0f4fd6b0f117996e648bc2fa4be9bda356e88d
