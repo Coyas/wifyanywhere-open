@@ -24,13 +24,6 @@ $(document).ready( function () {
 } );
 
 
-// add slidedown and up em despositivos, servicos
-$(document).ready(function(){
-    $(".fa-chevron-down").click(function(){
-        alert('tessra system slidedown');
-      $(".devicebox").slideDown("slow");
-    });
-  });
 
 // script para input mask
 $(document).ready(function(){
