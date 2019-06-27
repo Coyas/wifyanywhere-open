@@ -117,75 +117,40 @@
         <div class="col-md-12 text-center">
             <h1 class="display-4 font-weight-bold">{{translation.ATD}}</h1>
         </div>
-    </div>
+    </div> 
 
     <div class="row mo">
+        
         <div class="col-md-3">
             <div class="device">
-                <!--                <figure>-->
-                <img src="/images/Camada%2044.png">
-                <!--                </figure>-->
+                <img id="device-5" class="img" onclick='clickHandler(event)' src="/images/Camada%2044.png">
                 <div class="devicebox">
-                    <ul>
-                        <li>terrasystem</li>
-                        <li>terrasystem</li>
-                        <li>terrasystem</li>
-                        <li>terrasystem</li>
+                    <ul id="drop5" class='dropdown'>
+                        <li><i class='fa fa-wifi'></i> info 1</li>
+                        <li><i class='fa fa-tachometer'></i> info 2</li>
+                        <li><i class='fa fa-mobile'></i> info 2</li>
+                        <li><i class='fa fa-battery-full'></i> info 3</li>
                     </ul>
                     <span><i class="fas fa-chevron-down"></i></span>
                 </div>
-            </div>
-        </div>
-
-        <div class="col-md-3">
-            <div class="device">
-                <!--                <figure>-->
-                <img src="/images/Camada%2044.png">
-                <!--                </figure>-->
-                <div class="devicebox">
-                    <ul>
-                        <li>terrasystem</li>
-                        <li>terrasystem</li>
-                        <li>terrasystem</li>
-                        <li>terrasystem</li>
-                    </ul>
-                    <span><i class="fas fa-chevron-down"></i></span>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-3">
-            <div class="device">
-                <!--                <figure>-->
-                <img src="/images/Camada%2044.png">
-                <!--                </figure>-->
-                <div class="devicebox">
-                    <ul>
-                        <li>terrasystem</li>
-                        <li>terrasystem</li>
-                        <li>terrasystem</li>
-                        <li>terrasystem</li>
-                    </ul>
-                    <span><i class="fas fa-chevron-down"></i></span>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-3">
-            <div class="device">
-                <!--                <figure>-->
-                <img src="/images/Camada%2044.png">
-                <!--                </figure>-->
-                <div class="devicebox">
-                    <ul>
-                        <li>terrasystem</li>
-                        <li>terrasystem</li>
-                        <li>terrasystem</li>
-                        <li>terrasystem</li>
-                    </ul>
-                    <span><i class="fas fa-chevron-down"></i></span>
-                </div>
+                
             </div>
         </div>
     </div>
 </section>
+
+
+ <script>
+function clickHandler(event) {
+
+    let n="#drop"+event.target.id.slice(-1);
+    console.log(n);
+    let el = document.querySelector(n)
+
+    if (el.classList.contains('slide')) {
+        el.classList.remove('slide');
+    } else {
+        el.classList.add('slide');
+    }
+}
+</script>
