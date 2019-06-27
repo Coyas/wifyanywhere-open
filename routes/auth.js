@@ -3,6 +3,7 @@ const passport = require('passport')
 const User = require('../models/User')
 const bcrypt = require('bcrypt');
 const Mail = require('../config/mail')
+const keys = require('../config/keys.json')
 const saltRounds = 10;
 
 // login session checker
@@ -117,7 +118,7 @@ router.post('/registro', (req, res) => {
                     // console.log(Url)
 
                     Mail.sendMail({
-                        from: '"Ailton Duarte 👻" <adidas.coyas@gmail.com>', // sender address
+                        from: `${req.user.firstName} ${req.user.lastName} 👻 <${keys.email.user}>`,
                         to: req.user.email, // list of receivers
                         subject: "Confirmacao de email wifianywhere ✔", // Subject line
                         text: "Ola Mundo, estou testando o email enviado por nodejs com pacote nodemailer, viva mundo node", // plain text body

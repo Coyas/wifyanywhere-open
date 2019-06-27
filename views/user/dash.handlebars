@@ -37,27 +37,81 @@
                        <div class="col-md-6">
                            <ul>
                                <li class="a">NOME</li>
-                               <li class="b">{{User.firstName}}</li>
+                               <li class="b">
+                                   {{#if User.firstName}}
+                                        {{User.firstName}}
+                                   {{else}}
+                                    -- -- --
+                                   {{/if}}
+                               </li>
                                <li class="a">EMAIL</li>
-                               <li class="b">{{User.email}}</li>
+                               <li class="b">
+                                   {{#if User.email}}
+                                        {{User.email}}
+                                   {{else}}
+                                    -- -- --
+                                   {{/if}}
+                               </li>
                                <li class="a">ENDEREÇO</li>
-                               <li class="b">{{User.street_adress}}</li>
+                               <li class="b">
+                                   {{#if User.street_adress}}
+                                        {{User.street_adress}}
+                                   {{else}}
+                                        -- -- --
+                                   {{/if}}
+                               </li>
                                <li class="a">CIDADE</li>
-                               <li class="b">{{User.city}}</li>
+                               <li class="b">
+                                   {{#if User.city}}
+                                        {{User.city}}
+                                   {{else}}
+                                        -- -- --
+                                   {{/if}}
+                               </li>
                                <li class="a">PAIS</li>
-                               <li class="b">{{User.country}}</li>
+                               <li class="b">
+                                   {{#if User.country}}
+                                        {{User.country}}
+                                   {{else}}
+                                        -- -- --
+                                   {{/if}}
+                               </li>
                            </ul>
                        </div>
                        <div class="col-md-6">
                            <ul>
                                <li class="a">APELIDO</li>
-                               <li class="b">{{User.lastName}}</li>
+                               <li class="b">
+                                   {{#if User.lastName}}
+                                        {{User.lastName}}
+                                   {{else}}
+                                        -- -- --
+                                   {{/if}}
+                               </li>
                                <li class="a">TELEFONE/MOVEL</li>
-                               <li class="b">{{User.phone}}</li>
+                               <li class="b">
+                                   {{#if User.phone}}
+                                        {{User.phone}}
+                                   {{else}}
+                                        -- -- --
+                                   {{/if}}
+                               </li>
                                <li class="a">ENDEREÇO DE COBRANÇA</li>
-                               <li class="b">{{User.biling_adress}}</li>
+                               <li class="b">
+                                   {{#if User.biling_adress}}
+                                        {{User.biling_adress}}
+                                   {{else}}
+                                        -- -- --
+                                   {{/if}}
+                               </li>
                                <li class="a">CODIGO ZIP</li>
-                               <li class="b">{{User.zip_code}}</li>
+                               <li class="b">
+                                   {{#if User.zip_code}}
+                                        {{User.zip_code}}
+                                   {{else}}
+                                        -- -- --
+                                   {{/if}}
+                               </li>
                            </ul>
                        </div>
                    </div>
