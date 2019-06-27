@@ -4,7 +4,7 @@ const User = require('../models/User')
 const bcrypt = require('bcrypt');
 const Mail = require('../config/mail')
 const keys = require('../config/keys.json')
-const saltRounds = 10;
+const saltRounds = 10
 
 // login session checker
 const authCheck = (req, res, next) => {
