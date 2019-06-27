@@ -1,5 +1,5 @@
-var $ = require( 'jquery' );
-require( 'datatables.net' )( window, $ );
+/*var $ = require( 'jquery' );
+require( 'datatables.net' )( window, $ );*/
 
 
 $(document).ready(function() {
