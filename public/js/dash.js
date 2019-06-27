@@ -1,7 +1,6 @@
 // var $ = require( 'jquery' );
 // require( 'datatables.net' )( window, $ );
 
-
 $(document).ready(function() {
     $('#dt-basic-checkbox').DataTable({
         paging:false,

@@ -466,10 +466,10 @@ span.psw {
     margin-top: 5%;
 }
 #minhasreservas .reservabotao{
-    margin-left: 10%;
+    margin-left: 15%;
 }
 
-#minhasreservas a{
+#minhasreservas .reserva{
     color: #1FB0C1;
     background-color: white;
     font-size: 1.5rem;
@@ -477,13 +477,18 @@ span.psw {
     border-radius: 10px;
     font-weight: bold;
     border: 1px solid #1FB0C1;
-
-
 }
+
+
+#minhasreservas #recarregar{
+    padding: 20% 50% 20% 50%;
+}
+
 #minhasreservas a.active{
     background-color: #1FB0C1;
     color: white;
 }
+
 #minhasreservas .reserva{
     width: 70%;
     height: 110%;
