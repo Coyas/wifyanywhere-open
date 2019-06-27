@@ -281,14 +281,14 @@ footer .mrg {
     -ms-user-select: none;
     user-select: none;
   }
-  
+
   /* Hide the browser's default radio button */
  #booking .containers input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
   }
-  
+
   /* Create a custom radio button */
   #booking .checkmark {
     position: absolute;
@@ -303,29 +303,29 @@ footer .mrg {
   #booking .fff{
       margin-top: 7%;
   }
-  
+
   /* On mouse-over, add a grey background color */
   #booking .containers:hover input ~ .checkmark {
     background-color: #FFFFFF;
   }
-  
+
   /* When the radio button is checked, add a blue background */
   #booking .containers input:checked ~ .checkmark {
     background-color: #1FB0C1;
   }
-  
+
   /* Create the indicator (the dot/circle - hidden when not checked) */
   #booking .checkmark:after {
     content: "";
     position: absolute;
     display: none;
   }
-  
+
   /* Show the indicator (dot/circle) when checked */
   #booking .container input:checked ~ .checkmark:after {
     display: block;
   }
-  
+
   /* Style the indicator (dot/circle) */
   #booking .containers .checkmark:after {
        top: 9px;
@@ -540,6 +540,7 @@ footer .mm {
 	width: 100%;
 }
 
+<<<<<<< HEAD
 
 /********************reset senha css****************************/
 .resetbody {
@@ -552,3 +553,36 @@ footer .mm {
     padding: 5% 10% 10% 10%;
     text-align: center;
 }
+=======
+#login .terra1{
+    box-shadow: 2px 2px 4px 4px rgba(31,176,193,0.5);
+}
+
+#login .terra2 {
+    background-color: white;
+    color: #1FB0C1;
+    white-space: nowrap;
+    box-shadow: 2px 2px 4px 4px rgba(0,0,0,0.5);
+    border: none;
+}
+
+#login .google-button__icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 8px 0 8px 8px;
+    width: 18px;
+    height: 18px;
+    box-sizing: border-box;
+}
+#login .google-button__text {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 24px;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'Roboto',arial,sans-serif;
+}
+#login button ~ button {
+    margin-left: 20px;
+}
+>>>>>>> 2a0f4fd6b0f117996e648bc2fa4be9bda356e88d
