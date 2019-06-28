@@ -1,6 +1,7 @@
 const express = require("express")
-const bcrypt = require('bcrypt')
 const router = express.Router()
+const bcrypt = require('bcrypt')
+const saltRounds = 10
 
 const User = require("../models/User")
 
@@ -61,7 +62,7 @@ router.get('/:user/config', authCheck, (req, res) => {
 router.post('/config', authCheck, (req, res) => {
 
 
-      // Change everyone without a last name to "Doe"
+      
     User.update({
         firstName: req.body.firstName,
         lastName: req.body.lastName,
@@ -87,11 +88,50 @@ router.post('/config', authCheck, (req, res) => {
 
 router.post('/changepass', authCheck, (req, res) => {
 
-    if (bcrypt.compareSync(req.body.oldpass, req.user.password)) {
-        res.send(`chage passpord<br> old: ${req.body.oldpass}<br>pass: ${req.body.pass}<br>repass: ${req.body.repass}`)
+
+    // req.checkBody('oldpass', 'old password nao pode estar vazia').isEmpty();
+    req.checkBody('pass', 'password deve estar entre 8-100 caracteres.').len(8,100);
+    // // req.checkBody('pass', 'password deve conter pelo menos um caracter maiuscula, uma minuscula, um numero e um caracter especial').matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.* )(,=.*[^a-zA-Z0-9]).{8,}$/, "i");
+    req.checkBody('repass', 'confirmar password deve estar entre 8-100 caracteres.').len(8,100);
+    req.checkBody('repass', 'As senha parecem estar diferentes, tenta de novo.').equals(req.body.pass);
+
+
+    const errors = req.validationErrors();
+
+    if (errors) {
+      console.log(`errors de change password: ${JSON.stringify(errors)}`);
+      res.redirect(`/users/${req.user.id}`)
+    //   res.render('/', {
+    //       errors: errors,
+    //       title: 'Erros ao registrar utilizador'
+    //   });
     }else {
-        res.send(`Passpords Diferentes<br> old: ${req.body.oldpass}<br>pass: ${req.body.pass}<br>repass: ${req.body.repass}`)
-    }    
+        console.log('sem erros');
+        if (bcrypt.compareSync(req.body.oldpass, req.user.password)) {
+
+            bcrypt.hash(req.body.pass, saltRounds, (err, hash) => {
+                
+                User.update({
+                    password: hash
+                }, {
+                    where: {
+                    id: req.user.id
+                    }
+                }).then( () => {
+                    console.log("atualizacao de user feito com sucesso")
+                    res.redirect('/users/'+req.user.id)
+                }).catch( err => {
+                    console.log("Falha na atualizacao de user feito com sucesso")
+                    res.redirect('/user/'+req.user.id+'/config')
+                })
+            })
+    
+            // res.send(`chage passpord<br> old: ${req.body.oldpass}<br>pass: ${req.body.pass}<br>repass: ${req.body.repass}`)
+        }else {
+            res.redirect(`/users/${req.user.id}`)
+            // res.send(`Passpords Diferentes<br> old: ${req.body.oldpass}<br>pass: ${req.body.pass}<br>repass: ${req.body.repass}<br>user:${req.user.password}`)
+        }   
+    } 
 })
 
 module.exports = router
