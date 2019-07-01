@@ -191,7 +191,7 @@ footer .mrg {
 #AboutDevices {
     background-color: gray;
     padding: 2% 10% 10% 10%;
-    
+
 }
 
 #AboutDevices img{
@@ -215,7 +215,7 @@ footer .mrg {
     width: 163.7px;
     margin-left: 100px;
     margin-top: 100px;
-    /* margin-bottom: 310px; 
+    /* margin-bottom: 310px;
     position: relative;
 } */
 /* .device > div > div >img{
@@ -227,8 +227,8 @@ footer .mrg {
     width: 130px;
     overflow: hidden;
     position:absolute;
-    background-color: #FFFFFF;
-    text-align: center;
+    background-color: #FFFFFF;/*
+    text-align: center;*/
     /* margin-top: -10px; */
     padding-top: 25px;
     transition: height 0.4s;
@@ -244,6 +244,7 @@ footer .mrg {
 #AboutDevices .dropdown li {
     list-style: none;
     margin-top: 10px;
+    color: black;
 }
 #AboutDevices .dropdown i {
     width: 20px;
@@ -253,7 +254,7 @@ footer .mrg {
     color: black;
 }
 #AboutDevices .slide {
-    height: 130px;
+    height: 180px;
 }
 
 
@@ -515,7 +516,7 @@ footer .mrg {
 /*********** estilos para menu (navbar) **********************/
 
 #menu a {
-    color: #1FB0C1; 
+    color: #1FB0C1;
 }
 #menu form a {
     color: white;
