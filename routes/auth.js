@@ -99,12 +99,15 @@ router.post('/registro', (req, res) => {
             email: req.body.email,
             }
         }).then( user => {
-            if(!user){
+            console.log(`Terra user: ${JSON.stringify(user)}`)
+
+            if( user == null ){
                 // res.send('utilizador nao existe, criando...')
-                // criptografando a senhaa
+                // criptografando a senha a
                 console.log('registrando user')
                 const password = req.body.password
                 bcrypt.hash(password, saltRounds, (err, hash) => {
+
                     // create user
                     User.create({
                         firstName: req.body.firstName,
@@ -148,12 +151,14 @@ router.post('/registro', (req, res) => {
 
                     //  res.send('*********** dados do cadastro ********************** <br><br>username: '+req.body.username+'<br>email: '+req.body.email+'<br>password: '+req.body.password+'<br>password criptografado: ')
                 })
+
             }else {
                 // res.send('Utilizador ja existe')
                 res.render('error',{
                     title: "Utilizador ja existe"
                 })
             }
+
         })
     }
 })

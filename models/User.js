@@ -35,7 +35,8 @@ const User = sequelize.define('users',{
         type: Sequelize.BOOLEAN
     },
     facebookId: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        defaultValue: false
     },
     googleId: {
         type: Sequelize.STRING,
