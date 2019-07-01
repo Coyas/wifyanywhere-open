@@ -94,14 +94,20 @@ router.post('/registro', (req, res) => {
       });
     }else {
 
-        User.findAll({
+        User.findOne({
             where: {
             email: req.body.email,
             }
         }).then( user => {
             console.log(`Terra user: ${JSON.stringify(user)}`)
 
-            if( user == null ){
+            if( user ){
+                
+                // res.send('Utilizador ja existe')
+                res.render('error',{
+                    title: "Utilizador ja existe"
+                })
+            }else {
                 // res.send('utilizador nao existe, criando...')
                 // criptografando a senha a
                 console.log('registrando user')
@@ -150,12 +156,6 @@ router.post('/registro', (req, res) => {
                     })
 
                     //  res.send('*********** dados do cadastro ********************** <br><br>username: '+req.body.username+'<br>email: '+req.body.email+'<br>password: '+req.body.password+'<br>password criptografado: ')
-                })
-
-            }else {
-                // res.send('Utilizador ja existe')
-                res.render('error',{
-                    title: "Utilizador ja existe"
                 })
             }
 
