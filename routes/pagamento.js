@@ -2,17 +2,29 @@ const express = require('express')
 const router = express.Router()
 const Mail = require('../config/mail')
 
-router.get('/', (req, res) => {
+// login session checker
+const authCheck = (req, res, next) => {
+    if(!req.user){
+        //se user nao esta logado
+        // console.log(` o middlewhere para sessao (req.session.passport.user): ${JSON.stringify(req.session.passport)}`);
+        res.redirect('/')
+    }else{
+        // se esta logado
+        next() //continue
+    }
+}
+
+router.get('/', authCheck,(req, res) => {
     res.render('booking/pagamento', {
         User: req.user
     })
 })
 
-router.post('/visasuccess', (req, res) => {
+router.post('/visasuccess', authCheck, (req, res) => {
     res.send('pagamento efetuado')
 })
  
-router.post('/pagamento_visa', (req, res) => {
+router.post('/pagamento_visa', authCheck, (req, res) => {
     // res.send('pagamento efetuado')
 
     Mail.sendMail({

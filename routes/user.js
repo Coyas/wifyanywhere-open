@@ -86,6 +86,7 @@ router.post('/config', authCheck, (req, res) => {
     })
 })
 
+// mudar a senha se o user tem uma conta local
 router.post('/changepass', authCheck, (req, res) => {
 
 

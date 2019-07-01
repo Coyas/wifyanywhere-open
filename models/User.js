@@ -17,7 +17,8 @@ const User = sequelize.define('users',{
     },
     email:  {
         type: Sequelize.STRING(100),
-        allowNull: true
+        allowNull: false,
+        unique:true
     },
     password:  {
         type: Sequelize.STRING(70),
@@ -31,13 +32,14 @@ const User = sequelize.define('users',{
         type: Sequelize.STRING(150)
     },
     localId: {
-        type: Sequelize.STRING
+        type: Sequelize.BOOLEAN
     },
     facebookId: {
         type: Sequelize.STRING
     },
     googleId: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        defaultValue: false
     },
     street_adress: {
         type: Sequelize.STRING

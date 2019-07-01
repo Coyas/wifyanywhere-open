@@ -41,7 +41,10 @@ passport.use(new FacebookStrategy({
                     firstName: profile.displayName,
                     email: profile.emails[0].value,
                     photo: profile.photos[0].value,                    
-                    facebookId: profile.id
+                    facebookId: profile.id,
+                    status: 10,
+                    access: 1,
+                    localId: false
                 }).then( newUser => {
                     console.log('Novo User: '+ newUser)
                     done(null, newUser)
@@ -92,7 +95,10 @@ passport.use(
                     lastName: profile.name.givenName,
                     photo: profile.photos[0].value,
                     googleId: profile.id,
-                    email: profile.emails[0].value
+                    email: profile.emails[0].value,
+                    status: 10,
+                    access: 1,
+                    localId: false
                 }).then( newUser => {
                     console.log('Novo User: '+ newUser)
                     done(null, newUser)

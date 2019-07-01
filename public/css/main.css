@@ -584,3 +584,18 @@ footer .mm {
 #login button ~ button {
     margin-left: 20px;
 }
+
+
+/* global class for wifi library */
+.ho:hover {
+    color: #FFFFFF !important;
+}
+.wifi-text-azul {
+    color: #1FB0C1 !important;
+}
+.wifi-text-preto {
+    color: #23494e !important;
+}
+.wifi-text-white {
+    color: #FFFFFF !important;
+}

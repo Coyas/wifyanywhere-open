@@ -69,7 +69,11 @@
         {{/if}}
     </ul>
     <form class="form-inline my-2 my-lg-0">
-            <a href="/booking" class="btn btn-info my-2 my-sm-0" >{{translation.ONLINE_BOOKING}}</a>
+      {{#if User}}
+        <a href="/booking" class="btn btn-info my-2 my-sm-0">{{translation.ONLINE_BOOKING}}</a>
+      {{else}}
+        <a class="btn btn-info my-2 my-sm-0"   data-toggle="modal" data-target="#login">{{translation.ONLINE_BOOKING}}</a>
+      {{/if}}
     </form>
   </div>
  </div>

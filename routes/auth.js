@@ -31,7 +31,7 @@ router.get('/facebook/callback',
   passport.authenticate('facebook', { failureRedirect: '/' }),
   function(req, res) {
     // Successful authentication, redirect home.
-    res.redirect('/users');
+    res.redirect(`/users/${req.user.id}`)
 });
 
 /********************Google Login *****************************/
@@ -47,7 +47,7 @@ router.get('/google', passport.authenticate('google', {
 router.get('/google/redirect', passport.authenticate('google'), (req, res) => {
 
     // res.send('user logado foi: '+req.user.googleId)
-    res.redirect('/users/')
+    res.redirect(`/users/${req.user.id}`)
 })
 
 /************* Local Login ************************************/
@@ -94,53 +94,66 @@ router.post('/registro', (req, res) => {
       });
     }else {
 
+        User.findAll({
+            where: {
+            email: req.body.email,
+            }
+        }).then( user => {
+            if(!user){
+                // res.send('utilizador nao existe, criando...')
+                // criptografando a senhaa
+                console.log('registrando user')
+                const password = req.body.password
+                bcrypt.hash(password, saltRounds, (err, hash) => {
+                    // create user
+                    User.create({
+                        firstName: req.body.firstName,
+                        lastName: req.body.lastName,
+                        email: req.body.email,
+                        password: hash,
+                        status: 10,
+                        access: 1,
+                        localId: true
+                    }).then( user => {
+                        console.log('cadastro feito com sucesso<br>**** dados do cadastro ***<br><br>username: '+req.body.username+'<br>email: '+req.body.email+'<br>password: '+req.body.password+'<br>password criptografado: '+hash)
+                        req.login(user, (err) => {
 
+                            console.log('login done com sucesso no registrar');
 
-        // criptografando a senhaa
-        console.log('registrando user')
-        const password = req.body.password
-        bcrypt.hash(password, saltRounds, (err, hash) => {
-            // create user
-            User.create({
-                firstName: req.body.firstName,
-                lastName: req.body.lastName,
-                email: req.body.email,
-                password: hash,
-                status: 10,
-                access: 1
-            }).then( user => {
-                console.log('cadastro feito com sucesso<br>**** dados do cadastro ***<br><br>username: '+req.body.username+'<br>email: '+req.body.email+'<br>password: '+req.body.password+'<br>password criptografado: '+hash)
-                req.login(user, (err) => {
+                            // get accessToken
+                            const Url = `http://192.168.88.42:3000/auth/emailcheck/${req.user.accessToken}`
+                            // console.log(Url)
 
-                    console.log('login done com sucesso no registrar');
+                            Mail.sendMail({
+                                from: `<${keys.email.user}>`,
+                                to: req.user.email, // list of receivers
+                                subject: "Confirmacao de conta no wifianywhere ✔", // Subject line
+                                text: "Ola Mundo, estou testando o email enviado por nodejs com pacote nodemailer, viva mundo node", // plain text body
+                                html: `Confirme seu email <a href="${Url}" class="btn btn-primary">Confirmar</a>` // html body
+                            }).then( () => {
+                                console.log('email enviado')
+                                res.redirect('/users/'+req.user.id)
+                            }).catch( err => {
+                                console.log('erro ao enviar o email: '+err)
+                                // res.redirect('/users/'+req.user.id)
+                                res.send("erro ao enviar o email: "+err)
+                            })
 
-                    // get accessToken
-                    const Url = `http://192.168.88.42:3000/auth/emailcheck/${req.user.accessToken}`
-                    // console.log(Url)
+                            // res.redirect('/users/'+req.user.id);
 
-                    Mail.sendMail({
-                        from: `<${keys.email.user}>`,
-                        to: req.user.email, // list of receivers
-                        subject: "Confirmacao de conta no wifianywhere ✔", // Subject line
-                        text: "Ola Mundo, estou testando o email enviado por nodejs com pacote nodemailer, viva mundo node", // plain text body
-                        html: `Confirme seu email <a href="${Url}" class="btn btn-primary">Confirmar</a>` // html body
-                    }).then( () => {
-                        console.log('email enviado')
-                        res.redirect('/users/'+req.user.id)
-                    }).catch( err => {
-                        console.log('erro ao enviar o email: '+err)
-                        // res.redirect('/users/'+req.user.id)
-                        res.send("erro ao enviar o email: "+err)
+                        });
+                    }).catch((err) => {
+                        console.log('erro ao cadastrar o user: '+err)
                     })
 
-                    // res.redirect('/users/'+req.user.id);
-
-                });
-            }).catch((err) => {
-                console.log('erro ao cadastrar o user: '+err)
-            })
-
-            //  res.send('*********** dados do cadastro ********************** <br><br>username: '+req.body.username+'<br>email: '+req.body.email+'<br>password: '+req.body.password+'<br>password criptografado: ')
+                    //  res.send('*********** dados do cadastro ********************** <br><br>username: '+req.body.username+'<br>email: '+req.body.email+'<br>password: '+req.body.password+'<br>password criptografado: ')
+                })
+            }else {
+                // res.send('Utilizador ja existe')
+                res.render('error',{
+                    title: "Utilizador ja existe"
+                })
+            }
         })
     }
 })

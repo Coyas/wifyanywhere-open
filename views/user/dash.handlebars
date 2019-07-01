@@ -17,7 +17,7 @@
     <div class="row">
         <div class="col-md-4">
             <figure>
-                <img src="/images/General.svg">
+                <img src="{{User.photo}}">
                 <figcaption class="mt-2 h1">{{User.firstName}} {{User.lastName}}</figcaption>
             </figure>
         </div>
@@ -262,7 +262,12 @@
         </div>
          <div class="row mt-5">
             <div class="col-md-6">
-                <a href="/pagamento" class="btn btn-info btn-lg active" id="recarregar" role="button" aria-pressed="true">Recarregar</a>
+                {{#if User}}
+                    <a href="/pagamento" class="btn btn-info btn-lg active" id="recarregar" role="button" aria-pressed="true">Recarregar</a>
+                {{else}}
+                    <a class="btn btn-info btn-lg active"   data-toggle="modal" data-target="#login">{{translation.ONLINE_BOOKING}}</a>
+                {{/if}}
+                
             </div>
              <!--<div class="col-md-6">
                  <a href="#" class="btn btn-secondary btn-lg active" id="cancelar" role="button" aria-pressed="true">Cancelar</a>
