@@ -76,7 +76,7 @@ router.post('/registro', (req, res) => {
 
     // req.checkBody('firstName', 'O firstName nao pode estar vazia, porfavor tenta de novo').isEmpty();
     // req.checkBody('lastName', 'O lastName nao pode estar vazia, porfavor tenta de novo').isEmpty();
-    req.checkBody('email', 'O email nao pode estar vazia, porfavor tenta de novo').isEmail();
+    req.checkBody('email', 'O email nao pode estar vazia, por favor tenta de novo').isEmail();
     req.checkBody('email', 'O email deve estar entre 4-100 caracteres, porfavor tenta de novo').len(4, 100);
     req.checkBody('password', 'password deve estar entre 8-100 caracteres.').len(8,100);
     // // req.checkBody('pass', 'password deve conter pelo menos um caracter maiuscula, uma minuscula, um numero e um caracter especial').matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.* )(,=.*[^a-zA-Z0-9]).{8,}$/, "i");

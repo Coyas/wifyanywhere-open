@@ -24,10 +24,6 @@ const User = sequelize.define('users',{
         type: Sequelize.STRING(70),
         allowNull: true
     },
-    confirm: {
-        type: Sequelize.BOOLEAN,
-        defaultValue: false
-    },
     photo: {
         type: Sequelize.STRING(150)
     },

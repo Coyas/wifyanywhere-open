@@ -80,7 +80,7 @@ passport.use(
         
         User.findOne({
             where: {
-                googleId: profile.id
+                email: profile.emails[0].value
             }
         }).then(atualUser => {
             if(atualUser){

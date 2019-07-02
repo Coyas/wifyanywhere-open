@@ -600,3 +600,9 @@ footer .mm {
 .wifi-text-white {
     color: #FFFFFF !important;
 }
+
+/* fix things */
+#AboutDevices .dropdown{
+    padding-top: 20px;
+    padding-left: 15px;
+}
