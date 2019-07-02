@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const User = require('../models/User')
 
 // login session checker
 const authCheck = (req, res, next) => {
@@ -51,15 +52,39 @@ router.post('/orders', authCheck, (req, res) => {
     console.log(req.body.flynum)
     console.log(req.body.title)
     console.log(req.body.fname)
+    console.log(req.body.lname)
     console.log(req.body.saddr)
     console.log(req.body.baddr)
     console.log(req.body.city)
     console.log(req.body.zip)
     console.log(req.body.country)
+    console.log(req.body.phone)
     console.log(req.body.email)
+    console.log('iniciando o update dos dados de user id=>'+req.user.id)
+    
+    User.update({
+        firstName: req.body.fname,
+        lastName: req.body.lname,
+        email: req.body.email,
+        street_adress: req.body.saddr,
+        biling_adress: req.body.baddr,
+        city: req.body.city,
+        zip_code: req.body.zip,
+        phone: req.body.phone
+    }, {
+        where: {
+            id: req.user.id
+        }
+    }).then( () => {
+        console.log("atualizacao de user feito com sucesso")
+        res.redirect('/pagamento')
+    }).catch( err => {
+        console.log("Falha na atualizacao de user feito com sucesso:"+err)
+        res.redirect('/undefined')
+    })
 
     
-    res.redirect('/pagamento')
+    
 })
 
 // implementar a requisicao de post de form para SISP (visa's card)
