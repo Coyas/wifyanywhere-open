@@ -20,6 +20,13 @@ router.get('/', authCheck,(req, res) => {
     })
 })
 
+router.get('/:id', authCheck,(req, res) => {
+    res.render('booking/pagamento', {
+        User: req.user,
+        msg: "recaregamento"
+    })
+})
+
 router.post('/visasuccess', authCheck, (req, res) => {
     res.send('pagamento efetuado')
 })
