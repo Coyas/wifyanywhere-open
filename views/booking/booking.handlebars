@@ -61,7 +61,7 @@
 
                         <div class="form-group col-md-6">
                             <label for="inputFlightnumber">{{translation.FN}}</label>
-                            <input type="number" name="flynum" class="form-control" id="inputFlightnumber" placeholder="">
+                            <input type="text" name="flynum" class="form-control" id="inputFlightnumber" pattern="[a-zA-Z0-9]+"  placeholder="">
                         </div>
                     </div>
 
@@ -193,7 +193,7 @@
                                 <option value="in">Inglatera</option>
                                 <option value="ho">Holanda</option>
                             </select>
-                        </div> 
+                        </div>
 
                         <div class="form-group col-md-6">
                             <label for="inputEmail">{{translation.Email}}</label>
