@@ -8,7 +8,15 @@
                 {{!-- <img src="/images/logo.png" width="350" height="300"> --}}
             </div>
             <div class="row">
-                <a href="/booking" class="btn btn-info btn-lg">{{translation.ONLINE_BOOKING}} </a>
+                {{#if User}}
+                    {{#if User.confirme}}
+                        <a href="/booking" class="btn btn-info btn-lg ho">{{translation.ONLINE_BOOKING}} </a>
+                    {{else}}
+                        <a href="/users/{{User.id}}" class="btn btn-info btn-lg ho">{{translation.ONLINE_BOOKING}} </a>
+                    {{/if}}
+                {{else}}
+                    <a class="btn btn-info btn-lg wifi-text-azul ho"   data-toggle="modal" data-target="#login">{{translation.ONLINE_BOOKING}}</a>
+                {{/if}}
             </div>
         </div>
 
@@ -119,7 +127,15 @@
                     <p class="card-text font-weight-bold">Data plan per day</p>
                     <p class="card-text font-weight-bold">Number of devices</p>
                     <p class="card-text font-weight-bold">Battery life</p>
-                    <a href="/booking" class="btn btn-primary site-cor">{{translation.ONLINE_BOOKING}}</a>
+                    {{#if User}}
+                        {{#if User.confirme}}
+                            <a href="/booking" class="btn btn-primary site-cor">{{translation.ONLINE_BOOKING}}</a>
+                        {{else}}
+                            <a href="/users/{{User.id}}" class="btn btn-primary site-cor">{{translation.ONLINE_BOOKING}}</a>
+                        {{/if}}
+                    {{else}}
+                        <a class="btn btn-primary site-cor wifi-text-white"   data-toggle="modal" data-target="#login">{{translation.ONLINE_BOOKING}}</a>
+                    {{/if}}
                 </div>
             </div>
         </div>
@@ -133,7 +149,15 @@
                     <p class="card-text font-weight-bold">Data plan per day</p>
                     <p class="card-text font-weight-bold">Number of devices</p>
                     <p class="card-text font-weight-bold">Battery life</p>
-                    <a href="/booking" class="btn btn-primary site-cor">{{translation.ONLINE_BOOKING}}</a>
+                    {{#if User}}
+                        {{#if User.confirme}}
+                            <a href="/booking" class="btn btn-primary site-cor">{{translation.ONLINE_BOOKING}}</a>
+                        {{else}}
+                            <a href="/users/{{User.id}}" class="btn btn-primary site-cor">{{translation.ONLINE_BOOKING}}</a>
+                        {{/if}}
+                    {{else}}
+                        <a class="btn btn-primary site-cor wifi-text-white"   data-toggle="modal" data-target="#login">{{translation.ONLINE_BOOKING}}</a>
+                    {{/if}}
                 </div>
             </div>
         </div>
@@ -147,7 +171,15 @@
                     <p class="card-text font-weight-bold">Data plan per day</p>
                     <p class="card-text font-weight-bold">Number of devices</p>
                     <p class="card-text font-weight-bold">Battery life</p>
-                    <a href="/booking" class="btn btn-primary site-cor">{{translation.ONLINE_BOOKING}}</a>
+                    {{#if User}}
+                        {{#if User.confirme}}
+                            <a href="/booking" class="btn btn-primary site-cor">{{translation.ONLINE_BOOKING}}</a>
+                        {{else}}
+                            <a href="/users/{{User.id}}" class="btn btn-primary site-cor">{{translation.ONLINE_BOOKING}}</a>
+                        {{/if}}
+                    {{else}}
+                        <a class="btn btn-primary site-cor wifi-text-white"   data-toggle="modal" data-target="#login">{{translation.ONLINE_BOOKING}}</a>
+                    {{/if}}
                 </div>
             </div>
         </div>

@@ -151,30 +151,34 @@
                     </div>
                     <div class="form-group">
                         <label for="inputAddress">{{translation.FNAME}}</label>
-                        <input type="text" name="fname" class="form-control" id="inputAddress" placeholder="">
+                        <input type="text" name="fname" class="form-control" id="inputAddress" placeholder="" value="{{User.firstName}}">
                     </div>
                     <div class="form-group">
                         <label for="inputAddress2">{{translation.LNAME}}</label>
-                        <input type="text" name="lname" class="form-control" id="inputAddress2" placeholder="">
+                        <input type="text" name="lname" class="form-control" id="inputAddress2" placeholder="" value="{{User.lastName}}">
                     </div>
                     <div class="form-group">
                         <label for="inputAddress">{{translation.SADDRESS}}</label>
-                        <input type="text" name="addr" class="form-control" id="inputAddress" placeholder="">
+                        <input type="text" name="saddr" class="form-control" id="streetAddress" placeholder="" value="{{User.street_address}}">
+                    </div>
+                     <div class="form-group">
+                        <label for="inputAddress">Biling Address</label>
+                        <input type="text" name="baddr" class="form-control" id="bilingAddress" placeholder="" value="{{User.biling_address}}">
                     </div>
                     <div class="form-group">
                         <label for="inputAddress2">{{translation.city}}</label>
-                        <input type="text" name="addr2" class="form-control" id="inputAddress2" placeholder="">
+                        <input type="text" name="city" class="form-control" id="inputAddress2" placeholder="" value="{{User.city}}">
                     </div>
 
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputZip">{{translation.Zcode}}</label>
-                            <input type="text" name="zip" class="form-control" id="inputZip" placeholder="">
+                            <input type="text" name="zip" class="form-control" id="inputZip" placeholder="" value="{{User.zip_code}}">
                         </div>
 
                         <div class="form-group col-md-6">
                             <label for="inputPhone">{{translation.Phone}}</label>
-                            <input type="text" name="phone" class="form-control" id="inputPhone" placeholder="">
+                            <input type="text" name="phone" class="form-control" id="inputPhone" placeholder="" value="{{User.phone}}">
                         </div>
                     </div>
 
@@ -189,11 +193,11 @@
                                 <option value="in">Inglatera</option>
                                 <option value="ho">Holanda</option>
                             </select>
-                        </div>
+                        </div> 
 
                         <div class="form-group col-md-6">
                             <label for="inputEmail">{{translation.Email}}</label>
-                            <input type="email" class="form-control" id="inputEmail" placeholder="" name="email">
+                            <input type="email" class="form-control" id="inputEmail" placeholder="" name="email" value="{{User.email}}">
                         </div>
                     </div>
 
