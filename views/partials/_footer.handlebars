@@ -13,9 +13,17 @@
                     <ul>
                         <li><a href="/servicos">{{translation.SERVICOS}}</a></li>
                         <li><a href="/planos">{{translation.PLANOS}}</a></li>
-                        <li><a href="#">{{translation.FAQ}} </a></li>
+                        <li><a href="/faq">{{translation.FAQ}} </a></li>
+                        {{#if User.email}}
                         <li><a href="/booking">{{translation.RESERVAS}} </a></li>
-                        <li><a href="#">{{translation.ENTRAR}} </a></li>
+                        <li>
+                            <a  href="/auth/logout"> {{translation.SAIR}}</a>
+                        </li>
+                        {{else}}
+                        <li>
+                            <a data-toggle="modal" data-target="#login"> {{translation.ENTRAR}}</a>
+                        </li>
+                        {{/if}}                        
                     </ul>
                 </div>
             </div>
