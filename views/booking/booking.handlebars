@@ -33,8 +33,8 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputNumber">{{translation.SN_DAYWIFI}}</label>
-                            <input type="number" id="inputNumber" name="numdays" class="form-control">
-                            
+                            <input type="number" id="inputNumber" min="0" max="999"  oninput="validity.valid||(value='');" name="numdays" class="form-control">
+
                         </div>
                     </div>
                     <div class="form-row">
@@ -58,13 +58,13 @@
                         </div>
                     </div>
                     <div class="form-row">
-                        
+
                         <div class="form-group col-md-6">
                             <label for="inputFlightnumber">{{translation.FN}}</label>
-                            <input type="number" name="flynum" class="form-control" id="inputFlightnumber" placeholder="">
+                            <input type="text" name="flynum" class="form-control" id="inputFlightnumber" pattern="[a-zA-Z0-9]+"  placeholder="">
                         </div>
                     </div>
-                    
+
                     <div class="container">
                         <div class="row">
                             <div class="col-md-4 d-flex justify-content-center coluna">
@@ -129,7 +129,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>                                
+                        </div>
                     </div>
 
 
@@ -193,7 +193,7 @@
                                 <option value="in">Inglatera</option>
                                 <option value="ho">Holanda</option>
                             </select>
-                        </div> 
+                        </div>
 
                         <div class="form-group col-md-6">
                             <label for="inputEmail">{{translation.Email}}</label>
@@ -282,7 +282,7 @@
             </div>
         </div>
 
-       
+
     </div>
 </section>
 

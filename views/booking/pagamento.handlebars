@@ -17,7 +17,7 @@
             </div>
         </div>
     </div>
-     
+
 
     <div class="row">
          <div id="form-2" class="col-md-9">
@@ -50,7 +50,7 @@
 
                     <div class="form-group col-md-3">
                         <label for="inputCVC">{{translation.CVC}}</label>
-                        <input type="text" class="form-control" id="inputCVC" placeholder="000" name="ccv">
+                        <input type="text" class="form-control" id="inputCVC" min="0" oninput="this.value = Math.abs(this.value)" placeholder="000" name="ccv">
                     </div>
                 </div>
 
