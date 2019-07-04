@@ -1,30 +1,25 @@
-const Sequelize = require("sequelize");
-const sequelize = require("../config/db.js")
-const Faqs = require("./faqs")
-
-
-
-const Categoria = sequelize.define('categoria',{
+'use strict';
+module.exports = (sequelize, DataTypes) => {
+  const categoria = sequelize.define('categoria', {
     nomept:{
-        type: Sequelize.STRING,
-        unique: true,
-        allowNull:false
+      type: DataTypes.STRING,
+      unique: true,
+      allowNull:false
     },
     nomeen:{
-        type: Sequelize.STRING,
-        unique: true,
-        allowNull:false
+      type: DataTypes.STRING,
+      unique: true,
+      allowNull:false
     },
     nomefr:{
-        type: Sequelize.STRING,
-        unique: true,
-        allowNull:false
-    }
-
-})
-
-Categoria.hasMany(Faqs)
-Categoria.sync()
-
-module.exports = Categoria
-
+      type: DataTypes.STRING,
+      unique: true,
+      allowNull:false
+    },
+  }, {});
+  categoria.associate = function(models) {
+    // categoria hasmany faqs
+    categoria.hasMany(models.faqs)
+  };
+  return categoria;
+};

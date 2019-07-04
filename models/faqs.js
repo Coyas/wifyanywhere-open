@@ -1,24 +1,21 @@
-const Sequelize = require("sequelize");
-const sequelize = require("../config/db.js");
-
-const Faqs = sequelize.define('faqs',{
+'use strict';
+module.exports = (sequelize, DataTypes) => {
+  const faqs = sequelize.define('faqs', {
     title:{
-        type: Sequelize.STRING,
-        unique: true,
-        allowNull:false
+      type: DataTypes.STRING,
+      unique: true,
+      allowNull:false
     },
     descricao:{
-        type: Sequelize.STRING,
+      type: DataTypes.STRING,
     },
     lingua:{
-        type: Sequelize.STRING,
-    }
-})
-
-
-
-Faqs.sync()
-
-
-module.exports = Faqs
-
+      type: DataTypes.STRING,
+    },
+  }, {});
+  faqs.associate = function(models) {
+    // cada faq pertence a uma categoria
+    faqs.belongsTo(models.categoria, { foreignKey: 'categoriaId' })
+  };
+  return faqs;
+};
