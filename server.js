@@ -2,33 +2,27 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const exphbs = require('express-handlebars');
 const path = require('path');
-const Categoria = require('./models').categoria
-const Faqs = require('./models').faqs
+const Categoria = require('./models').Category
+const Faqs = require('./models').Faq
+const Sequelize = require('sequelize')
 
 Categoria.create({
     nomept: 'terrs',
     nomeen: 'sqsdqs',
     nomefr: 'fdds'
 }).then( cate => {
-    cate.createfaqs({
+    cate.createFaq({
         title: "teste terra",
         descricao: "dqsdsddqs dsd qd qd qdqq"
     }).then( () => console.log('funcionou'))
 })
 
-// Shop.create({
-// 	name: 'Starbucks'
-// }).then(shop => {
-// 	shop.createCoffee({
-// 		name: 'Columbian',
-// 		type: 'Dark'
-// 	}).then(() => console.log('Worked!'));
-// });
-
-// Shop.findAll({
-// 	include: [Coffee]
+// Categoria.findAll({
+// 	include: [{
+//         model: Faqs
+//     }]
 // }).then(shops => {
-// 	console.log(shops[0].Coffees);
+// 	console.log(shops[0].Faqs);
 // });
 
 

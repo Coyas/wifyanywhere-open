@@ -1,6 +1,6 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const faqs = sequelize.define('faqs', {
+  const Faq = sequelize.define('Faq', {
     title:{
       type: DataTypes.STRING,
       unique: true,
@@ -11,11 +11,11 @@ module.exports = (sequelize, DataTypes) => {
     },
     lingua:{
       type: DataTypes.STRING,
-    },
+    }
   }, {});
-  faqs.associate = function(models) {
-    // cada faq pertence a uma categoria
-    faqs.belongsTo(models.categoria, { foreignKey: 'categoriaId' })
+  Faq.associate = function(models) {
+    // associations can be defined here
+    Faq.belongsTo(models.Category, {foreignKey: 'categoryId'})
   };
-  return faqs;
+  return Faq;
 };

@@ -1,9 +1,8 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('users', {
+    return queryInterface.createTable('Users', {
       id: {
-        allowNull: false,
         type: Sequelize.UUID,
         primaryKey: true,
         defaultValue: Sequelize.UUIDV4
@@ -13,63 +12,63 @@ module.exports = {
         allowNull: true,
       },
       lastName: {
-        type: Sequelize.STRING(50),
-        allowNull: true,
+          type: Sequelize.STRING(50),
+          allowNull: true,
       },
       email:  {
-        type: Sequelize.STRING(100),
-        allowNull: false,
-        unique:true
+          type: Sequelize.STRING(100),
+          allowNull: false,
+          unique:true
       },
       password:  {
-        type: Sequelize.STRING(70),
-        allowNull: true
+          type: Sequelize.STRING(70),
+          allowNull: true
       },
       photo: {
-        type: Sequelize.STRING(150)
+          type: Sequelize.STRING(150)
       },
       localId: {
-        type: Sequelize.SMALLINT
+          type: Sequelize.BOOLEAN
       },
       facebookId: {
-        type: Sequelize.STRING,
-        defaultValue: false
+          type: Sequelize.STRING,
+          defaultValue: false
       },
       googleId: {
-        type: Sequelize.STRING,
-        defaultValue: false
+          type: Sequelize.STRING,
+          defaultValue: false
       },
       street_adress: {
-        type: Sequelize.STRING
+          type: Sequelize.STRING
       },
       city: {
-        type: Sequelize.STRING
+          type: Sequelize.STRING
       },
       biling_adress: {
         type: Sequelize.STRING
       },
       zip_code: {
-        type: Sequelize.STRING
+          type: Sequelize.STRING
       },
       phone: {
-        type: Sequelize.STRING
+          type: Sequelize.STRING
       },
       country: {
-        type: Sequelize.STRING
+          type: Sequelize.STRING
       },
       status: {
-        type: Sequelize.SMALLINT
+          type: Sequelize.SMALLINT
       },
       access: {
-        type: Sequelize.SMALLINT
+          type: Sequelize.SMALLINT
       },
       accessToken:{
-        type: Sequelize.UUID,
-        defaultValue: Sequelize.UUIDV4
+          type: Sequelize.UUID,
+          defaultValue: Sequelize.UUIDV4
       },
       confirme:{
-        type: Sequelize.SMALLINT,
-        defaultValue: false
+          type: Sequelize.BOOLEAN,
+          defaultValue: false
       },
       createdAt: {
         allowNull: false,

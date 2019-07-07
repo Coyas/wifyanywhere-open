@@ -610,3 +610,7 @@ footer .mm {
 a {
     cursor: pointer;
 }
+
+#dashboard figcaption {
+    color: #1FB0C1;
+}

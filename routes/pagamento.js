@@ -2,6 +2,9 @@ const express = require('express')
 const router = express.Router()
 const Mail = require('../config/mail')
 
+// pegar models
+const Pagamentos = require('../models').Payment
+
 // login session checker
 const authCheck = (req, res, next) => {
     if(!req.user){

@@ -1,27 +1,23 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('categoria', {
+    return queryInterface.createTable('Faqs', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      nomept:{
+      title: {
         type: Sequelize.STRING,
         unique: true,
         allowNull:false
       },
-      nomeen:{
-        type: Sequelize.STRING,
-        unique: true,
-        allowNull:false
+      descricao: {
+        type: Sequelize.TEXT
       },
-      nomefr:{
-        type: Sequelize.STRING,
-        unique: true,
-        allowNull:false
+      lingua: {
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
@@ -30,10 +26,18 @@ module.exports = {
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
+      },
+      categoryId: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'Categories',
+          key: 'id' 
+        },
+        onDelete: 'SET NULL'
       }
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('categoria');
+    return queryInterface.dropTable('Faqs');
   }
 };

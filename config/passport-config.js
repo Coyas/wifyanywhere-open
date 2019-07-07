@@ -6,7 +6,7 @@ const keys = require('./keys.json')
 const bcrypt = require('bcrypt')
 
 // importar models
-const User = require('../models/User')
+const User = require('../models').User
 
 /************Estrategia de login por facebook**********/
 passport.use(new FacebookStrategy({

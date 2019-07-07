@@ -1,6 +1,6 @@
 const router = require('express').Router()
 const passport = require('passport')
-const User = require('../models/User')
+const User = require('../models').User
 const bcrypt = require('bcrypt');
 const Mail = require('../config/mail')
 const keys = require('../config/keys.json')
