@@ -5,8 +5,8 @@
         <div class="container modal-content" id="menumodal">
             <nav>
                 <div class="row nav nav-tabs bg-info" id="nav-tab" role="tablist">
-                    <a class="col-6 nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Login</a>
-                    <a class="col-6 nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Sign up</a>
+                    <a class="col-6 nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">{{translation.Login}}</a>
+                    <a class="col-6 nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">{{translation.Sign_up}}</a>
                 </div>
             </nav>
             <div class="tab-content" id="nav-tabContent">
@@ -27,9 +27,9 @@
                         <div class="container">
 
                             <form method="POST" action="/auth/login">
-                                <label for="uname"><b>E-mail</b></label>
+                                <label for="uname"><b>{{translation.Email}}</b></label>
                                 <input type="text" name="username" placeholder="Enter your Email" name="username" required>
-                                <label for="psw"><b>Password</b></label>
+                                <label for="psw"><b>{{translation.Password}}</b></label>
                                 <input type="password" name="password" placeholder="Enter Password" name="password" required>
                                 <div class="mb-3">
                                     <label>

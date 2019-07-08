@@ -6,7 +6,7 @@
     "FAQ": "FAQ",
     "ENTRAR": "ENTRER",
     "PERFIL": "Profil",
-    "SAIR"  : "Déconnecter", 
+    "SAIR"  : "Déconnecter",
     "ONLINE_BOOKING": "RESERVATION EN LIGNE",
     "_footer": "tarducao do footer, o q nao foi traduziodo em navbar",
     "RESERVAS": "En ligne",
@@ -75,7 +75,10 @@
     "TheWifianywhere": "Le service Wifi Anywhere est fourni par iMedia. Pour le support après vente, veuillez contacter directement iMedia",
     "_pagina error": "tradducao pagina erro",
     "error": "Page non trouvée",
-    "OR" : "ou"
-
-
+    "OR" : "ou",
+    "_login": "traducao para login",
+    "Login": "Je me connecte",
+    "Sign_up": "S'inscrire",
+    "Email": "E-mail",
+    "Password": "mot de passe"
 }
