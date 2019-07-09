@@ -1,6 +1,9 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Category = sequelize.define('Category', {
+    photo: {
+      type: DataTypes.STRING
+    },
     nomept:{
       type: DataTypes.STRING,
       unique: true,

@@ -1,13 +1,11 @@
 const express = require("express");
 const router = express.Router();
+const Sequelize = require('sequelize')
 
 
 // pegar models
 const Categoria = require("../models").Category
-const Faqs = require("../models").Faq
-const Despositivo = require('../models').Device
-const Planos = require('../models').Plan
-const Bookins = require('../models').Booking
+const Faq = require('../models').Faq
 
 // as rotas
 
@@ -34,6 +32,17 @@ router.get('/planos', (req, res) => {
 });
 
 router.get('/faq', (req, res) => {
+
+    Categoria.findAll({
+        include: [{
+            model: Faq
+        }]
+    }).then( dados => {
+        // console.log("dados: "+JSON.stringify(dados))
+        console.log(dados)
+        console.log(dados[1].nomept)
+    })
+
     res.render('home/faq', {
         User: req.user
     })
