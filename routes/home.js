@@ -4,19 +4,46 @@ const Sequelize = require('sequelize')
 
 
 // pegar models
-const Categoria = require("../models").Category
+const Plan = require("../models").Plan
 const Faq = require('../models').Faq
+const Users = require('../models').User
 
 // as rotas
 
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
     // res.send(lang)
     // console.log('lingua: '+lang)
     // console.log('teste')
     // res.cookie('cookeLang', 'pt', { maxAge: 900000, httpOnly: true });
-    res.render('home/index', {
-        User: req.user
-    })
+    
+    try {
+        const ress = await Users.findAll()
+        const planos = await Plan.findAll()
+        // console.log('dados:')
+        // console.log(ress[0].firstName)
+        // console.log('Planos')
+        // console.log(planos)
+
+        return res.render('home/index', {
+            User: req.user,
+            Planos: planos
+        })
+
+    } catch(err) {
+        throw new Error('Erro ao retornar usuarios')
+    }
+
+    
+    
+    
+    // result.then( d => {
+    //     console.log(d)
+    // })
+    
+    
+    // console.log('dados json:')
+    // console.log(res.firstName)
+
 });
 
 router.get('/servicos', (req, res) => {
