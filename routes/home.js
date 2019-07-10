@@ -1,11 +1,11 @@
 const express = require("express");
 const router = express.Router();
-const Sequelize = require('sequelize')
+// const Sequelize = require('sequelize')
 
 
 // pegar models
 const Plan = require("../models").Plan
-const Faq = require('../models').Faq
+const Contact = require('../models').Contact
 const Users = require('../models').User
 
 // as rotas
@@ -19,18 +19,20 @@ router.get('/', async (req, res) => {
     try {
         const ress = await Users.findAll()
         const planos = await Plan.findAll()
+        const contato = await Contact.findAll()
         // console.log('dados:')
         // console.log(ress[0].firstName)
         // console.log('Planos')
-        // console.log(planos)
+        // console.log(contato[0].phone)
 
         return res.render('home/index', {
             User: req.user,
-            Planos: planos
+            Planos: planos,
+            Contato: contato
         })
 
     } catch(err) {
-        throw new Error('Erro ao retornar usuarios')
+        throw new Error('Erro ao retornar dados de planos, contatos')
     }
 
     
@@ -52,43 +54,44 @@ router.get('/servicos', (req, res) => {
     })
 });
 
-router.get('/planos', (req, res) => {
-    res.render('home/planos', {
-        User: req.user
-    })
+router.get('/planos', async (req, res) => {
+    try {
+
+        const planos = await Plan.findAll()
+        const contato = await Contact.findAll()
+
+
+        res.render('home/planos', {
+            User: req.user,
+            Planos: planos,
+            Contato: contato
+        })
+    } catch (error) {
+        throw new Error('Erro ao pegar os dados de contactos, redes sociais, planos')
+    }
 });
 
-router.get('/faq', (req, res) => {
+router.get('/faq', async (req, res) => {
+    try {
 
-    Categoria.findAll({
-        include: [{
-            model: Faq
-        }]
-    }).then( dados => {
-        // console.log("dados: "+JSON.stringify(dados))
-        console.log(dados)
-        console.log(dados[1].nomept)
-    })
-
-    res.render('home/faq', {
-        User: req.user
-    })
+        res.render('home/faq', {
+            User: req.user
+        })
+    }catch(err){
+        throw new Error('Erro ao retornar dados de faq e categorias')
+    }
 })
 
-router.get('/faq/:id', (req, res) => {
-    /*let id = req.params.id
-    console.log("id:" + id)*/
-    // faqs.find("")
-    res.render('booking/teste', {
-        User: req.user,
-        id: req.params.id
-    })
+router.get('/faq/:id', async (req, res) => {
+    try {
+        res.render('booking/teste', {
+            User: req.user,
+            id: req.params.id
+        })
+    } catch (error) {
+        throw new Error('erro ao pegar o faq pelo id')
+    }
 })
 
-/*router.post('/login',function (req, res) {
-    req.body.email
-    req.body.senha
-    res.send('RECEBIDO')
-})*/
 
 module.exports = router;
