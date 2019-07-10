@@ -80,5 +80,14 @@
     "Login": "Login",
     "Sign_up": "Sign up",
     "Email": "E-mail",
-    "Password": "Password"
+    "Password": "Password",
+    "Remember_me": "Remember me",
+    "Esqueceu_a_senha?":"Forgot password?",
+    "Close": "Close",
+    "PleaseFillAccount":"Please fill in this form to create an account.",
+    "Nome": "Name",
+    "Apelido": "Surname",
+    "Repeat Password": "Repeat Password",
+    "ByCreatingAccount":"By creating an account you agree to our",
+    "TermsPrivacy":"Terms & Privacy"
 }

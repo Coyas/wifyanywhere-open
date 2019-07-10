@@ -80,5 +80,14 @@
     "Login": "Entrar",
     "Sign_up": "Inscrever-se",
     "Email": "E-mail",
-    "Password": "Palavra Passe"
+    "Password": "Palavra Passe",
+    "Remember_me": "Lembre de mim",
+    "Esqueceu_a_senha?": "Esqueceu a Palavra Passe?",
+    "Close": "Fechar",
+   "PleaseFillAccount":"Por favor, preencha este formulário para criar uma conta.",
+   "Nome": "Nome",
+    "Apelido": "Apelido",
+    "RepeatPassword": "Repita a Palavra Passe",
+   "ByCreatingAccount":"Ao criar uma conta, você concorda com nossos",
+    "TermsPrivacy":"Termos e Privacidades"
 }
