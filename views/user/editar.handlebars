@@ -4,33 +4,33 @@
         <div class="col-md-4">
             <figure>
                 <img src="{{User.photo}}">
-                <figcaption>NOME DO USUARIO</figcaption>
+                <figcaption>{{translation.NomeUsuario}}</figcaption>
             </figure>
 
             <div class="editpwd">
                 <div class="card" id="editpwd1">
-                    <div class="card-header" id="editpwd2">CHANGE PASSWORD</div>
+                    <div class="card-header" id="editpwd2">{{translation.MudarPPasse}}</div>
                     <div class="card-body">
                         {{#if User.localId}}
                             <form method="POST" action="/users/changepass">
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Password antigo</label>
+                                    <label for="exampleInputEmail1">{{translation.PPasseAntigo}}</label>
                                     <input type="password" class="form-control"  placeholder="Enter old passworrd" name="oldpass">
 
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">Novo Password</label>
+                                    <label for="exampleInputPassword1">{{translation.NovoPPasse}}</label>
                                     <input type="password" class="form-control" id="exampleInputPassword1" name="pass" placeholder="New Password">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">Repete Password</label>
+                                    <label for="exampleInputPassword1">{{translation.RepetePPasse}}</label>
                                     <input type="password" class="form-control" id="exampleInputPassword1" name="repass" placeholder="Repete Password">
                                 </div>
-                                <button type="submit" class="btn btn-primary">Mudar</button>
+                                <button type="submit" class="btn btn-primary">{{translation.Mudar}}</button>
                             </form>
                         {{else}}
                             <div class="wifi-text-azul">
-                                Utilizadores com autenticacao pelo facebook ou google nao podem mudar a senha
+                                {{translation.AutentFacGoogle}}
                             </div>
                         {{/if}}
                     </div>
@@ -43,7 +43,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-12">
-                            <h5 class="card-title">EDITAR INFORMAÇÕES</h5>
+                            <h5 class="card-title">{{translation.EDITARINFORMAÇÕES}}</h5>
                         </div>
                     </div>
 
@@ -52,54 +52,54 @@
                     <form method="POST" action="/users/config">
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label for="inputNome">Nome</label>
+                                <label for="inputNome">{{translation.Nome}}</label>
                                 <input type="text" class="form-control" id="inputNome" value="{{User.firstName}}" name="firstName" placeholder="Nome">
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="inputApelido">Apelido</label>
+                                <label for="inputApelido">{{translation.Apelido}}</label>
                                 <input type="text" class="form-control" id="inputApelido" value="{{User.lastName}}" name="lastName" placeholder="Apelido">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label for="inputEmail4">Email</label>
+                                <label for="inputEmail4">{{translation.Email}}</label>
                                 <input type="email" class="form-control" id="inputEmail4" value="{{User.email}}" name="email" placeholder="Email">
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="inputTelefone">Telefone</label>
+                                <label for="inputTelefone">{{translation.phone}}</label>
                                 <input type="Telefone" class="form-control" id="inputTelefone" value="{{User.phone}}" name="phone" placeholder="Telefone">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label for="inputAddress">Address</label>
+                                <label for="inputAddress">{{translation.adress}}</label>
                                 <input type="text" class="form-control" id="inputAddress" value="{{User.street_adress}}" name="street_adress" placeholder="1234 Main St">
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="inputAddress2">Address Cobrança</label>
+                                <label for="inputAddress2">{{translation.biling_adress}}</label>
                                 <input type="text" class="form-control" id="inputAddress2" value="{{User.biling_adress}}" name="biling_adress" placeholder="Apartment, studio, or floor">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label for="inputCity">City</label>
+                                <label for="inputCity">{{translation.city2}}</label>
                                 <input type="text" class="form-control" id="inputCity" value="{{User.city}}" name="city">
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="inputZip">Zip</label>
+                                <label for="inputZip">{{translation.zip_code}}</label>
                                 <input type="text" class="form-control" id="inputZip" value="{{User.zip_code}}" name="zip_code">
                             </div>
                         </div>
                         <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="inputZip">Pais</label>
+                            <label for="inputZip">{{translation.country}}</label>
                             <input type="text" class="form-control" id="inputPais" value="{{User.country}}" name="country">
                         </div>
                         </div>
 
                         <div class="col-md-12 pull-right">
-                            <input type="submit" value="enviar">
-                            <a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Cancelar</a>
+                            <input type="submit" class="btn btn-secondary btn-lg" value="{{translation.enviar}}">
+                            <a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">{{translation.Cancelar}}</a>
 
                         </div>
                     </form>
