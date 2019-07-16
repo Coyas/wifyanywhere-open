@@ -1,12 +1,12 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const Device = sequelize.define('Device', {
+  const Property = sequelize.define('Property', {
     nome: DataTypes.STRING,
     descricao: DataTypes.TEXT,
-    photo: DataTypes.STRING
+    deviceId: DataTypes.INTEGER
   }, {});
-  Device.associate = function(models) {
+  Property.associate = function(models) {
     // associations can be defined here
   };
-  return Device;
+  return Property;
 };

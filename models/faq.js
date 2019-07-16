@@ -11,7 +11,8 @@ module.exports = (sequelize, DataTypes) => {
     },
     lingua:{
       type: DataTypes.STRING,
-    }
+    },
+    utilidade: DataTypes.INTEGER
   }, {});
   Faq.associate = function(models) {
     // associations can be defined here

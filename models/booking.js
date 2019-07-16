@@ -7,7 +7,11 @@ module.exports = (sequelize, DataTypes) => {
     planoId: DataTypes.INTEGER,
     userId: DataTypes.UUID,
     pickuplocationId: DataTypes.INTEGER,
-    returnlocationId: DataTypes.INTEGER
+    returnlocationId: DataTypes.INTEGER,
+    show: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
+    }
   }, {});
   Booking.associate = function(models) {
     // associations can be defined here
