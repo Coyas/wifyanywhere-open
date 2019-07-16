@@ -69,7 +69,7 @@ const User = sequelize.define('users',{
     confirme:{
         type: Sequelize.BOOLEAN,
         defaultValue: false
-    }
+    } 
 
 })
 User.sync()

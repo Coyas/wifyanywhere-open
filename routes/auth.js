@@ -1,6 +1,6 @@
 const router = require('express').Router()
 const passport = require('passport')
-const User = require('../models/User')
+const User = require('../models').User
 const bcrypt = require('bcrypt');
 const Mail = require('../config/mail')
 const keys = require('../config/keys.json')
@@ -130,7 +130,7 @@ router.post('/registro', (req, res) => {
                             console.log('login done com sucesso no registrar');
 
                             // get accessToken
-                            const Url = `http://192.168.88.42:3000/auth/emailcheck/${req.user.accessToken}`
+                            const Url = `http://${keys.server.server}:${keys.server.port}/auth/emailcheck/${req.user.accessToken}`
                             // console.log(Url)
 
                             Mail.sendMail({

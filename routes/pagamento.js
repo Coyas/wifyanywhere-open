@@ -2,6 +2,9 @@ const express = require('express')
 const router = express.Router()
 const Mail = require('../config/mail')
 
+// pegar models
+const Pagamentos = require('../models').Payment
+
 // login session checker
 const authCheck = (req, res, next) => {
     if(!req.user){
@@ -32,14 +35,28 @@ router.post('/visasuccess', authCheck, (req, res) => {
 })
  
 router.post('/pagamento_visa', authCheck, (req, res) => {
-    // res.send('pagamento efetuado')
+
+    // email de confirmacao de reserva
 
     Mail.sendMail({
         from: '"Ailton Duarte 👻" <adidas.coyas@gmail.com>', // sender address
         to: req.user.email, // list of receivers
-        subject: "Ola teste do nodemailer ✔", // Subject line
-        text: "Ola Mundo, estou testando o email enviado por nodejs com pacote nodemailer, viva mundo node", // plain text body
-        html: "" // html body
+        subject: "Confirmacao de reserva", // Subject line
+        text: "Ola acabaste de fazer uma reserva do despositivo da wifianywhere", // plain text body
+        html: "Ola acabaste de fazer uma reserva do despositivo da wifianywhere" // html body
+    }).then( () => {
+        console.log('Envio do email de confirmacao de booking');
+    })
+
+
+    // email de confirmacao de pagamento
+
+    Mail.sendMail({
+        from: '"Ailton Duarte 👻" <adidas.coyas@gmail.com>', // sender address
+        to: req.user.email, // list of receivers
+        subject: "Confirmacao de pagamento", // Subject line
+        text: "Ola acabaste de fazer uma reserva do despositivo da wifianywhere", // plain text body
+        html: "Ola acabaste de fazer uma reserva do despositivo da wifianywhere" // html body
     }).then( () => {
         console.log('email enviado')
         res.redirect('/users/'+req.user.id)
@@ -48,6 +65,7 @@ router.post('/pagamento_visa', authCheck, (req, res) => {
         // res.redirect('/users/'+req.user.id)
         res.send("erro ao enviar o email: "+err)
     })
+
 
     
     

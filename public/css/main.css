@@ -606,3 +606,11 @@ footer .mm {
     padding-top: 20px;
     padding-left: 15px;
 }
+
+a {
+    cursor: pointer;
+}
+
+#dashboard figcaption {
+    color: #1FB0C1;
+}

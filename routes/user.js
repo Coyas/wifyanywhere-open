@@ -3,7 +3,7 @@ const router = express.Router()
 const bcrypt = require('bcrypt')
 const saltRounds = 10
 
-const User = require("../models/User")
+const User = require("../models").User
 
 const authCheck = (req, res, next) => {
     if(!req.user){
