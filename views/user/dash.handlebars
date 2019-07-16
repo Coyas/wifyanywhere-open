@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-md-12 text-center">
                 <div class="alert alert-primary" role="alert">
-                    <span class="text-danger">Sua conta ainda nao foi validada, por favor verifique a sua conta para poder fazer operacoes no site</span>
+                    <span class="text-danger">{{translation.ValidarConta}}</span>
                 </div>
             </div>
         </div>
@@ -17,7 +17,7 @@
     <div class="row">
         <div class="col-md-4">
             <figure>
-                
+
                 {{#if User.photo}}
                     <img src="{{User.photo}}">
                 {{else}}
@@ -32,7 +32,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-12">
-                            <h5 class="card-title">MINHAS INFORMAÇÕES <a href="/users/{{User.id}}/config"><i class="float-right fas fa-user-edit"></i></a></h5>
+                            <h5 class="card-title">{{translation.MyInfo}} <a href="/users/{{User.id}}/config"><i class="float-right fas fa-user-edit"></i></a></h5>
                         </div>
                     </div>
 
@@ -41,7 +41,7 @@
                    <div class="row">
                        <div class="col-md-6">
                            <ul>
-                               <li class="a">NOME</li>
+                               <li class="a">{{translation.Nome}}</li>
                                <li class="b">
                                    {{#if User.firstName}}
                                         {{User.firstName}}
@@ -49,7 +49,7 @@
                                     -- -- --
                                    {{/if}}
                                </li>
-                               <li class="a">EMAIL</li>
+                               <li class="a">{{translation.Email2}}</li>
                                <li class="b">
                                    {{#if User.email}}
                                         {{User.email}}
@@ -57,7 +57,7 @@
                                     -- -- --
                                    {{/if}}
                                </li>
-                               <li class="a">ENDEREÇO</li>
+                               <li class="a">{{translation.adress}}</li>
                                <li class="b">
                                    {{#if User.street_adress}}
                                         {{User.street_adress}}
@@ -65,7 +65,7 @@
                                         -- -- --
                                    {{/if}}
                                </li>
-                               <li class="a">CIDADE</li>
+                               <li class="a">{{translation.city2}}</li>
                                <li class="b">
                                    {{#if User.city}}
                                         {{User.city}}
@@ -73,7 +73,7 @@
                                         -- -- --
                                    {{/if}}
                                </li>
-                               <li class="a">PAIS</li>
+                               <li class="a">{{translation.country}}</li>
                                <li class="b">
                                    {{#if User.country}}
                                         {{User.country}}
@@ -85,7 +85,7 @@
                        </div>
                        <div class="col-md-6">
                            <ul>
-                               <li class="a">APELIDO</li>
+                               <li class="a">{{translation.lastName}}</li>
                                <li class="b">
                                    {{#if User.lastName}}
                                         {{User.lastName}}
@@ -93,7 +93,7 @@
                                         -- -- --
                                    {{/if}}
                                </li>
-                               <li class="a">TELEFONE/MOVEL</li>
+                               <li class="a">{{translation.phone}}</li>
                                <li class="b">
                                    {{#if User.phone}}
                                         {{User.phone}}
@@ -101,7 +101,7 @@
                                         -- -- --
                                    {{/if}}
                                </li>
-                               <li class="a">ENDEREÇO DE COBRANÇA</li>
+                               <li class="a">{{translation.biling_adress}}</li>
                                <li class="b">
                                    {{#if User.biling_adress}}
                                         {{User.biling_adress}}
@@ -109,7 +109,7 @@
                                         -- -- --
                                    {{/if}}
                                </li>
-                               <li class="a">CODIGO ZIP</li>
+                               <li class="a">{{translation.zip_code}}</li>
                                <li class="b">
                                    {{#if User.zip_code}}
                                         {{User.zip_code}}
@@ -131,16 +131,16 @@
 <section class="container-fluid" id="minhasreservas">
     <div class="row">
         <div class="col-md-12">
-            <h1 class="titulo">MINHAS RESERVAS</h1>
+            <h1 class="titulo">{{translation.MinhasReservas}}</h1>
         </div>
     </div>
 
     <div class="row reservabotao mt-4" role="tablist">
         <div class="col-6">
-            <a class="reserva nav-item nav-link active" data-toggle="tab" href="#" role="tab" aria-selected="true">RESERVAS ATUAIS</a>
+            <a class="reserva nav-item nav-link active" data-toggle="tab" href="#" role="tab" aria-selected="true">{{translation.ReservasAtuais}}</a>
         </div>
         <div class="col-6">
-            <a class="reserva nav-item nav-link" data-toggle="tab" href="#" role="tab" aria-selected="true">RESERVAS ANTERIORES</a>
+            <a class="reserva nav-item nav-link" data-toggle="tab" href="#" role="tab" aria-selected="true">{{translation.ReservasAnteriores}}</a>
         </div>
     </div>
 
@@ -153,15 +153,15 @@
                     <thead>
                     <tr>
                         <th>Select</th>
-                        <th class="th-sm">Plan
+                        <th class="th-sm">{{translation.PLANO}}
                         </th>
-                        <th class="th-sm">Pickup Data
+                        <th class="th-sm">{{translation.PICKUP_DATE}}
                         </th>
-                        <th class="th-sm">Return Data
+                        <th class="th-sm">{{translation.RETURN2}}
                         </th>
-                        <th class="th-sm">Pickup Location
+                        <th class="th-sm">{{translation.CPU_LOC}}
                         </th>
-                        <th class="th-sm">Salary
+                        <th class="th-sm">{{translation.Pacote}}
                         </th>
                     </tr>
                     </thead>
@@ -268,11 +268,11 @@
          <div class="row mt-5">
             <div class="col-md-6">
                 {{#if User}}
-                    <a href="/pagamento" class="btn btn-info btn-lg active" id="recarregar" role="button" aria-pressed="true">Recarregar</a>
+                    <a href="/pagamento" class="btn btn-info btn-lg active" id="recarregar" role="button" aria-pressed="true">{{translation.Recarregar}}</a>
                 {{else}}
                     <a class="btn btn-info btn-lg active"   data-toggle="modal" data-target="#login">{{translation.ONLINE_BOOKING}}</a>
                 {{/if}}
-                
+
             </div>
              <!--<div class="col-md-6">
                  <a href="#" class="btn btn-secondary btn-lg active" id="cancelar" role="button" aria-pressed="true">Cancelar</a>
