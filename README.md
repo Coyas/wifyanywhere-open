@@ -4,7 +4,7 @@ site em node do wifianywhere.
 
 
 #### clone o app
-1° : git clone https://github.com/Coyas/wifyanywhere.git
+    git clone https://github.com/Coyas/wifyanywhere.git
 
 ##### Adicione as chaves do app
 
@@ -58,14 +58,17 @@ Vai em [Facebook Developers](https://developers.facebook.com/) e cria as credenc
 
 #### Como iniciar a aplicacao
 ```$xslt
-1.1: npm install bower -g
+1° : npm install bower -g
 
 2° : npm install
+
 3° : bower install
 
-4° : Run de app
- 4.1: npm test => node bin/www
- 4.2: npm start => nodemon bin/www
+4° : sequelize db:migrate
+
+(use npm i sequilize-cli -g para poder usar o os comandos do sequelize-cli)
+
+5° : (npm test => node bin/www  ou npm start => nodemon bin/www)
 ```
 
 
@@ -121,6 +124,12 @@ Vai em [Facebook Developers](https://developers.facebook.com/) e cria as credenc
     - user : rotas de acesso aos dados do utilizador
     
 ./views
+
+./migrations  contem as migrations do banco de dados
+
+./config/config.json contem as configuracoes do banco de dados
+
+./seeders contem os dados "default" para enserir nas tabelas
 
 
 

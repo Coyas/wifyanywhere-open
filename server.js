@@ -6,16 +6,16 @@ const Categoria = require('./models').Category
 const Faqs = require('./models').Faq
 const Sequelize = require('sequelize')
 
-Categoria.create({
-    nomept: 'terrs',
-    nomeen: 'sqsdqs',
-    nomefr: 'fdds'
-}).then( cate => {
-    cate.createFaq({
-        title: "teste terra",
-        descricao: "dqsdsddqs dsd qd qd qdqq"
-    }).then( () => console.log('funcionou'))
-})
+// Categoria.create({
+//     nomept: 'terrs',
+//     nomeen: 'sqsdqs',
+//     nomefr: 'fdds'
+// }).then( cate => {
+//     cate.createFaq({
+//         title: "teste terra",
+//         descricao: "dqsdsddqs dsd qd qd qdqq"
+//     }).then( () => console.log('funcionou'))
+// })
 
 // Categoria.findAll({
 // 	include: [{
