@@ -62,14 +62,14 @@
     <div class="row">
         <div class="col d-flex justify-content-center coluna">
             <div class="pacote text-center">
-                <h5 class="card-header planocabeca">{{translation.PN}}</h5>
+                <h5 class="card-header planocabeca">{{Planos.0.nome}}</h5>
                 <div class="card-body">
                     <img class="card-img mt-0" src="/images/Router.jpg" alt="Card image">
                     <!--<h6 class="card-text mt-5">equipment image with transparency</h6>-->
-                    <h1 class="card-text  font-weight-bold">000$</h1>
-                    <p class="card-text font-weight-bold">Data plan per day</p>
-                    <p class="card-text font-weight-bold">Number of devices</p>
-                    <p class="card-text font-weight-bold">Battery life</p>
+                    <h1 class="card-text font-weight-bold">{{Planos.0.preco}}$00</h1>
+                    <p class="card-text font-weight-bold">{{Planos.0.qtd_megas}} MegaBytes</p>
+                    <p class="card-text font-weight-bold">Download {{Planos.0.txdownload}} Mb/s</p>
+                    <p class="card-text font-weight-bold">Upload {{Planos.0.txupload}} Mb/s</p>
                     {{#if User}}
                         {{#if User.confirme}}
                             <a href="/booking" class="btn btn-primary site-cor">{{translation.ONLINE_BOOKING}}</a>
@@ -84,14 +84,14 @@
         </div>
         <div class="col d-flex justify-content-center coluna">
             <div class="pacote text-center">
-                <h5 class="card-header planocabeca">{{translation.PN}}</h5>
+                <h5 class="card-header planocabeca">{{Planos.1.nome}}</h5>
                 <div class="card-body">
                     <img class="card-img mt-0" src="/images/Router.jpg" alt="Card image">
                     <!--<h6 class="card-text mt-5">equipment image with transparency</h6>-->
-                    <h1 class="card-text font-weight-bold">000$</h1>
-                    <p class="card-text font-weight-bold">Data plan per day</p>
-                    <p class="card-text font-weight-bold">Number of devices</p>
-                    <p class="card-text font-weight-bold">Battery life</p>
+                    <h1 class="card-text font-weight-bold">{{Planos.1.preco}}$00</h1>
+                    <p class="card-text font-weight-bold">{{Planos.1.qtd_megas}} MegaBytes</p>
+                    <p class="card-text font-weight-bold">Download {{Planos.1.txdownload}} Mb/s</p>
+                    <p class="card-text font-weight-bold">Upload {{Planos.1.txupload}} Mb/s</p>
                     {{#if User}}
                         {{#if User.confirme}}
                             <a href="/booking" class="btn btn-primary site-cor">{{translation.ONLINE_BOOKING}}</a>
@@ -106,14 +106,14 @@
         </div>
         <div class="col d-flex justify-content-center coluna">
             <div class="pacote text-center">
-                <h5 class="card-header planocabeca">{{translation.PN}}</h5>
+                <h5 class="card-header planocabeca">{{Planos.2.nome}}</h5>
                 <div class="card-body">
                     <img class="card-img mt-0" src="/images/Router.jpg" alt="Card image">
                     <!--<h6 class="card-text mt-5">equipment image with transparency</h6>-->
-                    <h1 class="card-text font-weight-bold">000$</h1>
-                    <p class="card-text font-weight-bold">Data plan per day</p>
-                    <p class="card-text font-weight-bold">Number of devices</p>
-                    <p class="card-text font-weight-bold">Battery life</p>
+                    <h1 class="card-text font-weight-bold">{{Planos.2.preco}}$00</h1>
+                    <p class="card-text font-weight-bold">{{Planos.2.qtd_megas}} MegaBytes</p>
+                    <p class="card-text font-weight-bold">Download {{Planos.2.txdownload}} Mb/s</p>
+                    <p class="card-text font-weight-bold">Upload {{Planos.2.txupload}} Mb/s</p>
                     {{#if User}}
                         {{#if User.confirme}}
                             <a href="/booking" class="btn btn-primary site-cor">{{translation.ONLINE_BOOKING}}</a>

@@ -1,17 +1,4 @@
-{{!-- <div class="container-fluid p-0" id="faq">
-    <img src="/images/Imagem 2.png" class="img-fluid banner" alt="Responsive image">
-    <div class="row position-absolute logofaq">
-<!--        <div class="col-12">-->
-<!--            <div class="row">-->
-                <h1 class="h5 font-weight-bold ">{{translation.FAKQ}}</h1>
-<!--            </div>-->
-<!--        </div>-->
 
-    </div>
-    <form>
-        <input type="text" placeholder="Type your question..">
-    </form>
-</div> --}}
 <div class="container-fluid p-0" id="faq">
     <img src="/images/Imagem 2.png" class="img-fluid banner" alt="Responsive image">
     <div class="centered h5 font-weight-bold">
@@ -28,14 +15,14 @@
         <div class="col-md-2 col-sm-4">
             <div class="row text-center mt-4">
                 <div class="col-12">
-                    <a class="general" href="/faq/1">
+                    <a class="general" href="/faq/{{Faq.0.id}}">
                         <img class="ativo" src="/images/General.svg">
                     </a>
 
                 </div>
             </div>
             <div class="row">
-                <div class="col-12 mt-4"><h6 class="text-center font-weight-bold ativo" >{{translation.GENERAL}}</h6></div>
+                <div class="col-12 mt-4"><h6 class="text-center font-weight-bold ativo" >{{Faq.0.nomept}}</h6></div>
             </div>
         </div>
         <div class="col-md-2 col-sm-4">
