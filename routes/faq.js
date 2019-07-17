@@ -26,7 +26,7 @@ router.get('/', async (req, res) => {
         })
         
         // console.log(categorias)
-        // console.log(categorias[1])
+        console.log(categorias[1])
         
         return res.render('home/faq', {
             User: req.user, 
@@ -41,7 +41,7 @@ router.get('/', async (req, res) => {
 })
 
 router.post('/pesquisa', (req, res) => {
-    res.send('terrasystem 1: '+req.body.search)
+    res.send('Faqs search: '+req.body.search)
 })
 
 
