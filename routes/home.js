@@ -89,45 +89,5 @@ router.get('/planos', async (req, res) => {
     }
 });
 
-router.get('/faq', async (req, res) => {
-
-    // var cookies = req.headers.cookie
-    
-    try {
-        const contato = await Contact.findAll()
-        const redes = await Rsocials.findAll()
-        const categorias = await Category.findAll({
-            include: [{
-                model: Faqs
-            }]
-        })
-        
-        // console.log(categorias)
-        // console.log(categorias[1])
-        
-
-        return res.render('home/faq', {
-            User: req.user, 
-            Faq: categorias,
-            Contato: contato,
-            Rsocial: redes
-        })
-
-    }catch(err){
-        throw new Error('Erro ao retornar dados de faq e categorias')
-    }
-})
-
-router.get('/faq/:id', async (req, res) => {
-    try {
-        res.render('booking/teste', {
-            User: req.user,
-            id: req.params.id
-        })
-    } catch (error) {
-        throw new Error('erro ao pegar o faq pelo id')
-    } 
-})
-
 
 module.exports = router;

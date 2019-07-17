@@ -16,9 +16,9 @@ module.exports = {
         updatedAt: new Date()
       },{
         photo: 'ddqsqs.png',
-        nomept: 'Geraldff',
-        nomeen: 'Generalsfs',
-        nomefr: 'Generalsdfs',
+        nomept: 'USO',
+        nomeen: 'USAGE',
+        nomefr: 'USAGE',
         createdAt: new Date(),
         updatedAt: new Date()
       }], {});
