@@ -6,9 +6,9 @@ const router = express.Router();
 // pegar models
 const Plan      = require("../models").Plan
 const Contact   = require('../models').Contact
-const Users     = require('../models').User
 const Category  = require('../models').Category
-const Faqs       = require('../models').Faq
+const Faqs      = require('../models').Faq
+const Rsocials  = require('../models').Rsocial
 
 // as rotas
 
@@ -20,18 +20,21 @@ router.get('/', async (req, res) => {
     try {
         console.log('translation: ')
         console.log(req.cookies.language)
-        const ress = await Users.findAll()
-        const planos = await Plan.findAll()
-        const contato = await Contact.findAll()
+        
+        const planos    = await Plan.findAll()
+        const contato   = await Contact.findAll()
+        const redes     = await Rsocials.findAll()
         // console.log('dados:')
         // console.log(ress[0].firstName)
         // console.log('Planos')
+        console.log(redes)
         // console.log(contato[0].phone)
 
         return res.render('home/index', {
             User: req.user,
             Planos: planos,
-            Contato: contato
+            Contato: contato,
+            Rsocial: redes
         })
 
     } catch(err) {
@@ -54,11 +57,13 @@ router.get('/', async (req, res) => {
 router.get('/servicos', async (req, res) => {
     try {
         const contato = await Contact.findAll()
+        const redes = await Rsocials.findAll()
 
 
         return res.render('home/servicos', {
             User: req.user,
-            Contato: contato
+            Contato: contato,
+            Rsocial: redes
         })
     } catch (error) {
         throw new Error('Erro ao pegar os dados para servicos')
@@ -70,12 +75,14 @@ router.get('/planos', async (req, res) => {
 
         const planos = await Plan.findAll()
         const contato = await Contact.findAll()
+        const redes = await Rsocials.findAll()
 
 
         return res.render('home/planos', {
             User: req.user,
             Planos: planos,
-            Contato: contato
+            Contato: contato,
+            Rsocial: redes
         })
     } catch (error) {
         throw new Error('Erro ao pegar os dados de contactos, redes sociais, planos')
@@ -88,6 +95,7 @@ router.get('/faq', async (req, res) => {
     
     try {
         const contato = await Contact.findAll()
+        const redes = await Rsocials.findAll()
         const categorias = await Category.findAll({
             include: [{
                 model: Faqs
@@ -95,13 +103,14 @@ router.get('/faq', async (req, res) => {
         })
         
         // console.log(categorias)
-        console.log(categorias[1])
+        // console.log(categorias[1])
         
 
         return res.render('home/faq', {
             User: req.user, 
             Faq: categorias,
-            Contato: contato
+            Contato: contato,
+            Rsocial: redes
         })
 
     }catch(err){
