@@ -41,9 +41,13 @@
         </div>
         <div class="col-md">
             <div id="a" class="row rsocial ">
-                <div class="col-md social"><a href="#"><i class="fab fa-instagram"></i></a></div>
+                {{#each Rsocial}}
+                    {{!-- {{this.nome}} --}}
+                    <div class="col-md social"><a href="{{this.link}}"><i class="{{this.icon}}"></i></a></div>
+                {{/each}}
+                {{!-- <div class="col-md social"><a href="#"><i class="fab fa-instagram"></i></a></div>
                 <div class="col-md social"><a href="#"><i class="fab fa-facebook-f"></i></a></div>
-                <div class="col-md social"><a href="#"><i class="fab fa-twitter"></i></a></div>
+                <div class="col-md social"><a href="#"><i class="fab fa-twitter"></i></a></div> --}}
             </div>
             <div id="b" class="row mrg ">
                 <div class="col-md">

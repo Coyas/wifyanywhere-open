@@ -1,10 +1,10 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const exphbs = require('express-handlebars');
-const path = require('path');
-const Categoria = require('./models').Category
-const Faqs = require('./models').Faq
-const Sequelize = require('sequelize')
+// const express = require('express');
+// const bodyParser = require('body-parser');
+// const exphbs = require('express-handlebars');
+// const path = require('path');
+// const Categoria = require('./models').Category
+// const Faqs = require('./models').Faq
+// const Sequelize = require('sequelize')
 
 // Categoria.create({
 //     nomept: 'terrs',
@@ -24,17 +24,19 @@ const Sequelize = require('sequelize')
 // }).then(shops => {
 // 	console.log(shops[0].Faqs);
 // });
+console.log('data: ')
+console.log(new Date())
 
 
-const app = express();
+// const app = express();
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(bodyParser.json());
 
-app.use(express.static(path.join(__dirname, 'public')));
+// app.use(express.static(path.join(__dirname, 'public')));
 
-app.engine('handlebars', exphbs({defaultLayout: 'main'}));
-app.set('view engine', 'handlebars');
+// app.engine('handlebars', exphbs({defaultLayout: 'main'}));
+// app.set('view engine', 'handlebars');
 
 // Routes
 // app.get('/', (req, res) => {
@@ -55,4 +57,4 @@ app.set('view engine', 'handlebars');
 // 		.then(() => res.redirect('/'));
 // });
 
-app.listen(5000, () => console.log('Listening on port 5000'));
+// app.listen(5000, () => console.log('Listening on port 5000'));

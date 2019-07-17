@@ -77,7 +77,7 @@ Vai em [Facebook Developers](https://developers.facebook.com/) e cria as credenc
 
 ./bin - configuracao do servidor node
 
-./congig (configuracoes da aplicacao)
+./config (configuracoes da aplicacao)
 
     - db : configuracoes de conexao com o banco de dados
 
@@ -86,6 +86,8 @@ Vai em [Facebook Developers](https://developers.facebook.com/) e cria as credenc
     - mail : configuracoes para envio de email
     
     - passport-config : configuracoes do passport e das suas estrategias de autenticacao
+
+    - config : configuracoes de acesso ao banco de dados para producao, teste, e desenvolvimento
 
 ./i18n (pacote de traducao e localizacao)
 
@@ -127,8 +129,6 @@ Vai em [Facebook Developers](https://developers.facebook.com/) e cria as credenc
 
 ./migrations  contem as migrations do banco de dados
 
-./config/config.json contem as configuracoes do banco de dados
-
 ./seeders contem os dados "default" para enserir nas tabelas
 
 
@@ -139,16 +139,16 @@ Vai em [Facebook Developers](https://developers.facebook.com/) e cria as credenc
 
 - [nodejs](https://nodejs.org/) (servidor)
 - [express](https://expressjs.com/) (pacotes para servidor web (node))
-- handlebars (tamplete engine)
-- html5 (marcacao de texto)
-- css3 (marcacao de estilos)
-- js ES6 (versao atualizado do javascript)
-- i18n-express (pacote de internacionalizacao, para traducao do site em outras linguas)
-- modemailer (pacote de envio de email)
-- sequelize ORM (pacote de Mapeamento objeto-relaçao do banco de dados)
-- passport facebook Auth2.0 (integracao com sistema de autenticacao do facebook)
-- passport google Auth2.0 (integracao com sistema de autenticacao do google)
-- mysql  (banco de dados)
+- [handlebars](https://handlebarsjs.com/) (tamplete engine)
+- [html5](https://www.w3schools.com/html/html5_intro.asp) (marcacao de texto)
+- [css3](https://www.w3schools.com/css/) (marcacao de estilos)
+- [js ES6](https://www.w3schools.com/js/js_es6.asp) (versao atualizado do javascript)
+- [i18n-express](https://www.npmjs.com/package/i18n-express) (pacote de internacionalizacao, para traducao do site em outras linguas)
+- [modemailer](https://nodemailer.com/about/) (pacote de envio de email)
+- [sequelize ORM](docs.sequelizejs.com) (pacote de Mapeamento objeto-relaçao do banco de dados)
+- [passport facebook Auth2.0](http://www.passportjs.org/docs/facebook/) (integracao com sistema de autenticacao do facebook)
+- [passport google Auth2.0](http://www.passportjs.org/docs/google/) (integracao com sistema de autenticacao do google)
+- [mysql](https://www.mysql.com/)  (banco de dados)
 
 
 

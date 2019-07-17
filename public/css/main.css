@@ -554,16 +554,16 @@ footer .mm {
     text-align: center;
 }
 
-#login .terra1{
+/* #login .terra1{
     box-shadow: 2px 2px 4px 4px rgba(31,176,193,0.5);
-}
+} */
 
 #login .terra2 {
     background-color: white;
     color: #1FB0C1;
     white-space: nowrap;
-    box-shadow: 2px 2px 4px 4px rgba(0,0,0,0.5);
-    border: none;
+    /* box-shadow: 2px 2px 4px 4px rgba(0,0,0,0.5); */
+    /* border: none; */
 }
 
 #login .google-button__icon {
@@ -613,4 +613,8 @@ a {
 
 #dashboard figcaption {
     color: #1FB0C1;
+}
+
+#login .nav-title {
+    font-size: 2em;
 }
