@@ -21,6 +21,34 @@ module.exports = {
         nomefr: 'USAGE',
         createdAt: new Date(),
         updatedAt: new Date()
+      },{
+        photo: 'ddqsqs.png',
+        nomept: 'PAGAMENTO E RESERVA',
+        nomeen: 'BOOKING AND PAYMANET',
+        nomefr: 'USAGE',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },{
+        photo: 'ddqsqs.png',
+        nomept: 'PICKUP OU ENVIO',
+        nomeen: 'PICKUP OR SHIPPING',
+        nomefr: 'USAGE',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },{
+        photo: 'ddqsqs.png',
+        nomept: 'DEVOLUCAO',
+        nomeen: 'RETURN',
+        nomefr: 'USAGE',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },{
+        photo: 'ddqsqs.png',
+        nomept: 'MODIFICACAO E CANCELAMENTO',
+        nomeen: 'MODIFICATION AND CANCELLATION',
+        nomefr: 'USAGE',
+        createdAt: new Date(),
+        updatedAt: new Date()
       }], {});
     
   },
