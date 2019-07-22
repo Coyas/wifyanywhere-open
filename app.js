@@ -121,9 +121,7 @@ app.use(i18n({
     textsVarName: 'translation',
     browserEnable: true,  //cria cookie mesmo sem iniciar sessao
     defaultLang: 'pt',
-    paramLangName: 'clang',
-    // textsVarName: 'lang'
-    // cookie: 'cookeLang'
+    paramLangName: 'clang'
 }));
 
 // iniciar o passport

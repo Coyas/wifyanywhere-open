@@ -18,8 +18,10 @@ router.get('/', async (req, res) => {
     // res.cookie('cookeLang', 'pt', { maxAge: 900000, httpOnly: true });
     
     try {
-        console.log('translation: ')
-        console.log(req.cookies.language)
+        // console.log('translation: ')
+        // console.log('lingua: ' + ulang)
+        console.log('cookie: ')
+        console.log(req.cookies.wifianywhere)
         
         const planos    = await Plan.findAll()
         const contato   = await Contact.findAll()
@@ -27,8 +29,8 @@ router.get('/', async (req, res) => {
         // console.log('dados:')
         // console.log(ress[0].firstName)
         // console.log('Planos')
-        console.log(redes)
-        // console.log(contato[0].phone)
+        // console.log(redes)
+        // console.log(contato[0].phone) 
 
         return res.render('home/index', {
             User: req.user,
