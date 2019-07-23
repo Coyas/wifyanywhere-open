@@ -195,14 +195,52 @@ router.get('/emailcheck/:accessToken', (req, res) => {
 
 
 })
-
+ 
 router.get('/resetSenha', (req, res) => {
     res.render('home/resetsenha', {layout: 'resetsenha'})
 })
 
-router.post('/resetSenha', (req, res) => {
-    res.send('email de reset de senha enviado')
-    // res.redirect('/')
+router.post('/resetSenha', async (req, res) => {
+    // res.send('email de reset de senha enviado')
+    try {
+        
+        // get accessToken
+        // const Url = `http://${keys.server.server}`
+        const Url = `http://192.168.1.67:3000`
+        // console.log('emailllll:'+req.body.email )
+
+        const mail = await Mail.sendMail({
+            from: `<${keys.email.user}>`,
+            to: req.body.email, // list of receivers
+            // to: 'ailton_duarte@outlook.com',
+            subject: "Confirmacao de conta no wifianywhere ✔", // Subject line
+            text: "Confirme seu email "+ Url +" Confirmar", // plain text body
+            html: `<p><b>Confirme seu email <a href="${Url}" class="btn btn-primary">Confirmar</a></b></p>` // html body
+        })
+
+        // .then( () => {
+        //     console.log('email enviado')
+        //     return res.redirect('/home/index')
+        // }).catch( err => {
+        //     console.log('erro ao enviar o email: '+err)
+        //     // res.redirect('/users/'+req.user.id)
+        //     res.send("erro ao enviar o email: "+err)
+        // })
+
+        if(mail){
+            console.log('email de resetSenha enviado')
+            return res.redirect('/')
+        }else {
+            console.log('erro ao enviar o email de resetSenha')
+            return res.redirect('/')
+        }
+
+        
+
+    } catch (error) {
+        throw new Error('erro no post do reset senha')
+    }
+    
 })
 
 

@@ -20,8 +20,8 @@ router.get('/', async (req, res) => {
     try {
         // console.log('translation: ')
         // console.log('lingua: ' + ulang)
-        console.log('cookie: ')
-        console.log(req.cookies.wifianywhere)
+        // console.log('cookie: ')
+        // console.log(req.cookies.wifianywhere)
         
         const planos    = await Plan.findAll()
         const contato   = await Contact.findAll()
