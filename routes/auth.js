@@ -215,7 +215,19 @@ router.post('/resetSenha', async (req, res) => {
             // to: 'ailton_duarte@outlook.com',
             subject: "Confirmacao de conta no wifianywhere ✔", // Subject line
             text: "Confirme seu email "+ Url +" Confirmar", // plain text body
-            html: `<p><b>Confirme seu email <a href="${Url}" class="btn btn-primary">Confirmar</a></b></p>` // html body
+            html: `
+                image <img src="../public/images/Beneficios 1.svg">
+                <p>
+                Confirme seu email <a href="${Url}" class="btn btn-primary">Confirmar</a>
+                </p>
+                `, // html body
+            // attachments: [
+            //     {
+            //         filename: "Beneficios 1.svg", 
+            //         path: '../public/images/Beneficios 1.svg',
+            //         cid: 'geral@wifianywhere.com'
+            //     }
+            // ]
         })
 
         // .then( () => {
