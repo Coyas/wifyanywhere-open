@@ -102,22 +102,40 @@ try {
     const Mail = require('../config/mail')
     var qr = require("qr-image")
 
-    var qr_svg = qr.image('http://192.168.88.42:3000', { type: 'svg' });
+    var qr_svg = qr.image('http://192.168.88.42:3000', { type: 'png' });
     // essa linha cria uma svg com qrcode na root folder  `../WifiData/${req.user.email}`/${qrcodeNome.svg}`
-    qr_svg.pipe(require('fs').createWriteStream('public/i_love_qr.svg'));
+    qr_svg.pipe(require('fs').createWriteStream('public/i_love_qr.png'));
 
-    var svg_string = qr.imageSync('http://192.168.88.42:3000', { type: 'svg' });
+    var svg_string = qr.imageSync('http://192.168.88.42:3000', { type: 'png' });
 
     console.log(svg_string)
 
-     Mail.sendMail({
-            from: `<${keys.email.user}>`,
-            to: keys.email.user, // list of receivers
-            // to: 'ailton_duarte@outlook.com',
-            subject: "teste com qrcoden no wifianywhere ✔", // Subject line
-            text: "teste com qr code", // plain text body
-            html: 'terrasysysd '
-        })
+    Mail.sendMail({
+        from: `<${keys.email.user}>`,
+        to: keys.email.user, // list of receivers
+        // to: 'ailton_duarte@outlook.com',
+        subject: "teste com qrcoden no wifianywhere ✔", // Subject line
+        text: "teste com qr code", // plain text body
+        html: 'Embedded image',
+        
+    })
+
+    // opcao 2
+    //  Mail.sendMail({
+    //         from: `<${keys.email.user}>`,
+    //         to: keys.email.user, // list of receivers
+    //         // to: 'ailton_duarte@outlook.com',
+    //         subject: "teste com qrcoden no wifianywhere ✔", // Subject line
+    //         text: "teste com qr code", // plain text body
+    //         html: 'Embedded image: <img src="cid:adidas.coyas@kgmail.com"/>',
+    //         attachments: [
+    //             {   // file on disk as an attachment
+    //                 filename: 'i_love_qr.png',
+    //                 path: 'public/i_love_qr.png', // stream this file
+    //                 cid: 'adidas.coyas@kgmail.com'
+    //             },
+    //         ]
+    //     })
 
     return res.render('home/teste', {
         User: req.user,
