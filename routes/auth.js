@@ -221,13 +221,13 @@ router.post('/resetSenha', async (req, res) => {
                 Confirme seu email <a href="${Url}" class="btn btn-primary">Confirmar</a>
                 </p>
                 `, // html body
-            // attachments: [
-            //     {
-            //         filename: "Beneficios 1.svg", 
-            //         path: '../public/images/Beneficios 1.svg',
-            //         cid: 'geral@wifianywhere.com'
-            //     }
-            // ]
+            attachments: [
+                {
+                    filename: "Beneficios 1.svg", 
+                    path: '../public/images/Beneficios 1.svg',
+                    cid: 'geral@wifianywhere.com'
+                }
+            ]
         })
 
         // .then( () => {
