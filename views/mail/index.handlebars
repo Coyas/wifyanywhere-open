@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Teste de envio de email</title>
+    <style>
+
+        .container {
+            width: 100%;
+        }
+        .a {
+            width: 50%;
+        }
+        .b{
+            width: 50%;
+        }
+
+        
+        h1 {
+            color: #1FB0C1;
+            
+        }
+        .c {
+            color: gray;
+        }
+        .d {
+            color: #1FB0C1;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        ul li {
+            list-style-type: none;
+        }
+
+    </style>
+</head>
+<body>
+    <hr>
+    <p>{{username}}</p>
+    <hr>
+    <p>{{pass}}</p>
+    <h1>CONFIRMATION EMAIL</h1>
+    <hr>
+    <div class="container">
+        <div class="a">
+            <ul>
+                <li class="c">NAME</li>
+                <li class="d">-- -- --</li>
+                <li class="c">PICK-UP DATE</li>
+                <li class="d">-- -- --</li>
+                <li class="c">CHOOSEN PLAN</li>
+                <li class="d">-- -- --</li>
+                <li class="c">PHONE NUMBER</li>
+                <li class="d">(+238) 000 00 00</li>
+                <li class="c">PICK-UP LOCATION</li>
+                <li class="d">-- -- --</li>
+                <li class="c">DROP-OFF LOCATION</li>
+                <li class="d">-- -- --</li>
+                <li class="c">TOTAL PRICE</li>
+                <li class="d">00 00 00 $00</li>
+        </div>
+        <div class="b">
+            <img src="{{qrcode}}" width="400" height="400">
+        </div>
+    </div>
+</body>
+</html>

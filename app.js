@@ -13,6 +13,7 @@ const expressValidador = require('express-validator')
 //pasport autenticate pakages
 const passportSetup =  require('./config/passport-config')
 const keys = require('./config/keys.json')
+const email = require('./config/mail')
 
 // traducao
 const i18n = require('i18n-express')

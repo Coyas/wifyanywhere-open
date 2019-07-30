@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 // const Sequelize = require('sequelize')
 const keys = require('../config/keys.json')
+let   nhbs = require('nodemailer-express-handlebars')
+const Mail = require('../config/mail')
 
 
 // pegar models
@@ -92,62 +94,74 @@ router.get('/planos', async (req, res) => {
     }
 });
 
+//attach the plugin to the nodemailer transporter
+
+Mail.use('compile', nhbs({
+    viewEngine: {
+      extName: '.handlebars',
+      partialsDir: 'views/mail/partial',
+      layoutsDir: 'views/mail',
+      defaultLayout: 'index.handlebars',
+    },
+    viewPath: 'views/mail',
+    extName: '.handlebars',
+}))
 router.get('/teste', async (req, res) => {
 
-try {
+    try {
 
-    const contato = await Contact.findAll()
-    const redes = await Rsocials.findAll()
+        const contato = await Contact.findAll()
+        const redes = await Rsocials.findAll()
 
-    const Mail = require('../config/mail')
-    var qr = require("qr-image")
-
-    var qr_svg = qr.image('http://192.168.88.42:3000', { type: 'png' });
-    // essa linha cria uma svg com qrcode na root folder  `../WifiData/${req.user.email}`/${qrcodeNome.svg}`
-    qr_svg.pipe(require('fs').createWriteStream('public/i_love_qr.png'));
-
-    var svg_string = qr.imageSync('http://192.168.88.42:3000', { type: 'png' });
-
-    console.log(svg_string)
-
-    Mail.sendMail({
-        from: `<${keys.email.user}>`,
-        to: keys.email.user, // list of receivers
-        // to: 'ailton_duarte@outlook.com',
-        subject: "teste com qrcoden no wifianywhere ✔", // Subject line
-        text: "teste com qr code", // plain text body
-        html: 'Embedded image',
         
-    })
+        var qr = require("qr-image")
 
-    // opcao 2
-    //  Mail.sendMail({
-    //         from: `<${keys.email.user}>`,
-    //         to: keys.email.user, // list of receivers
-    //         // to: 'ailton_duarte@outlook.com',
-    //         subject: "teste com qrcoden no wifianywhere ✔", // Subject line
-    //         text: "teste com qr code", // plain text body
-    //         html: 'Embedded image: <img src="cid:adidas.coyas@kgmail.com"/>',
-    //         attachments: [
-    //             {   // file on disk as an attachment
-    //                 filename: 'i_love_qr.png',
-    //                 path: 'public/i_love_qr.png', // stream this file
-    //                 cid: 'adidas.coyas@kgmail.com'
-    //             },
-    //         ]
-    //     })
+        var qr_svg = qr.image('http://192.168.88.42:3000', { type: 'png' });
+        // essa linha cria uma svg com qrcode na root folder  `../WifiData/${req.user.email}`/${qrcodeNome.svg}`
+        qr_svg.pipe(require('fs').createWriteStream('public/i_love_qr.png'));
 
-    return res.render('home/teste', {
-        User: req.user,
-        Contato: contato,
-        Rsocial: redes,
-        svg: svg_string
-    })
-} catch (error) {
-    throw new Error("erro ao enviar qrcode pelo email: (inconpleto) "+error)
-}
+        var svg_string = qr.imageSync('http://192.168.88.42:3000', { type: 'png' });
 
+        console.log(svg_string)
+        
 
+        // let send = Mail.templateSender(temp)
+
+        // send('teste de email templete', context, callback)
+        const email = {
+            from: `<${keys.email.user}>`,
+            to: keys.email.user, // list of receivers
+            // to: 'ailton_duarte@outlook.com',
+            subject: "teste com qrcoden no wifianywhere ✔", // Subject line
+            text: "teste com qr code", // plain text body
+            // html: 'Embedded image: <img src="cid:adidas.coyas@kgmail.com"/>',
+            attachments: [
+                {   // file on disk as an attachment
+                    filename: 'i_love_qr.png',
+                    path: 'public/i_love_qr.png', // stream this file
+                    cid: 'adidas.coyas@kgmail.com'
+                },
+            ],
+            template: 'index',
+            context: {
+                qrcode: 'cid:adidas.coyas@kgmail.com',
+                username: 'ailton mendes duarte',
+                pass: 'terrasystem aazezeaze'
+            }
+        }
+
+        // opcao 2
+        Mail.sendMail(email)
+
+        return res.render('home/teste', {
+            User: req.user,
+            Contato: contato,
+            Rsocial: redes, 
+            svg: svg_string
+        })
+    } catch (error) {
+        throw new Error("erro "+error)
+    }
 
 })
 
