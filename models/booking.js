@@ -16,9 +16,34 @@ module.exports = (sequelize, DataTypes) => {
   Booking.associate = function(models) {
     // associations can be defined here
     Booking.hasMany(models.Payment)
-    Booking.belongsTo(models.Plan,{ foreignKey: 'planoId' })
+    Booking.belongsTo(models.Plan)
     Booking.belongsTo(models.User)
     Booking.belongsTo(models.Place)
+
+    // Booking.hasMany(models.Payment)
+    // Booking.belongsTo(models.Plan,{ foreignKey: 'planoId' })
+    // Booking.belongsTo(models.User, { foreignKey: 'userId' })
+    // Booking.belongsTo(models.Place, { foreignKey: 'pickuplocationId'})
+    // Booking.belongsTo(models.Place, { foreignKey: 'returnlocationId'})
   };
   return Booking;
 };
+
+// pickuplocationId: {
+//   type: DataTypes.INTEGER,
+//   references: {
+//     model: 'Places',
+//     key: 'id'
+//   },
+//   onUpdate: 'CASCADE',
+//   onDelete: 'SET NULL'
+// },
+// returnlocationId: {
+//   type: DataTypes.INTEGER,
+//   references: {
+//     model: 'Places',
+//     key: 'id'
+//   },
+//   onUpdate: 'CASCADE',
+//   onDelete: 'SET NULL'
+// },

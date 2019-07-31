@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 let   nhbs = require('nodemailer-express-handlebars')
+const keys = require('../config/keys.json')
 const Mail = require('../config/mail')
 
 // pegar models
@@ -12,6 +13,7 @@ const Faqs      = require('../models').Faq
 const Rsocials  = require('../models').Rsocial
 const Places    = require('../models').Place
 const Bookings   = require('../models').Booking
+const Users   = require('../models').User
 
 // login session checker
 const authCheck = (req, res, next) => {
@@ -78,10 +80,59 @@ router.post('/pagamento_visa/:id', authCheck, async (req, res) => {
         console.log('parametros: '+req.params.id)
 
         // pegar dados para enviar ao email
-        const booking = await Bookings.findByPk(req.params.id)
+        const booking = await Bookings.findAll({
+            where: {id: req.params.id},
+            attributes: ['id', 'pickupdate', 'numdias', 'flynumber', 'planoId', 'userId', 'pickuplocationId', 'returnlocationId', 'show'],
+            include: [{
+                model: User,
+            }]
+        })
 
         console.log(booking)
 
+        // gerar o qrcode
+        var qr = require("qr-image")
+        var qr_svg = qr.image('http://192.168.88.42:3000', { type: 'png' })
+        qr_svg.pipe(require('fs').createWriteStream('public/i_love_qr.png'))
+        var svg_string = qr.imageSync('http://192.168.88.42:3000', { type: 'png' })
+        console.log(svg_string)
+        // enviar email
+        const email = {
+            from: `<${keys.email.user}>`,
+            to: req.user.email, // list of receivers
+            // to: 'ailton_duarte@outlook.com',
+            subject: "Confirmacao de Reserva Wifianywhare", // Subject line
+            text: `o seu codigo de reserva é ${booking[0].id}`, // plain text body
+            // html: 'Embedded image: <img src="cid:adidas.coyas@kgmail.com"/>',
+            attachments: [
+                {   // file on disk as an attachment
+                    filename: 'i_love_qr.png',
+                    path: 'public/i_love_qr.png', // stream this file
+                    cid: 'geral@wifianywhere.cv'
+                },
+            ],
+            template: 'index',
+            context: {
+                qrcode: 'cid:geral@wifianywhere.cv',
+                nome: booking[0].userId,
+                apelido: booking[0].userId,
+                pickupdate: booking[0].pickupdate,
+                plano: booking[0].planoId,
+                phone: booking[0].userId,
+                picklocation: booking[0].userId,
+                droplocation: booking[0].userId                
+            }
+        }
+
+        // opcao 2
+        Mail.sendMail(email)
+
+        // return res.render('user/dash', {
+        //     User: req.user,
+        //     Contato: contato,
+        //     Rsocial: redes, 
+        //     svg: svg_string
+        // })
 
         
         return res.send('pagamento efetuado com sucesso')
