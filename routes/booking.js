@@ -9,6 +9,7 @@ const Contact   = require('../models').Contact
 const Category  = require('../models').Category
 const Faqs      = require('../models').Faq
 const Rsocials  = require('../models').Rsocial
+const Places    = require('../models').Place
 
 // login session checker
 const authCheck = (req, res, next) => {
@@ -29,12 +30,14 @@ router.get('/', authCheck, async (req, res, next) => {
         const planos    = await Plan.findAll()
         const contato   = await Contact.findAll()
         const redes     = await Rsocials.findAll()
+        const places    = await Places.findAll()
 
         return res.render('booking/booking', {
             User: req.user,
             Planos: planos,
             Contato: contato,
-            Rsocial: redes
+            Rsocial: redes,
+            Place: places
         })
 
     } catch (error) {
