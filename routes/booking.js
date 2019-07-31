@@ -2,6 +2,14 @@ const express = require("express");
 const router = express.Router();
 const User = require('../models').User
 
+
+// pegar models
+const Plan      = require("../models").Plan
+const Contact   = require('../models').Contact
+const Category  = require('../models').Category
+const Faqs      = require('../models').Faq
+const Rsocials  = require('../models').Rsocial
+
 // login session checker
 const authCheck = (req, res, next) => {
     if(!req.user){
@@ -11,16 +19,28 @@ const authCheck = (req, res, next) => {
     }else{
         // se esta logado
         next() //continue
-    }
+    } 
 }
 
 
 
-router.get('/', authCheck, (req, res, next) => {
+router.get('/', authCheck, async (req, res, next) => {
+    try {
+        const planos    = await Plan.findAll()
+        const contato   = await Contact.findAll()
+        const redes     = await Rsocials.findAll()
 
-    res.render('booking/booking', {
-        User: req.user
-    });
+        return res.render('booking/booking', {
+            User: req.user,
+            Planos: planos,
+            Contato: contato,
+            Rsocial: redes
+        })
+
+    } catch (error) {
+        throw new Error('erro ao pegar a rota booking')
+    }
+
 });
 
 
