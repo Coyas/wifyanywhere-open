@@ -17,13 +17,13 @@ const authCheck = (req, res, next) => {
     }
 }
 
-router.get('/', authCheck,(req, res) => {
+router.get('/:id', authCheck,(req, res) => {
     res.render('booking/pagamento', {
         User: req.user
     })
 })
 
-router.get('/:id', authCheck,(req, res) => {
+router.get('/recarga/:id', authCheck,(req, res) => {
     res.render('booking/pagamento', {
         User: req.user,
         msg: "recaregamento"

@@ -81,10 +81,7 @@ router.post('/orders', authCheck, (req, res) => {
     }).catch( err => {
         console.log("Falha na atualizacao de user feito com sucesso:"+err)
         res.redirect('/undefined')
-    })
-
-    
-    
+    })    
 })
 
 // implementar a requisicao de post de form para SISP (visa's card)
