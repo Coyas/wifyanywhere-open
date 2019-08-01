@@ -83,16 +83,22 @@ router.post('/pagamento_visa/:id', authCheck, async (req, res) => {
             where: {id: req.params.id},
             attributes: ['id', 'pickupdate', 'numdias', 'flynumber', 'planoId', 'userId', 'pickuplocationId', 'returnlocationId', 'showup'],
             include: [{
-                model: User,
+                model: Users,
             }]
         })
 
-        console.log(booking)
+        console.log(booking.User)
+
+        // calculo de pagamento
+        const taxa      = 330  //pegar de banco de dados
+        const pacote    = 1200   //pegar de banco de dados
+
+        const reserva = taxa * booking[0].numdias + pacote
 
         // guardar alguns dados de pagamento
         const a = await Pagamentos.create({
             data: new Date(),
-            valor: 222,
+            valor: reserva, //
             bookingId: booking[0].id,
             tipo: 0
         })

@@ -15,7 +15,7 @@ module.exports = {
         type: Sequelize.DOUBLE
       },
       bookingId: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.UUID,
         references: {
           model: 'Bookings',
           key: 'id'

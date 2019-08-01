@@ -1,6 +1,11 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Booking = sequelize.define('Booking', {
+    id: {
+      type: DataTypes.UUID,
+      primaryKey: true,
+      defaultValue: DataTypes.UUIDV4
+  },
     pickupdate: DataTypes.DATE,
     numdias: DataTypes.INTEGER,
     flynumber: DataTypes.STRING,
