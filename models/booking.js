@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
     userId: DataTypes.UUID,
     pickuplocationId: DataTypes.INTEGER,
     returnlocationId: DataTypes.INTEGER,
-    show: {
+    showup: {
       type: DataTypes.BOOLEAN,
       defaultValue: false
     }

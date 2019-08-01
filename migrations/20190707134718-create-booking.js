@@ -53,7 +53,7 @@ module.exports = {
         onUpdate: 'CASCADE',
         onDelete: 'SET NULL'
       },
-      show: {
+      showup: {
         type: Sequelize.BOOLEAN
       },
       createdAt: {
