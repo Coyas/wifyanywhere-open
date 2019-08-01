@@ -138,7 +138,7 @@ router.post('/registro', (req, res) => {
                                 from: `<${keys.email.user}>`,
                                 to: req.user.email, // list of receivers
                                 subject: "Confirmacao de conta no wifianywhere ✔", // Subject line
-                                text: "Ola Mundo, estou testando o email enviado por nodejs com pacote nodemailer, viva mundo node", // plain text body
+                                text: `Confirme seu email ${Url}`, // plain text body
                                 html: `Confirme seu email <a href="${Url}" class="btn btn-primary">Confirmar</a>` // html body
                             }).then( () => {
                                 console.log('email enviado')

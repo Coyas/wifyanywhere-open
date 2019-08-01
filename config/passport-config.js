@@ -4,6 +4,7 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy
 const FacebookStrategy = require('passport-facebook').Strategy;
 const keys = require('./keys.json')
 const bcrypt = require('bcrypt')
+const Mail = require('../config/mail')
 
 // importar models
 const User = require('../models').User
@@ -20,6 +21,7 @@ passport.use(new FacebookStrategy({
         // User.findOrCreate({ facebookId: profile.id }, function (err, user) {
         // return cb(err, user);
         // });
+        
         console.log('facebook Profile: '+profile.id)
         console.log('facebook Profile: '+profile.displayName)
         console.log('facebook Profile: '+profile.emails[0].value)
@@ -46,8 +48,30 @@ passport.use(new FacebookStrategy({
                     access: 1,
                     localId: false
                 }).then( newUser => {
-                    console.log('Novo User: '+ newUser)
-                    done(null, newUser)
+                    console.log('Novo User: ')
+                    console.log(newUser)
+
+                    // get accessToken
+                    const Url = `http://${keys.server.server}:${keys.server.port}/auth/emailcheck/${newUser.accessToken}`
+                    // console.log(Url)
+                    // enviar confirmacao de email
+                    Mail.sendMail({
+                        from: `<${keys.email.user}>`,
+                        to: profile.emails[0].value, // list of receivers
+                        subject: "Confirmacao de conta no wifianywhere ✔", // Subject line
+                        text: `Confirme seu email ${Url}`, // plain text body
+                        html: `Confirme seu email <a href="${Url}" class="btn btn-primary">Confirmar</a>` // html body
+                    }).then( () => {
+                        console.log('google de confirmacao de email enviado')
+                        // res.redirect('/users/'+req.user.id)
+                        done(null, newUser)
+                    }).catch( err => {
+                        console.log('erro ao enviar o email: '+err)
+                        res.redirect('/undefined')
+                        // res.send("erro ao enviar o email: "+err)
+                    })
+
+                    // done(null, newUser)
                 })
             }
         })
@@ -55,7 +79,7 @@ passport.use(new FacebookStrategy({
 ));
 100
 
-/*************Estrategia de login por google **********/
+/************* Estrategia de login por google **********/
 console.log(`google ci: ${keys.google.client_id}`)
 console.log(`google cs: ${keys.google.client_secret}`)
 console.log(`google redirect_uris: ${keys.google.redirect_uris}`)
@@ -100,8 +124,32 @@ passport.use(
                     access: 1,
                     localId: false
                 }).then( newUser => {
-                    console.log('Novo User: '+ newUser)
-                    done(null, newUser)
+                    console.log('Novo User: ')
+                    console.log(newUser.accessToken)
+                    console.log('Novo User email: ')
+                    console.log(profile.emails[0].value)
+
+                    // get accessToken
+                    const Url = `http://${keys.server.server}:${keys.server.port}/auth/emailcheck/${newUser.accessToken}`
+                    // console.log(Url)
+                    // enviar confirmacao de email
+                    Mail.sendMail({
+                        from: `<${keys.email.user}>`,
+                        to: profile.emails[0].value, // list of receivers
+                        subject: "Confirmacao de conta no wifianywhere ✔", // Subject line
+                        text: `Confirme seu email ${Url}`, // plain text body
+                        html: `Confirme seu email <a href="${Url}" class="btn btn-primary">Confirmar</a>` // html body
+                    }).then( () => {
+                        console.log('google de confirmacao de email enviado')
+                        // res.redirect('/users/'+req.user.id)
+                        done(null, newUser)
+                    }).catch( err => {
+                        console.log('erro ao enviar o email: '+err)
+                        res.redirect('/undefined')
+                        // res.send("erro ao enviar o email: "+err)
+                    })
+                    // done(null, newUser)
+
                 })
             }
         })
