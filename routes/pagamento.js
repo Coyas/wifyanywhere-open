@@ -90,7 +90,7 @@ router.post('/pagamento_visa/:id', authCheck, async (req, res) => {
         console.log('booking: ')
         console.log(booking)
         console.log('user: ')
-        console.log(booking.User[0].id)
+        console.log(booking[0].User)
 
         // calculo de pagamento
         const taxa      = 330  //pegar de banco de dados
@@ -142,7 +142,8 @@ router.post('/pagamento_visa/:id', authCheck, async (req, res) => {
                 plano: booking[0].planoId,
                 phone: booking[0].userId,
                 picklocation: booking[0].userId,
-                droplocation: booking[0].userId                
+                droplocation: booking[0].userId,
+                preco: 15815              
             }
         }
 
