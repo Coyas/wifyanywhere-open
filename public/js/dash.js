@@ -19,7 +19,8 @@ $(document).ready(function() {
                 /*order: [[ 1, 'asc' ]]*/
   } );
 } );
-
+ 
+// o que isso faz
 document.getElementById("recarregar").onclick = function () {
     if (Math.floor(Math.random() * 2)) {
         customCheck1.checked = true;
@@ -34,3 +35,29 @@ document.getElementById("recarregar").onclick = function () {
     }
 };
 
+// metodo para mudar de reserva corente para antigas assim como mudar de DataTable
+// reservas atual
+$('#ratual').click(function() {
+    // alert( "reservas atual" );
+    $( "#ratual" ).addClass('active');
+    $( "#rantes" ).removeClass('active');
+
+    $('#box1').removeClass('visivels')
+    $('#box').removeClass('invisivels')
+
+    $('#box').addClass('visivels')
+    $('#box1').addClass('invisivels')
+});
+
+// reservas antigas
+$('#rantes').click(function() {
+    // alert( "reservas antigas" );
+    $( "#rantes" ).addClass('active');
+    $( "#ratual" ).removeClass('active');
+
+    $('#box').removeClass('visivels')
+    $('#box1').removeClass('invisivels')
+
+    $('#box').addClass('invisivels')    
+    $('#box1').addClass('visivels')
+});
