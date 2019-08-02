@@ -42,10 +42,8 @@ $('#ratual').click(function() {
     $( "#ratual" ).addClass('active');
     $( "#rantes" ).removeClass('active');
 
-    $('#box1').removeClass('visivels')
+    
     $('#box').removeClass('invisivels')
-
-    $('#box').addClass('visivels')
     $('#box1').addClass('invisivels')
 });
 
@@ -55,9 +53,8 @@ $('#rantes').click(function() {
     $( "#rantes" ).addClass('active');
     $( "#ratual" ).removeClass('active');
 
-    $('#box').removeClass('visivels')
+    
     $('#box1').removeClass('invisivels')
-
     $('#box').addClass('invisivels')    
-    $('#box1').addClass('visivels')
+    
 });
