@@ -8,7 +8,7 @@ module.exports = {
 
       */
       return queryInterface.bulkInsert('Plans', [{
-        nome: 'PLAFONDE BASE',
+        nome: 'Low-Cost',
         qtd_megas: 3000,
         preco: 850,
         txdownload: 2,
@@ -17,7 +17,7 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },{
-        nome: 'PLAFONDE BRONZE',
+        nome: 'Standart',
         qtd_megas: 6000,
         preco: 1650,
         txdownload: 7,
@@ -26,7 +26,7 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },{
-        nome: 'PLAFONDE OURO',
+        nome: 'Premium',
         qtd_megas: 10000,
         preco: 2500,
         txdownload: 7,

@@ -85,6 +85,8 @@ router.post('/orders', authCheck, (req, res) => {
     console.log(req.body.phone)
     console.log(req.body.email)
     console.log('plano: ')
+    console.log(req.body.plano)
+    console.log('planotipo')
     console.log(req.body.planotipo)
     console.log('iniciando o update dos dados de user id=>'+req.user.id)
 
