@@ -624,3 +624,8 @@ a {
 .invisivels {
     display: none;
 }
+
+/* helpers */
+.lili {
+    list-style-type: none;
+}
