@@ -625,11 +625,11 @@ a {
     display: none;
 }
 /* fazer sumary ser flotuante */
-#sumario {
+.sumario {
     position: fixed;
     right: 2%;
 }
-#sumario2 {
+.sumario2 {
     position: relative;
 }
 

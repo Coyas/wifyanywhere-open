@@ -21,19 +21,19 @@ $(document).ready(function() {
 } );
  
 // o que isso faz
-document.getElementById("recarregar").onclick = function () {
-    if (Math.floor(Math.random() * 2)) {
-        customCheck1.checked = true;
-    } else {
-        customCheck1.checked = false;
-    }
+// document.getElementById("#recarregar").onclick = function () {
+//     if (Math.floor(Math.random() * 2)) {
+//         customCheck1.checked = true;
+//     } else {
+//         customCheck1.checked = false;
+//     }
 
-    if (Math.floor(Math.random() * 2)) {
-        customCheck2.checked = true;
-    } else {
-        customCheck2.checked = false;
-    }
-};
+//     if (Math.floor(Math.random() * 2)) {
+//         customCheck2.checked = true;
+//     } else {
+//         customCheck2.checked = false;
+//     }
+// };
 
 // metodo para mudar de reserva corente para antigas assim como mudar de DataTable
 // reservas atual
@@ -58,5 +58,20 @@ $('#rantes').click(function() {
     $('#box').addClass('invisivels')    
     
 });
-
-// fazer os sumary flotoante
+	
+// get scroll position in px
+// $(document).ready(function(){
+//     console.log($("#sumario").scrollTop() + " px");
+//   });
+$(window).scroll(function() {
+    var $height = $(window).scrollTop();
+    this.console.log($height)
+  if($height > 690) {
+        $('#sumario').removeClass('sumario');
+        $('#sumario').addClass('sumario2');
+        this.console.log($height)
+	} else {
+        $('#sumario').removeClass('sumario2');
+        $('#sumario').addClass('sumario');
+	}
+});
