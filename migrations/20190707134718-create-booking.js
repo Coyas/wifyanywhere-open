@@ -16,7 +16,7 @@ module.exports = {
       flynumber: {
         type: Sequelize.STRING
       },
-      planoId: {
+      planId: {
         type: Sequelize.INTEGER,
         references: {
           model: 'Plans',

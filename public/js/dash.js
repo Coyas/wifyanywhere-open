@@ -58,3 +58,5 @@ $('#rantes').click(function() {
     $('#box').addClass('invisivels')    
     
 });
+
+// fazer os sumary flotoante

@@ -9,7 +9,15 @@ module.exports = (sequelize, DataTypes) => {
     pickupdate: DataTypes.DATE,
     numdias: DataTypes.INTEGER,
     flynumber: DataTypes.STRING,
-    planoId: DataTypes.INTEGER,
+    planId:{
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'Plans',
+        key: 'id'
+      },
+      onUpdate: 'CASCADE',
+      onDelete: 'SET NULL'
+    },
     userId: DataTypes.UUID,
     pickuplocationId: DataTypes.INTEGER,
     returnlocationId: DataTypes.INTEGER,

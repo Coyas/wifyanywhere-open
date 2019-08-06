@@ -624,6 +624,14 @@ a {
 .invisivels {
     display: none;
 }
+/* fazer sumary ser flotuante */
+#sumario {
+    position: fixed;
+    right: 2%;
+}
+#sumario2 {
+    position: relative;
+}
 
 /* helpers */
 .lili {

@@ -79,24 +79,40 @@ router.post('/pagamento_visa/:id', authCheck, async (req, res) => {
         console.log(req.body.ccv)
 
         // pegar dados para enviar ao email
+        // dados do booking, Users & plano
         const booking = await Bookings.findAll({
             where: {id: req.params.id},
-            attributes: ['id', 'pickupdate', 'numdias', 'flynumber', 'planoId', 'userId', 'pickuplocationId', 'returnlocationId', 'showup'],
-            include: [{
-                model: Users,
-            }]
+            attributes: ['id', 'pickupdate', 'numdias', 'flynumber', 'planId', 'userId', 'pickuplocationId', 'returnlocationId', 'showup'],
+            include: [
+                {model: Users},
+                {model: Plan}
+            ]
         })
+        // dados do Places
+        const pickuplocationId = await Places.findAll({
+            where: {id: booking[0].pickuplocationId}
+        })
+
+        const returnlocationId = await Places.findAll({
+            where: {id: booking[0].returnlocationId}
+        })
+        console.log('pick up place')
+        console.log(pickuplocationId[0].nome)
+        console.log('drop off place')
+        console.log(returnlocationId[0].nome)
 
         console.log('booking: ')
         console.log(booking)
+        console.log('Planos: ')
+        console.log(booking[0].Plan)
         console.log('user: ')
         console.log(booking[0].User)
 
         // calculo de pagamento
         const taxa      = 330  //pegar de banco de dados
-        const pacote    = 1200   //pegar de banco de dados
+        const pacote    = booking[0].Plan.preco   //pegar de banco de dados
 
-        const reserva = taxa * booking[0].numdias + pacote
+        const reserva   = taxa * booking[0].numdias + pacote
 
         // guardar alguns dados de pagamento
         const a = await Pagamentos.create({
@@ -136,19 +152,25 @@ router.post('/pagamento_visa/:id', authCheck, async (req, res) => {
             template: 'index',
             context: {
                 qrcode: 'cid:geral@wifianywhere.cv',
-                nome: booking[0].userId,
-                apelido: booking[0].userId,
+                nome: booking[0].User.firstName,
+                apelido: booking[0].User.lastName,
                 pickupdate: booking[0].pickupdate,
-                plano: booking[0].planoId,
-                phone: booking[0].userId,
-                picklocation: booking[0].userId,
-                droplocation: booking[0].userId,
-                preco: 15815              
+                plano: booking[0].Plan.nome,
+                phone: booking[0].User.phone,
+                picklocation: pickuplocationId[0].nome,
+                droplocation: returnlocationId[0].nome,
+                preco: reserva      
             }
         }
 
         // opcao 2
-        Mail.sendMail(email)
+        const sa = Mail.sendMail(email)
+
+        if(sa){
+            console.log('email enviado com sucesso')
+        }else {
+            console.log('falha ao enviar o email')
+        }
 
         // return res.render('user/dash', {
         //     User: req.user,

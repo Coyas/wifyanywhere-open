@@ -112,7 +112,7 @@ router.post('/orders', authCheck, (req, res) => {
             pickupdate: req.body.pdate,
             numdias: req.body.numdays,
             flynumber: req.body.flynum,
-            planoId: 1,
+            planId: 1,
             userId: req.user.id,
             pickuplocationId: req.body.plocation,
             returnlocationId: req.body.rlocation,
