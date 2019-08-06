@@ -1,9 +1,9 @@
 {
   "development": {
     "username": "root",
-    "password": "terrasystem",
+    "password": "",
     "database": "wifianywhere",
-    "host": "127.0.0.1",
+    "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
@@ -14,9 +14,10 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "coyas",
-    "password": "Terra.system1",
-    "database": "wifi",
+
+    "username": "root",
+    "password": null,
+    "database": "database_production",
     "host": "127.0.0.1",
     "dialect": "mysql"
   }
