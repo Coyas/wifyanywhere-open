@@ -30,9 +30,15 @@
 </head>
 <body class="resetbody">
 
+    {{>_navbars}}
+
     {{{body}}}
 
-    {{>_chat}}
+    {{!-- {{>_footer}} --}}
+
+    {{>_login}}
+
+    {{!-- {{>_chat}} --}}
 
     <script src="/bower_components/jquery/dist/jquery.js"></script><!--
     <script src="/bower_components/popper.js/dist/popper.js"></script>-->

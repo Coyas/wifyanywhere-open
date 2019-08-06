@@ -3,7 +3,11 @@ const router = express.Router()
 const bcrypt = require('bcrypt')
 const saltRounds = 10
 
+
+// pegar models
 const User = require("../models").User
+const Contact   = require('../models').Contact
+const Rsocials  = require('../models').Rsocial
 
 const authCheck = (req, res, next) => {
     if(!req.user){
@@ -18,51 +22,61 @@ const authCheck = (req, res, next) => {
 
 
 
-router.get('/:user', authCheck, (req, res) => {
-    // console.log(`nome: ${req.user.firstName}  b apelido: ${req.user.lastName}`)
+router.get('/:user', authCheck, async (req, res) => {
+    
+    try {
+        const contato = await Contact.findAll()
+        const redes = await Rsocials.findAll()
 
-    User.findByPk(req.params.user).then( user => {
         if(req.params.user == req.user.id){
-            res.render('user/dash', {
-                User: user
+            return res.render('user/dash', {
+                User: req.user,
+                Contato: contato,
+                Rsocial: redes
             })
         }else {
-            res.render('error', {
-                User: user
+            return res.render('error', {
+                User: req.user
             })
         }
-    }).catch( err => {
-        res.render('error',{
-            User: req.user
-        })
-    })
 
+        
+    } catch (error) {
+        throw new Error('Error no perfil do user:'+error)
+    }
 
 })
 
-router.get('/:user/config', authCheck, (req, res) => {
-    // res.send('Pagina para perfil de usuarios - configuracoes')
-    User.findByPk(req.params.user).then( user => {
+router.get('/:user/config', authCheck, async (req, res) => {
+    
+    try {
+        const contato = await Contact.findAll()
+        const redes = await Rsocials.findAll()
+
         if(req.params.user == req.user.id){
             res.render('user/editar', {
-                User: user
+                User: req.user,
+                Contato: contato,
+                Rsocial: redes
             })
         }else {
             res.render('error', {
-                User: user
+                User: req.user
             })
         }
-    }).catch( err => {
-        res.render('error',{
-            User: req.user
-        })
-    })
+    } catch (error) {
+        throw new Error('error nas configuraçoes de user')
+    }
 
 })
+
+
+
+
+// methods posts
+
 router.post('/config', authCheck, (req, res) => {
 
-
-      
     User.update({
         firstName: req.body.firstName,
         lastName: req.body.lastName,
@@ -82,8 +96,10 @@ router.post('/config', authCheck, (req, res) => {
         res.redirect('/users/'+req.user.id)
     }).catch( err => {
         console.log("Falha na atualizacao de user feito com sucesso")
+        console.log(err)
         res.redirect('/user/'+req.user.id+'/config')
     })
+
 })
 
 // mudar a senha se o user tem uma conta local

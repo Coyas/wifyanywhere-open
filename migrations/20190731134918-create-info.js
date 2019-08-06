@@ -1,30 +1,21 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Payments', {
+    return queryInterface.createTable('Infos', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      data: {
-        type: Sequelize.DATE
+      sobrenos: {
+        type: Sequelize.TEXT
       },
-      valor: {
-        type: Sequelize.DOUBLE
+      poli_cansel: {
+        type: Sequelize.TEXT
       },
-      bookingId: {
-        type: Sequelize.UUID,
-        references: {
-          model: 'Bookings',
-          key: 'id'
-        },
-        onUpdate: 'CASCADE',
-        onDelete: 'SET NULL'
-      },
-      tipo: {
-        type: Sequelize.SMALLINT
+      advertencia: {
+        type: Sequelize.TEXT
       },
       createdAt: {
         allowNull: false,
@@ -37,6 +28,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Payments');
+    return queryInterface.dropTable('Infos');
   }
 };

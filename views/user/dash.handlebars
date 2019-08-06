@@ -137,14 +137,16 @@
 
     <div class="row reservabotao mt-4" role="tablist">
         <div class="col-6">
-            <a class="reserva nav-item nav-link active" data-toggle="tab" href="#" role="tab" aria-selected="true">{{translation.ReservasAtuais}}</a>
+            <a id="ratual" class="reserva nav-item nav-link active"  role="tab" aria-selected="true">{{translation.ReservasAtuais}}</a>
+            {{!-- <a class="reserva nav-item nav-link active" data-toggle="tab" href="#" role="tab" aria-selected="true">{{translation.ReservasAtuais}}</a> --}}
         </div>
         <div class="col-6">
-            <a class="reserva nav-item nav-link" data-toggle="tab" href="#" role="tab" aria-selected="true">{{translation.ReservasAnteriores}}</a>
+            {{!-- <a class="reserva nav-item nav-link" data-toggle="tab" href="#" role="tab" aria-selected="true">{{translation.ReservasAnteriores}}</a> --}}
+            <a id="rantes" class="reserva nav-item nav-link"  role="tab" aria-selected="true">{{translation.ReservasAnteriores}}</a>
         </div>
     </div>
 
-    <div class="row mt-5">
+    <div id="box" class="row mt-5">
         <div class="col-md-12">
 
             <div class="card">
@@ -274,9 +276,146 @@
                 {{/if}}
 
             </div>
-             <!--<div class="col-md-6">
+             {{!-- <div class="col-md-6">
                  <a href="#" class="btn btn-secondary btn-lg active" id="cancelar" role="button" aria-pressed="true">Cancelar</a>
-             </div>-->
+             </div> --}}
          </div>
+    </div>
+
+
+    <div id="box1" class="row mt-5 invisivels">
+        <div class="col-md-12">
+
+            <div class="card">
+                <div class="card-body">
+                <table id="table_id" class="table table-striped table-hover">
+                    <thead>
+                    <tr>
+                        <th>Select</th>
+                        <th class="th-sm">{{translation.PLANO}}
+                        </th>
+                        <th class="th-sm">{{translation.PICKUP_DATE}}
+                        </th>
+                        <th class="th-sm">{{translation.RETURN2}}
+                        </th>
+                        <th class="th-sm">{{translation.CPU_LOC}}
+                        </th>
+                        <th class="th-sm">{{translation.Pacote}}
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>
+
+                        </td>
+                        <td>Software Engineer</td>
+                        <td>Edinburgh</td>
+                        <td>23</td>
+                        <td>2008/12/13</td>
+                        <td>$103,600</td>
+                    </tr><tr>
+                        <td>
+
+                        </td>
+                        <td>Software Engineer</td>
+                        <td>Edinburgh</td>
+                        <td>23</td>
+                        <td>2008/12/13</td>
+                        <td>$103,600</td>
+                    </tr><tr>
+                        <td>
+
+                        </td>
+                        <td>Software Engineer</td>
+                        <td>Edinburgh</td>
+                        <td>23</td>
+                        <td>2008/12/13</td>
+                        <td>$103,600</td>
+                    </tr><tr>
+                        <td>
+
+                        </td>
+                        <td>Software Engineer</td>
+                        <td>Edinburgh</td>
+                        <td>23</td>
+                        <td>2008/12/13</td>
+                        <td>$103,600</td>
+                    </tr><tr>
+                        <td>
+
+                        </td>
+                        <td>Software Engineer</td>
+                        <td>Edinburgh</td>
+                        <td>23</td>
+                        <td>2008/12/13</td>
+                        <td>$103,600</td>
+                    </tr><tr>
+                        <td>
+
+                        </td>
+                        <td>Software Engineer</td>
+                        <td>Edinburgh</td>
+                        <td>23</td>
+                        <td>2008/12/13</td>
+                        <td>$103,600</td>
+                    </tr><tr>
+                        <td>
+
+                        </td>
+                        <td>Software Engineer</td>
+                        <td>Edinburgh</td>
+                        <td>23</td>
+                        <td>2008/12/13</td>
+                        <td>$103,600</td>
+                    </tr>
+                    <tr>
+                        <td>
+
+                        </td>
+                        <td>Office Manager</td>
+                        <td>London</td>
+                        <td>30</td>
+                        <td>2008/12/19</td>
+                        <td>$90,560</td>
+                    </tr>
+                    <tr>
+                        <td>
+
+                        </td>
+                        <td>Support Lead</td>
+                        <td>Edinburgh</td>
+                        <td>22</td>
+                        <td>2013/03/03</td>
+                        <td>$342,000</td>
+                    </tr>
+                    <tr>
+                        <td>
+
+                        </td>
+                        <td>Regional Director</td>
+                        <td>San Francisco</td>
+                        <td>36</td>
+                        <td>2008/10/16</td>
+                        <td>$470,600</td>
+                    </tr>
+                    </tbody>
+                </table>
+                </div>
+            </div>
+        </div>
+         {{!-- <div class="row mt-5">
+            <div class="col-md-6">
+                {{#if User}}
+                    <a href="/pagamento" class="btn btn-info btn-lg active" id="recarregar" role="button" aria-pressed="true">{{translation.Recarregar}}</a>
+                {{else}}
+                    <a class="btn btn-info btn-lg active"   data-toggle="modal" data-target="#login">{{translation.ONLINE_BOOKING}}</a>
+                {{/if}}
+
+            </div>
+             {{!-- <div class="col-md-6">
+                 <a href="#" class="btn btn-secondary btn-lg active" id="cancelar" role="button" aria-pressed="true">Cancelar</a>
+             </div> --}}
+         </div> --}}
     </div>
 </section>

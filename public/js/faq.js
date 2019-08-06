@@ -13,3 +13,26 @@ for (i = 0; i < acc.length; i++) {
     });
 }
 
+// $(document).ready(function(){
+//     $('div.faq a img').click(function(){
+//       $('a img').removeClass("ativo");
+//       $(this).addClass("ativo");
+//   });
+//   });
+
+$(window).on('load', function() {
+    
+    // code here
+    $('div.faq a img').click(function(){
+         $('a img').removeClass("ativo");
+         $(this).addClass("ativo");
+    });
+ });
+
+//  window.addEventListener("load", function(){
+//     // Your code
+//     $('div.faq a img').click(function(){
+//         $('a img').removeClass("ativo");
+//         $(this).addClass("ativo");
+//    });
+// });

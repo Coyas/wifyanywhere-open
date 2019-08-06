@@ -4,6 +4,7 @@ const User = require('../models').User
 const bcrypt = require('bcrypt');
 const Mail = require('../config/mail')
 const keys = require('../config/keys.json')
+let randomstring = require("randomstring")
 const saltRounds = 10
 
 // login session checker
@@ -137,7 +138,7 @@ router.post('/registro', (req, res) => {
                                 from: `<${keys.email.user}>`,
                                 to: req.user.email, // list of receivers
                                 subject: "Confirmacao de conta no wifianywhere ✔", // Subject line
-                                text: "Ola Mundo, estou testando o email enviado por nodejs com pacote nodemailer, viva mundo node", // plain text body
+                                text: `Confirme seu email ${Url}`, // plain text body
                                 html: `Confirme seu email <a href="${Url}" class="btn btn-primary">Confirmar</a>` // html body
                             }).then( () => {
                                 console.log('email enviado')
@@ -154,8 +155,7 @@ router.post('/registro', (req, res) => {
                     }).catch((err) => {
                         console.log('erro ao cadastrar o user: '+err)
                     })
-
-                    //  res.send('*********** dados do cadastro ********************** <br><br>username: '+req.body.username+'<br>email: '+req.body.email+'<br>password: '+req.body.password+'<br>password criptografado: ')
+                //  res.send('*********** dados do cadastro ********************** <br><br>username: '+req.body.username+'<br>email: '+req.body.email+'<br>password: '+req.body.password+'<br>password criptografado: ')
                 })
             }
 
@@ -179,7 +179,8 @@ router.get('/emailcheck/:accessToken', (req, res) => {
                 where: {
                     accessToken: req.params.accessToken
                 }
-            }).then( () => {
+            })
+            .then( () => {
                 console.log("atualizacao de user feito com sucesso")
                 res.redirect('/')
             }).catch( err => {
@@ -191,18 +192,142 @@ router.get('/emailcheck/:accessToken', (req, res) => {
         }
     }).catch( err => {
         res.redirect('/undefined')
-    })
+    }) 
 
 
 })
-
+ 
 router.get('/resetSenha', (req, res) => {
     res.render('home/resetsenha', {layout: 'resetsenha'})
 })
 
-router.post('/resetSenha', (req, res) => {
-    res.send('email de reset de senha enviado')
-    // res.redirect('/')
+router.post('/resetSenha', async (req, res) => {
+    // res.send('email de reset de senha enviado')
+    try {
+        const email = req.body.email
+        console.log('email: ')
+        console.log(email)
+        
+        // verifica se o email existe
+        const user = await User.findOne({
+            where: {
+                email: email
+            }
+        })
+
+        console.log('user: ')
+        console.log(user)
+
+        // verificar se é o localLogin (0 loginlocal - 1 login com redes sociais)
+        if(user['localId'] == 0){
+            console.log('voce fez login com uma rede social, por isso nao pode mudar a senha aqui, use a rede social para mudar a senha')
+        }else {
+        // gerar randomicamente uma senha
+            const senha = randomstring.generate(10);
+            console.log('senha gerada: ')
+            console.log(senha)
+            // const senha = 'terrasystem123'
+
+        // atualizar a senha criptograda
+            bcrypt.hash(senha, saltRounds, function(err, hash) {
+                User.update({
+                    password: hash
+                }, {
+                    where: {
+                        email: email
+                    }
+                })
+                .then( data => {
+                    // console.log('password atualizado com sucesso')
+                    // console.log(data)
+
+                            // enviar a senha pelo email
+                    // const Url = `http://${keys.server.server}`
+                    const Url = `http://192.168.1.67:3000`
+                    // console.log('emailllll:'+req.body.email )
+
+                    Mail.sendMail({
+                        from: `<${keys.email.user}>`,
+                        to: email, // list of receivers
+                        // to: 'ailton_duarte@outlook.com',
+                        subject: "Pedido de Reset Senha no wifianywhere ✔", // Subject line
+                        text: "Confirme seu email "+ Url +" Confirmar", // plain text body
+                        html: `
+                            <p>
+                                Sua nova senha do portal wifianywhere é: ${senha}<br>
+                                Fique livre de mudar essa senha quando quiser
+                            </p>
+
+                            <p>
+                            Confirme seu email <a href="${Url}" class="btn btn-primary">Confirmar</a>
+                            </p>
+                            `//, // html body
+                        // attachments: [
+                        //     {
+                        //         filename: "Beneficios 1.svg", 
+                        //         path: '../public/images/Beneficios 1.svg',
+                        //         cid: 'geral@wifianywhere.com'
+                        //     }
+                        // ]
+                    })
+
+                    
+                    return res.redirect('/')
+                }).catch(err => {
+                    console.log('erro na atualizacao da senha:' + err)
+                })
+            });
+
+            
+
+        }//fim do else de verificar localLogin
+
+        // // enviar a senha pelo email
+        // // const Url = `http://${keys.server.server}`
+        // const Url = `http://192.168.1.67:3000`
+        // // console.log('emailllll:'+req.body.email )
+
+        // const mail = await Mail.sendMail({
+        //     from: `<${keys.email.user}>`,
+        //     to: email, // list of receivers
+        //     // to: 'ailton_duarte@outlook.com',
+        //     subject: "Pedido de Reset Senha no wifianywhere ✔", // Subject line
+        //     text: "Confirme seu email "+ Url +" Confirmar", // plain text body
+        //     html: `
+        //         <p>
+        //             Sua nova senha do portal wifianywhere é: ${senha}
+        //         </p>
+        //         <p>
+        //         Confirme seu email <a href="${Url}" class="btn btn-primary">Confirmar</a>
+        //         </p>
+        //         `//, // html body
+        //     // attachments: [
+        //     //     {
+        //     //         filename: "Beneficios 1.svg", 
+        //     //         path: '../public/images/Beneficios 1.svg',
+        //     //         cid: 'geral@wifianywhere.com'
+        //     //     }
+        //     // ]
+        // })
+
+       
+
+        // if(mail){
+        //     console.log('email de resetSenha enviado')
+        //     // return res.redirect('/')
+        // }else {
+        //     console.log('erro ao enviar o email de resetSenha')
+        //     // return res.redirect('/')
+        // }
+
+       
+
+        
+
+    } catch (error) {
+        throw new Error('erro no post do reset senha')
+    }
+    
 })
 
 

@@ -13,20 +13,22 @@ const expressValidador = require('express-validator')
 //pasport autenticate pakages
 const passportSetup =  require('./config/passport-config')
 const keys = require('./config/keys.json')
+const email = require('./config/mail')
 
 // traducao
 const i18n = require('i18n-express')
 
 /***** importar rotas */
-const home = require('./routes/home');
-const user = require('./routes/user');
-const booking = require('./routes/booking')
+const home      = require('./routes/home')
+const user      = require('./routes/user')
+const booking   = require('./routes/booking')
 const pagamento = require('./routes/pagamento')
-const auth = require('./routes/auth')
+const auth      = require('./routes/auth')
+const faq       = require('./routes/faq')
 
 // console testes
 
-
+//init express
 const app = express();
 // require('dotenv').config();
 // console.log("variaveis do hanbiente do appjs")
@@ -120,9 +122,7 @@ app.use(i18n({
     textsVarName: 'translation',
     browserEnable: true,  //cria cookie mesmo sem iniciar sessao
     defaultLang: 'pt',
-    paramLangName: 'clang',
-    // textsVarName: 'lang'
-    // cookie: 'cookeLang'
+    paramLangName: 'clang'
 }));
 
 // iniciar o passport
@@ -130,15 +130,17 @@ app.use(passport.initialize())
 app.use(passport.session())
 
 // rota do index
-app.use('/', home);
+app.use('/', home)
 // rotas do user
-app.use('/users', user);
+app.use('/users', user)
 // rota para o bookin online
-app.use('/booking', booking);
+app.use('/booking', booking)
 //rota do pagamento
 app.use('/pagamento', pagamento)
 //rota das autenticacoes
 app.use('/auth', auth)
+//rota para faqs
+app.use('/faq', faq)
 
 
 // rota do 404 (catch 404 and forward to error handler)

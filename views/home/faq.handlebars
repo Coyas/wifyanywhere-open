@@ -3,56 +3,56 @@
     <img src="/images/Imagem 2.png" class="img-fluid banner" alt="Responsive image">
     <div class="centered h5 font-weight-bold">
         <span>{{translation.FAKQ}}</span>
-        <form action="" method="POST">
-            <input type="text" placeholder="Type your question...">
+        <form action="/faq/pesquisa" method="POST">
+            <input type="text" placeholder="Type your question..." name="search">
         </form>
     </div>
 </div>
 
 
 <section id="categoria"  class="container-fluid">
-    <div class="row">
+    <div class="row"> 
         <div class="col-md-2 col-sm-4">
-            <div class="row text-center mt-4">
+            <div class="row text-center mt-4 faq">
                 <div class="col-12">
-                    <a class="general" href="/faq/{{Faq.0.id}}">
+                    <a class="general" href="/faq/{{Catego.0.id}}">
                         <img class="ativo" src="/images/General.svg">
                     </a>
 
                 </div>
             </div>
             <div class="row">
-                <div class="col-12 mt-4"><h6 class="text-center font-weight-bold ativo" >{{Faq.0.nomept}}</h6></div>
+                <div class="col-12 mt-4"><h6 class="text-center font-weight-bold ativo" >{{Catego.0.nomept}}</h6></div>
             </div>
         </div>
         <div class="col-md-2 col-sm-4">
-            <div class="row text-center mt-4">
+            <div class="row text-center mt-4 faq">
                 <div class="col-12">
-                    <a href="./faq/2">
+                    <a href="/faq/{{Catego.1.id}}">
                         <img class="" src="/images/Usage.svg">
                     </a>
                 </div>
             </div>
             <div class="row">
-                <div class="col-12 mt-4"><h6 class="text-center font-weight-bold" >{{translation.USAGE}}</h6></div>
+                <div class="col-12 mt-4"><h6 class="text-center font-weight-bold" >{{Catego.1.nomept}}</h6></div>
             </div>
         </div>
-        <div class="col-md-2 col-sm-4">
+        <div class="col-md-2 col-sm-4 faq">
             <div class="row text-center mt-4">
                 <div class="col-12">
-                    <a href="./faq/3">
+                    <a href="/faq/{{Catego.2.id}}">
                         <img class="" src="/images/Booking%20and%20Payment.svg">
                     </a>
                 </div>
             </div>
             <div class="row">
-                <div class="col-12 mt-4"><h6 class="text-center font-weight-bold" >{{translation.B_PAYMENT}}</h6></div>
+                <div class="col-12 mt-4"><h6 class="text-center font-weight-bold" >{{Catego.2.nomept}}</h6></div>
             </div>
         </div>
-        <div class="col-md-2 col-sm-4">
+        <div class="col-md-2 col-sm-4 faq">
             <div class="row text-center mt-4">
                 <div class="col-12">
-                    <a href="./faq/4">
+                    <a href="/faq/4">
                         <img class="" src="/images/Pickup%20or%20shipping.svg">
                     </a>
                 </div>
@@ -61,10 +61,10 @@
                 <div class="col-12 mt-4"><h6 class="text-center font-weight-bold">{{translation.P_SHIPPING}}</h6></div>
             </div>
         </div>
-        <div class="col-md-2 col-sm-4">
+        <div class="col-md-2 col-sm-4 faq">
             <div class="row text-center mt-4">
                 <div class="col-12">
-                    <a href="./faq/5">
+                    <a href="/faq/5">
                         <img class="" src="/images/Return.svg">
                     </a>
                 </div>
@@ -74,10 +74,10 @@
             </div>
 
         </div>
-        <div class="col-md-2 col-sm-4">
+        <div class="col-md-2 col-sm-4 faq">
             <div class="row text-center mt-4">
                 <div class="col-12">
-                    <a href="./faq/6">
+                    <a href="/faq/6">
                         <img class="" src="/images/Modification%20and%20Cancellation.svg">
                     </a>
                 </div>
@@ -90,20 +90,19 @@
 </section>
 
 <section id="acordiao" class="container-fluid">
-<div class="row justify-content-center">
-    <div class="col-8  faqs">
-    <button class="accordion seccao">General 1 <i class="fa fa-plus" aria-hidden="true"></i></button>
-    <div class="panel">
-        <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-            wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-            eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
-            assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-            nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-            farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-            labore sustainable..</p>
+{{#each Faq}}
+    <div class="row justify-content-center">
+        <div class="col-8  faqs">
+        <button class="accordion seccao">{{this.title}} <i class="fa fa-plus" aria-hidden="true"></i></button>
+        <div class="panel">
+            <p>
+                {{this.descricao}}
+            </p>
+        </div>
+        </div>
     </div>
-    </div>
-</div>
+{{/each}}
+{{!--
 <div class="row justify-content-center">
     <div class="col-8 faqs">
     <button class="accordion seccao">General 2 <i class="fa fa-plus" aria-hidden="true"></i></button>
@@ -120,74 +119,6 @@
     </div>
     </div>
 </div>
-<div class="row justify-content-center">
-    <div class="col-8 faqs">
-    <button class="accordion seccao">General 3 <i class="fa fa-plus" aria-hidden="true"></i></button>
-    <div class="panel">
-        <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-            wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-            eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
-            assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-            nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-            farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-            labore sustainable.</p>
-    </div>
-    </div>
-</div>
-    <div class="row justify-content-center">
-        <div class="col-8 faqs">
-            <button class="accordion seccao">General 4 <i class="fa fa-plus" aria-hidden="true"></i></button>
-            <div class="panel">
-                <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-                    wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                    eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
-                    assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-                    nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-                    farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-                    labore sustainable.</p>
-            </div>
-        </div>
-    </div>
-    <div class="row justify-content-center">
-        <div class="col-8 faqs">
-            <button class="accordion seccao">General 5 <i class="fa fa-plus" aria-hidden="true"></i></button>
-            <div class="panel">
-                <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-                    wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                    eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
-                    assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-                    nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-                    farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-                    labore sustainable.</p>
-            </div>
-        </div>
-    </div>
-    <div class="row justify-content-center">
-        <div class="col-8 faqs">
-            <button class="accordion seccao">General 6 <i class="fa fa-plus" aria-hidden="true"></i></button>
-            <div class="panel">
-                <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-                    wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                    eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
-                    assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-                    nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-                    farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-                    labore sustainable.</p>
-            </div>
-        </div>
-    </div>
-    <div class="row justify-content-center">
-        <div class="col-8 faqs">
-            <button class="accordion seccao">General 7 <i class="fa fa-plus" aria-hidden="true"></i></button>
-            <div class="panel">
-                <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-                    wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                    eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
-                    assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-                    nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-                    farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-                    labore sustainable.</p>
-            </div>
-        </div>
-    </div>
+ --}}
 </section>
+

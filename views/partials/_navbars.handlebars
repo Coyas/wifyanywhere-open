@@ -20,7 +20,37 @@
 
             <a class="nav-link"   href="/faq">{{translation.FAQ}}</a>
         </li>
-        <li class="nav-item dropdown">
+        
+
+        {{#if User.email}}
+          <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle"  href="/?clang=es" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="far fa-user"></i> {{User.firstName}} {{User.lastName}}
+                </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item"  href="/users/{{User.id}}"><i class="fas fa-user-tag"></i> {{translation.PERFIL}}</a>
+                  <a class="dropdown-item"  href="/auth/logout"><i class="fas fa-sign-out-alt"></i> {{translation.SAIR}}</a>
+            </div>
+          </li>
+        {{else}}
+          <li class="nav-item">
+              <a class="login nav-link"   data-toggle="modal" data-target="#login"><i class="far fa-user"></i> {{translation.ENTRAR}}</a>
+          </li>
+        {{/if}}
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      {{#if User}}
+        {{#if User.confirme}}
+          <a href="/booking" class="btn btn-info my-2 my-sm-0">{{translation.ONLINE_BOOKING}}</a>
+        {{else}}
+          <a href="/users/{{User.id}}" class="btn btn-info my-2 my-sm-0">{{translation.ONLINE_BOOKING}}</a>
+        {{/if}}
+      {{else}}
+        <a class="btn btn-info my-2 my-sm-0"   data-toggle="modal" data-target="#login">{{translation.ONLINE_BOOKING}}</a>
+      {{/if}}
+    </form>
+
+    <li class="lili nav-item dropdown">
           {{#if_equal translation lang 'en'}}
                 <a class="nav-link dropdown-toggle"  href="/?clang=en" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <span class="flag-icon flag-icon-gb-eng"></span> {{translation.en}}
@@ -51,34 +81,6 @@
           {{/if_equal}}
         </div>
       </li>
-
-        {{#if User.email}}
-          <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle"  href="/?clang=es" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="far fa-user"></i> {{User.firstName}} {{User.lastName}}
-                </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item"  href="/users/{{User.id}}"><i class="fas fa-user-tag"></i> {{translation.PERFIL}}</a>
-                  <a class="dropdown-item"  href="/auth/logout"><i class="fas fa-sign-out-alt"></i> {{translation.SAIR}}</a>
-            </div>
-          </li>
-        {{else}}
-          <li class="nav-item">
-              <a class="login nav-link"   data-toggle="modal" data-target="#login"><i class="far fa-user"></i> {{translation.ENTRAR}}</a>
-          </li>
-        {{/if}}
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      {{#if User}}
-        {{#if User.confirme}}
-          <a href="/booking" class="btn btn-info my-2 my-sm-0">{{translation.ONLINE_BOOKING}}</a>
-        {{else}}
-          <a href="/users/{{User.id}}" class="btn btn-info my-2 my-sm-0">{{translation.ONLINE_BOOKING}}</a>
-        {{/if}}
-      {{else}}
-        <a class="btn btn-info my-2 my-sm-0"   data-toggle="modal" data-target="#login">{{translation.ONLINE_BOOKING}}</a>
-      {{/if}}
-    </form>
   </div>
  </div>
 </nav>
