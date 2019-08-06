@@ -66,11 +66,11 @@ $('#rantes').click(function() {
 $(window).scroll(function() {
     var $height = $(window).scrollTop();
     this.console.log($height)
-  if($height > 690) {
+  if($height > 950) {
         $('#sumario').removeClass('sumario');
         $('#sumario').addClass('sumario2');
-        this.console.log($height)
-	} else {
+        // this.console.log($height)
+    }else {
         $('#sumario').removeClass('sumario2');
         $('#sumario').addClass('sumario');
 	}

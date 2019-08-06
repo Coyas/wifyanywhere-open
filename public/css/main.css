@@ -630,8 +630,11 @@ a {
     right: 2%;
 }
 .sumario2 {
-    position: relative;
+    position: fixed;
+    right: 2%;
+    top: 7%;
 }
+
 
 /* helpers */
 .lili {
