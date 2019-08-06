@@ -3,7 +3,7 @@
     "username": "root",
     "password": "",
     "database": "wifianywhere",
-    "host": "127.0.0.1",
+    "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
@@ -14,7 +14,7 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "coyas",
+    "username": "root",
     "password": null,
     "database": "database_production",
     "host": "127.0.0.1",
