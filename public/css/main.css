@@ -99,9 +99,9 @@ a:hover {
 .fmenu ul li, .fcontato ul li{
     margin: 0 0 2% 0;
 }
-.fcontato {
-    /*margin-left: 1%;*/
-}
+/* .fcontato {
+    margin-left: 1%;
+} */
 
 footer .mrg {
     margin: 1.5rem 0 0 0;
@@ -416,7 +416,7 @@ footer .mrg {
     background-color: red;
 }
 #booking .card, #booking2 .card {
-    width: 100%;
+    width: 110%;
 }
 
 #booking .linkTerms {

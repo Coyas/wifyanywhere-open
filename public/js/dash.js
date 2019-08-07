@@ -76,10 +76,33 @@ $(window).scroll(function() {
 	}
 });
 
-// make sumary
+/******** make sumary ***********/
+
+// pickupdate
 $(document).ready(function(){
     $("#inputPickupdate").change(function(){
         var valor = $('#inputPickupdate').val();
       $(".pickdate").text(valor);
     });
-  });
+});
+// input number
+$(document).ready(function(){
+    $("#inputNumber").change(function(){
+        var valor = $('#inputNumber').val();
+      $(".duration").text(valor);
+    });
+});
+// pick up location
+$(document).ready(function(){
+    $("#inputLocation").change(function(){
+        var valor = $('#inputLocation').val();
+      $(".uploc").text(valor);
+    });
+});
+// return location
+$(document).ready(function(){
+    $("#inputLocation2").change(function(){
+        var valor = $('#inputLocation2').val();
+      $(".urnloc").text(valor);
+    });
+});

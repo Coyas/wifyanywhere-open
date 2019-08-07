@@ -61,25 +61,37 @@
             <div id="Cardpay" class="card text-right">
                 <div class="card-body">
                     <ul class="list-unstyled">
-                        <li class="list-inline">Mr. Nome Apelido</li>
-                        <li class="list-inline">Morada</li>
-                        <li class="list-inline">Cidade</li>
-                        <li class="list-inline">Zip code</li>
-                        <li class="list-inline">Cabo Verde</li>
-                        <li class="list-inline">(000) 000 00 00</li>
-                        <li class="list-inline">email@gmail.com</li>
+                        <li class="list-inline">{{booking.0.User.firstName}} {{booking.0.User.lastName}}</li>
+                        <li class="list-inline">{{booking.0.Use.street_adress}}</li>
+                        <li class="list-inline">{{booking.0.User.city}}</li>
+                        <li class="list-inline">{{booking.0.User.zip_code}}</li>
+                        <li class="list-inline">{{booking.0.User.country}}</li>
+                        <li class="list-inline">{{booking.0.User.phone}}</li>
+                        <li class="list-inline">{{booking.0.User.email}}</li>
+                        <hr>
+                        <li class="list-inline">Plano: {{booking.0.Plan.nome}}</li>
+                        <li class="list-inline">Pickup: {{booking.0.pickupdate}}</li>
+                        <li class="list-inline">Dias: {{booking.0.numdias}}</li>
+                        <li class="list-inline">Pickup: {{pickuplocal.0.nome}}</li>
+                        <li class="list-inline">Return: {{returnlocal.0.nome}}</li>
                     </ul>
                 </div>
             </div>
         </div>
+        
+        <p>
+            <figure class="text-center">
+                <img src="/images/virifiedbyvisa_semfundo.png" width="200" height="100">
+                <figcaption>
+                    <a href="">lear more</a>
+                </figcaption>
+            </figure>
+            
+            
+            <img src="/images/visa.png" width="100" height="100">
+        </p>
     </div>
 
-    <div class="row">
-        <div class="col-md-12">
-            <img src="/images/virifiedbyvisa_semfundo.png" width="200" height="100">
-            <img src="/images/visa.png" width="100" height="100">
-        </div>
-    </div>
 </section>
 
 

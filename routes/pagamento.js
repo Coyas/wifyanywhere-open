@@ -32,15 +32,36 @@ router.get('/:id', authCheck, async (req, res) => {
         
         const contato   = await Contact.findAll()
         const redes     = await Rsocials.findAll()
+        const booking   = await Bookings.findAll({
+            where: {id: req.params.id},
+            attributes: ['id', 'pickupdate', 'numdias', 'flynumber', 'planId', 'userId', 'pickuplocationId', 'returnlocationId', 'showup'],
+            include: [
+                {model: Users},
+                {model: Plan}
+            ]
+        })
+        console.log(booking)
+
+        const pickuplocationId = await Places.findAll({
+            where: {id: booking[0].pickuplocationId}
+        })
+
+        
+        const returnlocationId = await Places.findAll({
+            where: {id: booking[0].returnlocationId}
+        })
 
         return res.render('booking/pagamento', {
             User: req.user,
             Contato: contato,
             Rsocial: redes,
-            book: req.params.id
+            book: req.params.id,
+            booking: booking,
+            pickuplocal: pickuplocationId,
+            returnlocal: returnlocationId
         })
     } catch (error) {
-        throw new Error('flada no pagamento index')
+        throw new Error('falha no pagamento index')
     }
 })
 

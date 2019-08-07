@@ -49,7 +49,7 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputreturnlocation">{{translation.CR_LOC}}</label>
-                            <select id="inputLocation" name="rlocation" class="form-control input">
+                            <select id="inputLocation2" name="rlocation" class="form-control input">
                                 <option selected>Select</option>
                                 {{#each Place}}
                                     <option value="{{this.id}}">{{this.nome}}</option>
@@ -216,10 +216,10 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-3">{{translation.Duration}}: 00 days</div>
-                            <div class="col-md-3">{{translation.Ending}}: dd/mm/yyyy</div>
-                            <div class="col-md-3">{{translation.Starting}}: dd/mm/yyyy</div>
-                            <div class="col-md-3"><b>0000$00</b></div>
+                            <div class="col-md-3">{{translation.Duration}}: <span class="duration"></span> days</div>
+                            <div class="col-md-3">{{translation.Ending}}: <span class="pickdate">dd/mm/yyyy</span></div>
+                            <div class="col-md-3">{{translation.Starting}}: <span class="pickdate">dd/mm/yyyy</span></div>
+                            <div class="col-md-3"><b><span class="tottal">0000</span>$00</b></div>
                         </div>
                     </div>
                     <div class="terms">
@@ -238,7 +238,7 @@
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <h1 class="display-4 font-weight-bold total">{{translation.TOTAL}}: 000$00</h1>
+                                <h1 class="display-4 font-weight-bold total">{{translation.TOTAL}}: <span class="ptotal">000</span>$00</h1>
                             </div>
                         </div>
                     </div>
@@ -271,6 +271,14 @@
                         <tr>
                             <th scope="row">{{translation.PICKUP_DATE}}</th>
                             <td class="pickdate">dd-mm-yyy</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Pick-up location</th>
+                            <td class="uploc">dd-mm-yyy</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Return location</th>
+                            <td class="urnloc">dd-mm-yyy</td>
                         </tr>
                         <tr>
                             <th scope="row">{{translation.TOTAL}}</th>
