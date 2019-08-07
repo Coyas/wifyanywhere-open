@@ -117,7 +117,7 @@ function validateForm() {
     // This function deals with validation of the form fields
     var x, y, i, valid = true;
     x = document.getElementsByClassName("tab");
-    y = x[currentTab].getElementsByTagName("input");
+    y = x[currentTab].getElementsByClassName("input");
     console.log(y);
     // A loop that checks every input field in the current tab:
     for (i = 0; i < y.length; i++) {

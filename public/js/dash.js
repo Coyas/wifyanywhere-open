@@ -75,3 +75,11 @@ $(window).scroll(function() {
         $('#sumario').addClass('sumario');
 	}
 });
+
+// make sumary
+$(document).ready(function(){
+    $("#inputPickupdate").change(function(){
+        var valor = $('#inputPickupdate').val();
+      $(".pickdate").text(valor);
+    });
+  });

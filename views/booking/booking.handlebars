@@ -29,11 +29,11 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputPickupdate">{{translation.PICKUP_DATE}}</label>
-                            <input type="date" name="pdate" class="form-control" id="inputPickupdate" placeholder="dd/mm/yyyy">
+                            <input type="date" name="pdate" class="form-control input" id="inputPickupdate" placeholder="dd/mm/yyyy">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputNumber">{{translation.SN_DAYWIFI}}</label>
-                            <input type="number" id="inputNumber" min="0" max="999"  oninput="validity.valid||(value='');" name="numdays" class="form-control">
+                            <input type="number" id="inputNumber" min="0" max="999"  oninput="validity.valid||(value='');" name="numdays" class="form-control input">
 
                         </div>
                     </div>
@@ -49,7 +49,7 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputreturnlocation">{{translation.CR_LOC}}</label>
-                            <select id="inputLocation" name="rlocation" class="form-control">
+                            <select id="inputLocation" name="rlocation" class="form-control input">
                                 <option selected>Select</option>
                                 {{#each Place}}
                                     <option value="{{this.id}}">{{this.nome}}</option>
@@ -151,41 +151,41 @@
                     </div>
                     <div class="form-group">
                         <label for="inputAddress">{{translation.FNAME}}</label>
-                        <input type="text" name="fname" class="form-control" id="inputAddress" placeholder="" value="{{User.firstName}}">
+                        <input type="text" name="fname" class="form-control input" id="inputAddress" placeholder="" value="{{User.firstName}}">
                     </div>
                     <div class="form-group">
                         <label for="inputAddress2">{{translation.LNAME}}</label>
-                        <input type="text" name="lname" class="form-control" id="inputAddress2" placeholder="" value="{{User.lastName}}">
+                        <input type="text" name="lname" class="form-control input" id="inputAddress2" placeholder="" value="{{User.lastName}}">
                     </div>
                     <div class="form-group">
                         <label for="inputAddress">{{translation.SADDRESS}}</label>
-                        <input type="text" name="saddr" class="form-control" id="streetAddress" placeholder="" value="{{User.street_adress}}">
+                        <input type="text" name="saddr" class="form-control input" id="streetAddress" placeholder="" value="{{User.street_adress}}">
                     </div>
                      <div class="form-group">
                         <label for="inputAddress">Biling Address</label>
-                        <input type="text" name="baddr" class="form-control" id="bilingAddress" placeholder="" value="{{User.biling_adress}}">
+                        <input type="text" name="baddr" class="form-control input" id="bilingAddress" placeholder="" value="{{User.biling_adress}}">
                     </div>
                     <div class="form-group">
                         <label for="inputAddress2">{{translation.city}}</label>
-                        <input type="text" name="city" class="form-control" id="inputAddress2" placeholder="" value="{{User.city}}">
+                        <input type="text" name="city" class="form-control input" id="inputAddress2" placeholder="" value="{{User.city}}">
                     </div>
 
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputZip">{{translation.Zcode}}</label>
-                            <input type="text" name="zip" class="form-control" id="inputZip" placeholder="" value="{{User.zip_code}}">
+                            <input type="text" name="zip" class="form-control input" id="inputZip" placeholder="" value="{{User.zip_code}}">
                         </div>
 
                         <div class="form-group col-md-6">
                             <label for="inputPhone">{{translation.Phone}}</label>
-                            <input type="text" name="phone" class="form-control" id="inputPhone" placeholder="" value="{{User.phone}}">
+                            <input type="text" name="phone" class="form-control input" id="inputPhone" placeholder="" value="{{User.phone}}">
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputCountry">{{translation.Country}}</label>
-                            <select id="inputCountry" class="form-control" name="country">
+                            <select id="inputCountry" class="form-control input" name="country">
                                 <option value="eua" selected>EUA</option>
                                 <option value="pt">Portugal</option>
                                 <option value="fr">França</option>
@@ -197,7 +197,7 @@
 
                         <div class="form-group col-md-6">
                             <label for="inputEmail">{{translation.Email}}</label>
-                            <input type="email" class="form-control" id="inputEmail" placeholder="" name="email" value="{{User.email}}">
+                            <input type="email" class="form-control input" id="inputEmail" placeholder="" name="email" value="{{User.email}}">
                         </div>
                     </div>
 
@@ -219,7 +219,7 @@
                             <div class="col-md-3">{{translation.Duration}}: 00 days</div>
                             <div class="col-md-3">{{translation.Ending}}: dd/mm/yyyy</div>
                             <div class="col-md-3">{{translation.Starting}}: dd/mm/yyyy</div>
-                            <div class="col-md-3"><b>0000$</b></div>
+                            <div class="col-md-3"><b>0000$00</b></div>
                         </div>
                     </div>
                     <div class="terms">
@@ -238,7 +238,7 @@
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <h1 class="display-4 font-weight-bold total">{{translation.TOTAL}}: 000$</h1>
+                                <h1 class="display-4 font-weight-bold total">{{translation.TOTAL}}: 000$00</h1>
                             </div>
                         </div>
                     </div>
@@ -265,16 +265,16 @@
                         </thead>
                         <tbody>
                         <tr>
-                            <th scope="row">{{translation.WP}}</th>
-                            <td>Nina</td>
+                            <th scope="row">{{translation.WP}}: </th>
+                            <td class="wifiplan" ></td>
                         </tr>
                         <tr>
                             <th scope="row">{{translation.PICKUP_DATE}}</th>
-                            <td>dd-mm-yyy</td>
+                            <td class="pickdate">dd-mm-yyy</td>
                         </tr>
                         <tr>
                             <th scope="row">{{translation.TOTAL}}</th>
-                            <td>0000$</td>
+                            <td class="total">0000$</td>
                         </tr>
                         </tbody>
                     </table>

@@ -640,3 +640,11 @@ a {
 .lili {
     list-style-type: none;
 }
+
+.card-header {
+    font-weight: bold;
+}
+
+#Cardpay {
+    color: #1FB0C1;
+}
