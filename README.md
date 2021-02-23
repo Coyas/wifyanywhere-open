@@ -4,7 +4,7 @@ site em node do wifianywhere.
 
 
 #### clone o app
-    git clone https://github.com/Coyas/wifyanywhere.git
+    git clone https://github.com/Coyas/wifyanywhere-open.git
 
 ##### Adicione as chaves do app
 
